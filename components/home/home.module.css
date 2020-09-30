@@ -1,0 +1,86 @@
+.pageContainer {
+  min-height: 100vh;
+  padding: 32px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  background-color: #111;
+  color: #ddd;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.menusContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.linksMenu {
+  margin: 32px;
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  padding: 16px 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border: 2px solid #ddd;
+  border-radius: 24px;
+}
+
+.menuTitle {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.menuItem {
+  display: flex;
+  flex-flow: row;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.thumbnail {
+  width: 96px;
+  height: 96px;
+  margin: 16px;
+
+  border-radius: 16px;
+}
+
+.itemText {
+  margin: 16px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.itemTitle {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.itemDate {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+@media (max-width: 800px) {
+  .menusContainer {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+}
