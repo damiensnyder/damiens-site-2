@@ -1,10 +1,12 @@
 html, body {
   padding: 0;
   margin: 0;
-  font-family: Inter, "Helvetica Neue", Helvetica, -apple-system, sans-serif;
+  font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 a {
+  color: #f70;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -12,8 +14,14 @@ a:hover {
   text-decoration: underline;
 }
 
-button, input {
+button, input, select, option {
+  color: inherit;
+  font-size: inherit;
   font-family: inherit;
+}
+
+img {
+  border-radius: 8px;
 }
 
 * {

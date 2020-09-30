@@ -1,0 +1,111 @@
+.pageContainer {
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: #111;
+  color: #ddd;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.pageTitle:hover {
+  animation: rainbow 0.75s ease-in-out infinite;
+}
+
+.postContainer {
+  width: 70%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 28px;
+}
+
+.navHeader {
+  align-self: flex-start;
+  font-size: 24px;
+  font-family: Menlo, monospace;
+  font-weight: 400;
+  color: #888;
+}
+
+.bodyText {
+  line-height: 1.5;
+
+  font-family: "Source Serif Pro", Merriweather, Georgia, serif;
+}
+
+@keyframes rainbow {
+  0%, 100% {
+    color: #f00;
+  }
+
+  20% {
+    color: #bb0;
+  }
+
+  33% {
+    color: #0d0;
+  }
+
+  50% {
+    color: #0bb;
+  }
+
+  67% {
+    color: #66f;
+  }
+
+  85% {
+    color: #b0b;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pageContainer {
+    padding: 24px;
+  }
+
+  .pageTitle {
+    font-size: 40px;
+  }
+
+  .postContainer {
+    width: auto;
+    margin: 0 32px;
+    font-size: 24px;
+  }
+
+  .navHeader {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageContainer {
+    padding: 16px;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .postContainer {
+    margin: 0 16px;
+    font-size: 20px;
+  }
+
+  .navHeader {
+    font-size: 18px;
+  }
+}

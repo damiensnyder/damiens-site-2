@@ -1,0 +1,32 @@
+.caption {
+  font-style: oblique;
+}
+
+.versionSelect {
+  margin: 0 4px;
+
+  border: none;
+  border-radius: 0;
+  outline: none;
+  font-style: oblique;
+  background-color: #111;
+}
+
+/* remove dropdown arrow */
+.versionSelect {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.versionSelect::-ms-expand {
+  display: none;
+}
+
+.versionOption {
+  background-color: #111;
+}
+
+.insertImage {
+  max-width: 50%;
+  max-height: 400px;
+}
