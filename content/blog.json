@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "name": "This is my first blog post",
+      "code": "this-is-my-first-blog-post",
+      "date": "2020.10.07",
+      "description": "what it says on the tin. first blog post im making",
+      "tags": ["first-posts"]
+    }
+  ]
+}

@@ -37,8 +37,6 @@
   height: 96px;
   width: 96px;
   margin: 16px;
-
-  border-radius: 16px;
 }
 
 .itemText {
@@ -93,7 +91,6 @@
     height: 64px;
     width: 64px;
     margin: 8px;
-    border-radius: 8px;
   }
 
   .itemText {
@@ -129,7 +126,6 @@
     height: 48px;
     width: 48px;
     margin: 8px;
-    border-radius: 6px;
   }
 
   .itemText {

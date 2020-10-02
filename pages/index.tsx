@@ -5,10 +5,14 @@ import general from "../styles/general.module.css";
 import styles from "../styles/home.module.css";
 
 interface MenuItemProps {
-  url: string,
+  code: string,
   name: string,
-  metadata: string,
-  thumbnail: string
+  type: string,
+  date: string,
+  tags: string[],
+  featured: boolean,
+  description?: string,
+  collection?: string
 }
 
 export default function Home(props: HelloProps): ReactNode {
@@ -24,18 +28,10 @@ export default function Home(props: HelloProps): ReactNode {
       <div className={styles.menusContainer}>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>recent content</h2>
-          <MenuItem url={"songs/it-isnt-funny-anymore.mp3"}
-              name={"it isn't funny anymore"}
-              metadata={"2020.05.28 • song"}
-              thumbnail={"thumbs/it-isnt-funny-anymore.png"} />
           <span className={styles.moreLink}><a><i>more content</i> →</a></span>
         </div>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>other pages</h2>
-          <MenuItem url={"https://twitter.com/damien__snyder"}
-              name={"twitter"}
-              metadata={"exclusively for humor"}
-              thumbnail={"thumbs/twitter.jpg"} />
           <span className={styles.moreLink}><a><i>more other</i> →</a></span>
         </div>
       </div>
@@ -44,18 +40,31 @@ export default function Home(props: HelloProps): ReactNode {
 }
 
 function MenuItem(props: MenuItemProps): ReactElement {
+  let url: string;
+  let metadata: string = props.date + " • " + props.type;
+  if (props.type == "song") {
+    url = "songs/" + props.code;
+  } else if (props.type == "video") {
+    url = "videos/" + props.code;
+  } else if (props.type == "blog") {
+    url = "blog/" + props.code;
+  } else {
+    url = props.type;
+    metadata = props.description;
+  }
+
   return (
     <div className={styles.menuItem}>
-      <a href={props.url}>
+      <a href={url}>
         <img className={styles.thumbnail}
-            src={props.thumbnail}
+            src={"thumbs/" + props.code + ".png"}
             alt={props.name} />
       </a>
       <div className={styles.itemText}>
       <span className={styles.itemTitle}>
-        <a href={props.url}>{props.name}</a>
+        <a href={url}>{props.name}</a>
       </span>
-        <span className={styles.itemMetadata}>{props.metadata}</span>
+        <span className={styles.itemMetadata}>{metadata}</span>
       </div>
     </div>
   );

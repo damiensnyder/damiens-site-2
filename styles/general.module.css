@@ -40,6 +40,8 @@
 }
 
 .bodyText {
+  text-align: left;
+  align-self: flex-start;
   line-height: 1.5;
 
   font-family: "Source Serif Pro", Merriweather, Georgia, serif;
