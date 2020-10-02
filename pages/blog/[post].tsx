@@ -9,9 +9,9 @@ const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
   {label: "math", rule: /\n\$\$\$\n/g},
   {label: "quote", rule: /\n>>>\n/g},
-  {label: "img", rule: /\nimg\n/g},
-  {label: "p", rule: /\n{2,}/g},
+  {label: "other", rule: /\n{2,}/g},
 ];
+
 
 interface ChunkProps {
   type: string,
@@ -44,23 +44,25 @@ export default function BlogPost(props: BlogPostProps): ReactNode {
                 label={props.date} />
           </select>
         </p>
-        <PostBody text={props.text}/>
+        {markdownToJsx(props.text)}
       </div>
     </div>
   );
 }
 
-function PostBody(props: {text: string}) {
+function markdownToJsx(text): ReactElement[] {
   // const sections: {title: string, level: number}[] = [];
-  const chunks: ChunkProps[] = hierarchicallySplit(props.text, splitRules);
+  const chunks: ChunkProps[] = hierarchicallySplit(text, splitRules);
 
-  const document = chunks.map((chunk: ChunkProps, chunkIndex: number) => {
+  const document: ReactElement[] = chunks.map(
+      (chunk: ChunkProps, chunkIndex: number) => {
     return (
       <Chunk type={chunk.type}
         text={chunk.text}
         key={chunkIndex} />
     );
   });
+  document.splice(0, 0, null);
 
   return document;
 }
@@ -83,7 +85,48 @@ function hierarchicallySplit(text: string,
 }
 
 function Chunk(props: ChunkProps): ReactElement {
-  return <p className={general.bodyText}>{props.type}: {props.text}</p>;
+  if (props.type == "code") {
+    return <CodeBlock text={props.text} />;
+  }
+  if (props.type == "quote") {
+    return <BlockQuote text={props.text} />;
+  }
+  return <p className={general.bodyText}>{props.text}</p>;
+}
+
+function CodeBlock(props: {text: string}): ReactElement {
+  const lines: string[] = props.text.split(/\n/g);
+  const linesJsx: ReactElement[] = lines.map(
+      (line: string, lineIndex: number) => {
+    if (line == "\\```") {
+      line = "```";
+    }
+    return <CodeLine text={line} key={lineIndex} />;
+  });
+  return <div className={styles.codeBlock}>{linesJsx}</div>;
+}
+
+function CodeLine(props: {text: string}): ReactElement {
+  // Replace spaces with non-breaking spaces, tabs with 4 non-breaking spaces.
+  let plaintext: string = props.text.replace(/\t/g, "    ");
+  plaintext = plaintext.replace(/ /g, "\u00a0");
+  return (
+    <p className={styles.codeBlockLine}>{plaintext}</p>
+  );
+}
+
+function BlockQuote(props: {text: string}): ReactElement {
+  // Allow block quotes to be recursively nested by adding more less-than
+  // signs then removing one for each level down.
+  const subLeveledText: string = props.text.replace(/\n>>>>/g, "\n>>>");
+  const subChunks: ChunkProps[] = hierarchicallySplit(subLeveledText,
+      splitRules);
+  const subChunksJsx: ReactElement[] = subChunks.map(
+      (chunk: ChunkProps) => {
+    return <Chunk type={chunk.type} text={chunk.text} />
+  });
+
+  return <div className={styles.blockQuote}>{subChunksJsx}</div>;
 }
 
 export async function getStaticProps(context):
