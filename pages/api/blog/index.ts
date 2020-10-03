@@ -3,7 +3,7 @@ import {NextApiRequest, NextApiResponse} from "next";
 
 export interface BlogPostMetadata {
   name: string,
-  date: string,
+  dates: string[],
   code: string,
   description: string,
   tags: string[]

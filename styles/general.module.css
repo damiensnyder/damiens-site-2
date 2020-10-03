@@ -31,12 +31,25 @@
   font-size: 28px;
 }
 
-.navHeader {
+.navHeaderOuter {
   align-self: flex-start;
   font-size: 24px;
+
   font-family: Menlo, monospace;
   font-weight: 400;
   color: #888;
+}
+
+/* Must be separate because links override desired color and underline
+settings */
+.navHeader {
+  cursor: pointer;
+  color: #888;
+  text-decoration: none;
+}
+
+.navHeader:hover {
+  text-decoration: underline;
 }
 
 .bodyText {

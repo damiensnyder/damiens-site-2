@@ -1,9 +1,10 @@
-import React, {ReactElement, ReactNode} from "react";
+import React, {ReactElement, SyntheticEvent, useState} from "react";
 import Head from "next/head";
-import general from "../../styles/general.module.css";
-import styles from "../../styles/blog.module.css";
-import {BlogPostProps, getPost} from "../api/blog/[post]";
+import general from "../../../styles/general.module.css";
+import styles from "../../../styles/blog.module.css";
+import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
 import Link from "next/link";
+import {NextRouter, useRouter} from "next/router";
 
 const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
@@ -33,26 +34,49 @@ interface RuleWithLabel {
   rule: RegExp
 }
 
-export default function BlogPost(props: BlogPostProps): ReactNode {
+export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
+  const router: NextRouter = useRouter();
+  const changeDate: (e: SyntheticEvent) => void = (e: SyntheticEvent) => {
+    // @ts-ignore
+    const newDate: string = e.target.value;
+    router.push("/blog/" + props.code + "/" + newDate).then(null);
+  };
+
   return (
     <div className={general.pageContainer}>
       <Head>
-        <title>my blog post</title>
+        <title>{props.name}</title>
         <link rel={"icon"} href={"/eye-of-judgment.jpg"} />
       </Head>
       <div className={general.postContainer}>
-        <h3 className={general.navHeader}>
-          <Link href={"/"}>home</Link> / <Link href={"blog"}>blog</Link>
+        <h3 className={general.navHeaderOuter}>
+          <Link href={"/"}><span className={general.navHeader}>home</span></Link>
+          &nbsp;/&nbsp;
+          <Link href={"blog"}><span className={general.navHeader}>blog</span></Link>
         </h3>
         <h1 className={general.pageTitle}>
           {props.name}
         </h1>
         <p className={styles.caption}>
-          last edited
-          <select className={styles.versionSelect}>
-            <option className={styles.versionOption}
-                value={props.date}
-                label={props.date} />
+          {
+            props.date == props.dates[0] ?
+              "last edited" : "viewing version from"
+          }
+          <select className={styles.versionSelect}
+              defaultValue={props.date}
+              onChange={changeDate}>
+            {
+              props.dates.map((date: string, index: number) => {
+                const dateText: string = date.slice(0, 4) + "." +
+                    date.slice(4, 6) + "." + date.slice(6);
+                return (
+                  <option className={styles.versionOption}
+                      value={date}
+                      key={index}
+                      label={dateText} />
+                );
+              })
+            }
           </select>
         </p>
         {markdownToJsx(props.text)}
@@ -62,13 +86,12 @@ export default function BlogPost(props: BlogPostProps): ReactNode {
 }
 
 function markdownToJsx(text): ReactElement[] {
-  // const sections: {title: string, level: number}[] = [];
   const chunks: ChunkProps[] = hierarchicallySplit(text, splitRules);
 
   const document: ReactElement[] = chunks.map(
-      (chunk: ChunkProps) => {
-    return chunkJsx(chunk);
-  });
+      (chunk: ChunkProps, index: number) => {
+      return chunkJsx(chunk, index);
+    });
   document.splice(0, 0, null);
 
   return document;
@@ -91,15 +114,15 @@ function hierarchicallySplit(text: string,
   return final;
 }
 
-function chunkJsx(props: ChunkProps): ReactElement {
+function chunkJsx(props: ChunkProps, key: number): ReactElement {
   if (props.type == "other") {
-    return <Paragraph text={props.text} />;
+    return <Paragraph text={props.text} key={key} />;
   }
   if (props.type == "code") {
-    return <CodeBlock text={props.text} />;
+    return <CodeBlock text={props.text} key={key} />;
   }
   if (props.type == "quote") {
-    return <BlockQuote text={props.text} />;
+    return <BlockQuote text={props.text} key={key} />;
   }
   return null;
 }
@@ -108,20 +131,20 @@ function Paragraph(props: {text: string}): ReactElement {
   let escaped: string = props.text.replace(/\\\\/g, "🀣");
   if (escaped.startsWith("### ")) {
     return (
-      <h3 className={styles.heading3}
-          id={props.text}>{subSpansJsx(escaped.slice(4))}</h3>
+        <h3 className={styles.heading3}
+            id={props.text}>{subSpansJsx(escaped.slice(4))}</h3>
     );
   }
   if (escaped.startsWith("## ")) {
     return (
-      <h2 className={styles.heading2}
-          id={props.text}>{subSpansJsx(escaped.slice(3))}</h2>
+        <h2 className={styles.heading2}
+            id={props.text}>{subSpansJsx(escaped.slice(3))}</h2>
     );
   }
   if (escaped.startsWith("# ")) {
     return (
-      <h1 className={styles.heading1}
-          id={props.text}>{subSpansJsx(escaped.slice(2))}</h1>
+        <h1 className={styles.heading1}
+            id={props.text}>{subSpansJsx(escaped.slice(2))}</h1>
     );
   }
   if (escaped.startsWith("caption: ")) {
@@ -144,20 +167,18 @@ function BulletedList(props: {text: string}): ReactElement {
         props.text.split(/\n\* /mg).map(
             (bulletItem: string, index: number) => {
           return (
-            <li key={index}>{subSpansJsx(bulletItem)}</li>
+              <li key={index}>{subSpansJsx(bulletItem)}</li>
           );
         })
       }
     </ul>
   )
-  return null;
 }
 
 function Image(props: {text: string}): ReactElement {
   const unescaped: string = props.text.replace("🀣", "\\");
   const altText: string = unescaped.match(/[.*]/)[0].slice(1, -1);
   const imageSource: string = unescaped.match(/\(\S+\)/)[0].slice(1, -1);
-  console.log(imageSource)
   return (
     <img className={styles.caption}
         src={imageSource}
@@ -196,13 +217,13 @@ function addLinks(text: string): ReactElement[] {
     links = linkMatches.map((linkText: string, index: number) => {
       const visibleText: string = linkText.match(/\[.*]/)[0].slice(1, -1);
       const url: string = linkText.match(/\(.*\)/)[0].slice(1, -1);
-      return <Link href={url} key={index}>{visibleText}</Link>
+      return <Link href={url} key={2 * index + 1}>{visibleText}</Link>
     });
   }
   const nonLinks: ReactElement[] = text.split(linkRegex).map(
       (nonLinkText: string, index: number) => {
-    return <span key={index}>{nonLinkText}</span>;
-  });
+        return <span key={2 * index}>{nonLinkText}</span>;
+      });
   const merged: ReactElement[] = [nonLinks[0]];
   for (let i = 0; i < links.length; i++) {
     merged.push(links[i]);
@@ -213,9 +234,9 @@ function addLinks(text: string): ReactElement[] {
 
 function Footnote(props: {text: string}): ReactElement {
   return (
-    <sup className={styles.footnoteAsterisk}>*
-      <div className={styles.footnote}>{addLinks(props.text)}</div>
-    </sup>
+      <sup className={styles.footnoteAsterisk}>*
+        <span className={styles.footnote}>{addLinks(props.text)}</span>
+      </sup>
   );
 }
 
@@ -223,9 +244,9 @@ function CodeBlock(props: {text: string}): ReactElement {
   const lines: string[] = props.text.split(/\n/g);
   const linesJsx: ReactElement[] = lines.map(
       (line: string, lineIndex: number) => {
-    line = line.replace(/\\```\n/, "```\n");
-    return <CodeLine text={line} key={lineIndex} />;
-  });
+        line = line.replace(/\\```\n/, "```\n");
+        return <CodeLine text={line} key={lineIndex} />;
+      });
   return <div className={styles.codeBlock}>{linesJsx}</div>;
 }
 
@@ -234,19 +255,18 @@ function CodeLine(props: {text: string}): ReactElement {
   let plaintext: string = props.text.replace(/\t/g, "    ");
   plaintext = plaintext.replace(/ /g, "\u00a0");
   return (
-    <p className={styles.codeBlockLine}>{plaintext}</p>
+      <p className={styles.codeBlockLine}>{plaintext}</p>
   );
 }
 
 function BlockQuote(props: {text: string}): ReactElement {
   // Allow block quotes to be recursively nested by adding more less-than
   // signs then removing one for each level down.
-  const subLeveledText: string = props.text.replace(/\n>>>>/g, "\n>>>");
-  const subChunks: ChunkProps[] = hierarchicallySplit(subLeveledText,
-      splitRules);
+  const subLeveled: string = props.text.replace(/\n>>>>/g, "\n>>>");
+  const subChunks: ChunkProps[] = hierarchicallySplit(subLeveled, splitRules);
   const subChunksJsx: ReactElement[] = subChunks.map(
-      (chunk: ChunkProps) => {
-    return chunkJsx(chunk);
+      (chunk: ChunkProps, index: number) => {
+    return chunkJsx(chunk, index);
   });
 
   return <div className={styles.blockQuote}>{subChunksJsx}</div>;
@@ -254,9 +274,8 @@ function BlockQuote(props: {text: string}): ReactElement {
 
 export async function getStaticProps(context):
     Promise<{props: BlogPostProps}> {
-  const post: BlogPostProps = await getPost(context.params.post);
   return {
-    props: post
+    props: await getPost(context.params.post, context.params.date)
   };
 }
 
@@ -265,7 +284,14 @@ export async function getStaticPaths() {
     paths: [
       {
         params: {
-          post: "this-is-my-first-blog-post"
+          post: "this-is-my-first-blog-post",
+          date: "20201003"
+        }
+      },
+      {
+        params: {
+          post: "this-is-my-first-blog-post",
+          date: "20201002"
         }
       }
     ],
