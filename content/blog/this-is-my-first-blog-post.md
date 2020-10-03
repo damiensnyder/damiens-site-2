@@ -11,11 +11,13 @@ hello world? more like
 
 and im `inline` baby
 
-test for *italics* and **bold**, or whatever i decide to do instead
+test for *italics* and **bold**, ~~or whatever i decide to do instead~~
 
-a [link](https://tagpro.gg) and a footnote!^{my footnote here} or sidenote or however it turns out
+a [link](https://tagpro.gg) and a footnote!^^my [footnote](piss baby) here^^ or sidenote or however it turns out
 
-![an image, and this is the alt text](thumbs/twitter.jpg)
+![an image, and this is the alt text](/thumbs/twitter.jpg)
+
+caption: default caption
 
 like a
 
@@ -37,4 +39,7 @@ some
 block quotes
 >>>
 
-or something
+this line gets kind of fucked up
+and i don't know why. oh geeeeeee willikers
+
+oh g

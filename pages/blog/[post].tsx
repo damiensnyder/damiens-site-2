@@ -12,6 +12,17 @@ const splitRules: RuleWithLabel[] = [
   {label: "other", rule: /\n{2,}/g},
 ];
 
+const inlineSplitRules: RuleWithLabel[] = [
+  {label: "code", rule: /(?<!\\)`/g},
+  {label: "math", rule: /(?<!\\)\$/g},
+  {label: "bold", rule: /(?<!\\)\*\*/g},
+  {label: "italic", rule: /(?<!\\)\*/g},
+  {label: "strikethrough", rule: /(?<!\\)~~/g},
+  {label: "footnote", rule: /(?<!\\)\^\^/g},
+  {label: "other", rule: /^$/g}
+];
+
+const linkRegex: RegExp = /(?<!\\)\[.*]\(.*\)/g;
 
 interface ChunkProps {
   type: string,
@@ -85,22 +96,117 @@ function hierarchicallySplit(text: string,
 }
 
 function Chunk(props: ChunkProps): ReactElement {
+  if (props.type == "other") {
+    return <Paragraph text={props.text} />;
+  }
   if (props.type == "code") {
     return <CodeBlock text={props.text} />;
   }
   if (props.type == "quote") {
     return <BlockQuote text={props.text} />;
   }
-  return <p className={general.bodyText}>{props.text}</p>;
+  return null;
+}
+
+function Paragraph(props: {text: string}): ReactElement {
+  let escaped: string = props.text.replace(/\\\\/g, "🀣");
+  if (escaped.startsWith("### ")) {
+    return <h3>{subSpansJsx(escaped.slice(4))}</h3>;
+  }
+  if (escaped.startsWith("## ")) {
+    return <h2>{subSpansJsx(escaped.slice(3))}</h2>;
+  }
+  if (escaped.startsWith("# ")) {
+    return <h1>{subSpansJsx(escaped.slice(2))}</h1>;
+  }
+  if (escaped.startsWith("caption: ")) {
+    return <p className={styles.caption}>{subSpansJsx(escaped.slice(9))}</p>;
+  }
+  if (escaped.startsWith("* ")) {
+    return <BulletedList text={props.text} />;
+  }
+  const images: string[] = escaped.trim().match(/(?<!\\)!\[.*]\(.*\)/);
+  if (images != null) {
+    return <Image text={images[0]} />;
+  }
+  return <p className={general.bodyText}>{subSpansJsx(escaped)}</p>;
+}
+
+function BulletedList(props: {text: string}): ReactElement {
+  return null;
+}
+
+function Image(props: {text: string}): ReactElement {
+  const unescaped: string = props.text.replace("🀣", "\\");
+  const altText: string = unescaped.match(/[.*]/)[0].slice(1, -1);
+  const imageSource: string = unescaped.match(/\(\S+\)/)[0].slice(1, -1);
+  console.log(imageSource)
+  return (
+    <img className={styles.caption}
+        src={imageSource}
+        alt={altText} />
+  );
+}
+
+function subSpansJsx(text): ReactElement[] {
+  const subChunks: ChunkProps[] = hierarchicallySplit(text, inlineSplitRules);
+  return subChunks.map((chunk: ChunkProps, chunkIndex: number) => {
+    if (chunk.type == "footnote") {
+      return <Footnote text={chunk.text} key={chunkIndex} />;
+    }
+    let spanClass: string = "";
+    if (chunk.type == "code") {
+      spanClass = styles.inlineCode;
+    } else if (chunk.type == "bold") {
+      spanClass = styles.emphasis1;
+    } else if (chunk.type == "italic") {
+      spanClass = styles.emphasis2;
+    } else if (chunk.type == "strikethrough") {
+      spanClass = styles.strikethrough;
+    }
+    let processedChunk: ReactElement[] | string = chunk.text;
+    if (chunk.type != "code") {
+      processedChunk = addLinks(chunk.text);
+    }
+    return <span className={spanClass} key={chunkIndex}>{processedChunk}</span>;
+  });
+}
+
+function addLinks(text: string): ReactElement[] {
+  const linkMatches: string[] = text.match(linkRegex);
+  let links: ReactElement[] = [];
+  if (linkMatches != null) {
+    links = linkMatches.map((linkText: string, index: number) => {
+      const visibleText: string = linkText.match(/\[.*]/)[0].slice(1, -1);
+      const url: string = linkText.match(/\(.*\)/)[0].slice(1, -1);
+      return <Link href={url} key={index}>{visibleText}</Link>
+    });
+  }
+  const nonLinks: ReactElement[] = text.split(linkRegex).map(
+      (nonLinkText: string, index: number) => {
+    return <span key={index}>{nonLinkText}</span>;
+  });
+  const merged: ReactElement[] = [nonLinks[0]];
+  for (let i = 0; i < links.length; i++) {
+    merged.push(links[i]);
+    merged.push(nonLinks[i + 1]);
+  }
+  return merged;
+}
+
+function Footnote(props: {text: string}): ReactElement {
+  return (
+    <sup className={styles.footnoteAsterisk}>*
+      <div className={styles.footnote}>{addLinks(props.text)}</div>
+    </sup>
+  );
 }
 
 function CodeBlock(props: {text: string}): ReactElement {
   const lines: string[] = props.text.split(/\n/g);
   const linesJsx: ReactElement[] = lines.map(
       (line: string, lineIndex: number) => {
-    if (line == "\\```") {
-      line = "```";
-    }
+    line = line.replace(/\\```\n/, "```\n");
     return <CodeLine text={line} key={lineIndex} />;
   });
   return <div className={styles.codeBlock}>{linesJsx}</div>;
