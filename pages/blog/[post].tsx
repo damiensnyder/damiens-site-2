@@ -66,12 +66,8 @@ function markdownToJsx(text): ReactElement[] {
   const chunks: ChunkProps[] = hierarchicallySplit(text, splitRules);
 
   const document: ReactElement[] = chunks.map(
-      (chunk: ChunkProps, chunkIndex: number) => {
-    return (
-      <Chunk type={chunk.type}
-        text={chunk.text}
-        key={chunkIndex} />
-    );
+      (chunk: ChunkProps) => {
+    return chunkJsx(chunk);
   });
   document.splice(0, 0, null);
 
@@ -95,7 +91,7 @@ function hierarchicallySplit(text: string,
   return final;
 }
 
-function Chunk(props: ChunkProps): ReactElement {
+function chunkJsx(props: ChunkProps): ReactElement {
   if (props.type == "other") {
     return <Paragraph text={props.text} />;
   }
@@ -111,19 +107,28 @@ function Chunk(props: ChunkProps): ReactElement {
 function Paragraph(props: {text: string}): ReactElement {
   let escaped: string = props.text.replace(/\\\\/g, "🀣");
   if (escaped.startsWith("### ")) {
-    return <h3>{subSpansJsx(escaped.slice(4))}</h3>;
+    return (
+      <h3 className={styles.heading3}
+          id={props.text}>{subSpansJsx(escaped.slice(4))}</h3>
+    );
   }
   if (escaped.startsWith("## ")) {
-    return <h2>{subSpansJsx(escaped.slice(3))}</h2>;
+    return (
+      <h2 className={styles.heading2}
+          id={props.text}>{subSpansJsx(escaped.slice(3))}</h2>
+    );
   }
   if (escaped.startsWith("# ")) {
-    return <h1>{subSpansJsx(escaped.slice(2))}</h1>;
+    return (
+      <h1 className={styles.heading1}
+          id={props.text}>{subSpansJsx(escaped.slice(2))}</h1>
+    );
   }
   if (escaped.startsWith("caption: ")) {
     return <p className={styles.caption}>{subSpansJsx(escaped.slice(9))}</p>;
   }
   if (escaped.startsWith("* ")) {
-    return <BulletedList text={props.text} />;
+    return <BulletedList text={props.text.slice(2)} />;
   }
   const images: string[] = escaped.trim().match(/(?<!\\)!\[.*]\(.*\)/);
   if (images != null) {
@@ -133,6 +138,18 @@ function Paragraph(props: {text: string}): ReactElement {
 }
 
 function BulletedList(props: {text: string}): ReactElement {
+  return (
+    <ul className={general.bodyText}>
+      {
+        props.text.split(/\n\* /mg).map(
+            (bulletItem: string, index: number) => {
+          return (
+            <li key={index}>{subSpansJsx(bulletItem)}</li>
+          );
+        })
+      }
+    </ul>
+  )
   return null;
 }
 
@@ -229,7 +246,7 @@ function BlockQuote(props: {text: string}): ReactElement {
       splitRules);
   const subChunksJsx: ReactElement[] = subChunks.map(
       (chunk: ChunkProps) => {
-    return <Chunk type={chunk.type} text={chunk.text} />
+    return chunkJsx(chunk);
   });
 
   return <div className={styles.blockQuote}>{subChunksJsx}</div>;
