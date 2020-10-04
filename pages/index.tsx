@@ -2,7 +2,8 @@ import React, {ReactElement, ReactNode} from "react";
 import Head from "next/head";
 import {getHello, HelloProps} from "./api/hello";
 import general from "../styles/general.module.css";
-import styles from "../styles/home.module.css";
+import styles from "../styles/menu.module.css";
+import Link from "next/link";
 
 interface MenuItemProps {
   code: string,
@@ -55,11 +56,11 @@ function MenuItem(props: MenuItemProps): ReactElement {
 
   return (
     <div className={styles.menuItem}>
-      <a href={url}>
+      <Link href={url}>
         <img className={styles.thumbnail}
             src={"thumbs/" + props.code + ".png"}
             alt={props.name} />
-      </a>
+      </Link>
       <div className={styles.itemText}>
       <span className={styles.itemTitle}>
         <a href={url}>{props.name}</a>

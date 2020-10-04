@@ -1,6 +1,7 @@
 import React, {ReactElement} from "react";
 import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
 import BlogPostWithDate from "./[date]";
+import {BlogPostMetadata, getRecentPosts} from "../../api/blog";
 
 export default function BlogPost(props: BlogPostProps): ReactElement {
   return (
@@ -22,14 +23,15 @@ export async function getStaticProps(context):
 }
 
 export async function getStaticPaths() {
+  const recentPosts: {posts: BlogPostMetadata[]} = await getRecentPosts();
   return {
-    paths: [
-      {
+    paths: recentPosts.posts.map((post: BlogPostMetadata) => {
+      return {
         params: {
-          post: "this-is-my-first-blog-post"
+          post: post.code
         }
       }
-    ],
+    }),
     fallback: true
   };
 }

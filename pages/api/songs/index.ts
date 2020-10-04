@@ -1,11 +1,10 @@
 import {readFileSync} from "fs";
 import {NextApiRequest, NextApiResponse} from "next";
 
-export interface BlogPostMetadata {
+export interface SongMetadata {
   name: string,
   dates: string[],
   code: string,
-  description: string,
   tags: string[],
   thumbnail?: string
 }
@@ -22,12 +21,12 @@ export default function RecentPosts(req: NextApiRequest,
   }
 }
 
-export async function getRecentPosts(): Promise<{posts: BlogPostMetadata[]}> {
-  const blogBuffer: Buffer = readFileSync('content/blog.json');
-  const postsJson: {posts: BlogPostMetadata[]} =
+export async function getRecentSongs(): Promise<{songs: SongMetadata[]}> {
+  const blogBuffer: Buffer = readFileSync('content/songs.json');
+  const songsJson: {songs: SongMetadata[]} =
       JSON.parse(blogBuffer.toString());
-  postsJson.posts.forEach((post: BlogPostMetadata) => {
-    post.tags.push("blog");
+  songsJson.songs.forEach((song: SongMetadata) => {
+    song.tags.push("blog");
   });
-  return postsJson;
+  return songsJson;
 }

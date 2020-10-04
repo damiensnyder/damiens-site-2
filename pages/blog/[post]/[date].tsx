@@ -1,10 +1,11 @@
-import React, {ReactElement, SyntheticEvent, useState} from "react";
+import React, {ReactElement, SyntheticEvent} from "react";
 import Head from "next/head";
 import general from "../../../styles/general.module.css";
 import styles from "../../../styles/blog.module.css";
 import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
+import {BlogPostMetadata, getRecentPosts} from "../../api/blog";
 
 const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
@@ -52,7 +53,7 @@ export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
         <h3 className={general.navHeaderOuter}>
           <Link href={"/"}><span className={general.navHeader}>home</span></Link>
           &nbsp;/&nbsp;
-          <Link href={"blog"}><span className={general.navHeader}>blog</span></Link>
+          <Link href={"/blog"}><span className={general.navHeader}>blog</span></Link>
         </h3>
         <h1 className={general.pageTitle}>
           {props.name}
@@ -280,21 +281,20 @@ export async function getStaticProps(context):
 }
 
 export async function getStaticPaths() {
+  const recentPosts: {posts: BlogPostMetadata[]} = await getRecentPosts();
+  const codesAndDates: {params: {post: string, date: string}}[] = [];
+  recentPosts.posts.forEach((post: BlogPostMetadata) => {
+    return post.dates.forEach((date: string) => {
+      codesAndDates.push({
+        params: {
+          post: post.code,
+          date: date
+        }
+      });
+    });
+  });
   return {
-    paths: [
-      {
-        params: {
-          post: "this-is-my-first-blog-post",
-          date: "20201003"
-        }
-      },
-      {
-        params: {
-          post: "this-is-my-first-blog-post",
-          date: "20201002"
-        }
-      }
-    ],
+    paths: codesAndDates,
     fallback: true
   };
 }
