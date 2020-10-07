@@ -3,12 +3,12 @@ import Head from "next/head";
 import general from "../../styles/general.module.css";
 import styles from "../../styles/menu.module.css";
 import Link from "next/link";
-import {BlogPostMetadata, getRecentPosts} from "../api/blog";
+import {getPosts, PostMetadata} from "../api/content";
 
-export default function RecentPosts(props: {posts: BlogPostMetadata[]}):
+export default function RecentPosts(props: {posts: PostMetadata[]}):
     ReactElement {
-  const sortedPosts: BlogPostMetadata[] = props.posts.sort(
-      (a: BlogPostMetadata, b: BlogPostMetadata): number => {
+  const sortedPosts: PostMetadata[] = props.posts.sort(
+      (a: PostMetadata, b: PostMetadata): number => {
     return b.dates[0].localeCompare(a.dates[0]);
   });
   return (
@@ -27,7 +27,7 @@ export default function RecentPosts(props: {posts: BlogPostMetadata[]}):
       </div>
       <div className={styles.plainLinksMenu}>
         {
-          sortedPosts.map((post: BlogPostMetadata, index: number) => {
+          sortedPosts.map((post: PostMetadata, index: number) => {
             return (
               <BlogItem name={post.name}
                   code={post.code}
@@ -44,7 +44,7 @@ export default function RecentPosts(props: {posts: BlogPostMetadata[]}):
   );
 }
 
-function BlogItem(props: BlogPostMetadata): ReactElement {
+function BlogItem(props: PostMetadata): ReactElement {
   const dateText: string = props.dates[0].slice(0, 4) + "." +
       props.dates[0].slice(4, 6) + "." + props.dates[0].slice(6);
   const thumbnailSrc: string = props.thumbnail ?
@@ -69,8 +69,8 @@ function BlogItem(props: BlogPostMetadata): ReactElement {
 }
 
 export async function getStaticProps():
-    Promise<{props: {posts: BlogPostMetadata[]}}> {
+    Promise<{props: {posts: PostMetadata[]}}> {
   return {
-    props: await getRecentPosts()
+    props: await getPosts("blog")
   };
 }

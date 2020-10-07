@@ -1,8 +1,8 @@
 import {readFileSync} from "fs";
-import {BlogPostMetadata} from "../index";
+import {PostMetadata} from "../../content";
 import {NextApiRequest, NextApiResponse} from "next";
 
-export interface BlogPostProps extends BlogPostMetadata {
+export interface BlogPostProps extends PostMetadata {
   text?: string,
   date?: string
 }
@@ -20,7 +20,7 @@ export default function BlogPost(req: NextApiRequest, res: NextApiResponse) {
 
 export async function getPost(code: string, date?: string):
     Promise<BlogPostProps> {
-  const postsJson: {posts: BlogPostMetadata[]} = JSON.parse(
+  const postsJson: {posts: PostMetadata[]} = JSON.parse(
       readFileSync('content/blog.json').toString());
 
   const postWithText: BlogPostProps = postsJson.posts.find(

@@ -6,13 +6,6 @@
       "dates": ["20201003", "20201002"],
       "description": "what it says on the tin. first blog post im making",
       "tags": ["first-posts"]
-    },
-    {
-      "name": "this website: a midmortem",
-      "code": "this-website-a-midmortem",
-      "dates": ["20201004"],
-      "description": "haha what if i blog about the blog while making the blog. lol",
-      "tags": ["postmortems"]
     }
   ]
 }

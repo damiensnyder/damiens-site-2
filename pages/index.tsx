@@ -10,9 +10,7 @@ interface MenuItemProps {
   type: string,
   date: string,
   tags: string[],
-  featured: boolean,
-  description?: string,
-  collection?: string
+  description?: string
 }
 
 export default function Home(props: {}): ReactNode {
@@ -28,11 +26,15 @@ export default function Home(props: {}): ReactNode {
       <div className={styles.menusContainer}>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>recent content</h2>
-          <span className={styles.moreLink}><a><i>more content</i> →</a></span>
+          <Link href={"content"}>
+            <span className={styles.moreLink}><i>more content</i> →</span>
+          </Link>
         </div>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>other pages</h2>
-          <span className={styles.moreLink}><a><i>more other</i> →</a></span>
+          <Link href={"other"}>
+            <span className={styles.moreLink}><i>more other</i> →</span>
+          </Link>
         </div>
       </div>
     </div>

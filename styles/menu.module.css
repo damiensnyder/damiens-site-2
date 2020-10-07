@@ -74,6 +74,12 @@
 
   font-size: 18px;
   font-weight: 400;
+  color: #f70;
+  cursor: pointer;
+}
+
+.moreLink:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 1200px) {

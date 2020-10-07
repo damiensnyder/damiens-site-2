@@ -5,7 +5,7 @@ import styles from "../../../styles/blog.module.css";
 import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
-import {BlogPostMetadata, getRecentPosts} from "../../api/blog";
+import {PostMetadata, getPosts} from "../../api/content";
 
 const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
@@ -295,9 +295,9 @@ export async function getStaticProps(context):
 }
 
 export async function getStaticPaths() {
-  const recentPosts: {posts: BlogPostMetadata[]} = await getRecentPosts();
+  const recentPosts: {posts: PostMetadata[]} = await getPosts("blog");
   const codesAndDates: {params: {post: string, date: string}}[] = [];
-  recentPosts.posts.forEach((post: BlogPostMetadata) => {
+  recentPosts.posts.forEach((post: PostMetadata) => {
     return post.dates.forEach((date: string) => {
       codesAndDates.push({
         params: {

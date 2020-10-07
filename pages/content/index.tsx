@@ -51,11 +51,11 @@ function MenuItem(props: PostMetadata): ReactElement {
       "thumbs/" + props.thumbnail : "thumbs/bucko.jpg";
 
   let type: string;
-  for (let possibleType in Object.keys(TYPE_TO_PATH)) {
+  Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
     if (props.tags.includes(possibleType)) {
       type = possibleType;
     }
-  }
+  });
 
   return (
     <div className={styles.menuItem}>
