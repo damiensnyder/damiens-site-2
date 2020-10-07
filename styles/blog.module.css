@@ -91,14 +91,6 @@
   visibility: visible;
 }
 
-.blockQuote {
-  align-self: stretch;
-  margin: 8px 0;
-  padding-left: 20px;
-
-  border-left: 2px solid #888;
-}
-
 .versionSelect {
   margin: 0 4px;
 

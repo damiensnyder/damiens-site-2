@@ -1,6 +1,5 @@
 import React, {ReactElement, ReactNode} from "react";
 import Head from "next/head";
-import {getHello, HelloProps} from "./api/hello";
 import general from "../styles/general.module.css";
 import styles from "../styles/menu.module.css";
 import Link from "next/link";
@@ -16,7 +15,7 @@ interface MenuItemProps {
   collection?: string
 }
 
-export default function Home(props: HelloProps): ReactNode {
+export default function Home(props: {}): ReactNode {
   return (
     <div className={general.pageContainer}>
       <Head>
@@ -72,9 +71,7 @@ function MenuItem(props: MenuItemProps): ReactElement {
 }
 
 export async function getStaticProps() {
-  const content: HelloProps = await getHello();
-
   return {
-    props: content
+    props: {}
   };
 }

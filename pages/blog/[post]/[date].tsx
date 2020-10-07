@@ -11,7 +11,8 @@ const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
   {label: "math", rule: /\n\$\$\$\n/g},
   {label: "quote", rule: /\n>>>\n/g},
-  {label: "other", rule: /\n{2,}/g},
+  {label: "list", rule: /\n\*\*\*\n/g},
+  {label: "other", rule: /\n+\n/g},
 ];
 
 const inlineSplitRules: RuleWithLabel[] = [
@@ -125,6 +126,13 @@ function chunkJsx(props: ChunkProps, key: number): ReactElement {
   if (props.type == "quote") {
     return <BlockQuote text={props.text} key={key} />;
   }
+  if (props.type == "list") {
+    return (
+      <BulletedList text={props.text}
+          block={true}
+          key={key} />
+    );
+  }
   return null;
 }
 
@@ -132,8 +140,8 @@ function Paragraph(props: {text: string}): ReactElement {
   let escaped: string = props.text.replace(/\\\\/g, "🀣");
   if (escaped.startsWith("### ")) {
     return (
-        <h3 className={styles.heading3}
-            id={props.text}>{subSpansJsx(escaped.slice(4))}</h3>
+      <h3 className={styles.heading3}
+          id={props.text}>{subSpansJsx(escaped.slice(4))}</h3>
     );
   }
   if (escaped.startsWith("## ")) {
@@ -152,7 +160,11 @@ function Paragraph(props: {text: string}): ReactElement {
     return <p className={styles.caption}>{subSpansJsx(escaped.slice(9))}</p>;
   }
   if (escaped.startsWith("* ")) {
-    return <BulletedList text={props.text.slice(2)} />;
+    return <BulletedList text={props.text.slice(2)} block={false} />;
+  }
+  if (escaped.startsWith("> ")) {
+    const startsRemoved: string = props.text.replace(/\n> /g, "\n");
+    return <BlockQuote text={startsRemoved} />;
   }
   const images: string[] = escaped.trim().match(/(?<!\\)!\[.*]\(.*\)/);
   if (images != null) {
@@ -161,19 +173,21 @@ function Paragraph(props: {text: string}): ReactElement {
   return <p className={general.bodyText}>{subSpansJsx(escaped)}</p>;
 }
 
-function BulletedList(props: {text: string}): ReactElement {
-  return (
-    <ul className={general.bodyText}>
-      {
-        props.text.split(/\n\* /mg).map(
-            (bulletItem: string, index: number) => {
-          return (
-              <li key={index}>{subSpansJsx(bulletItem)}</li>
-          );
-        })
+function BulletedList(props: {text: string, block: boolean}): ReactElement {
+  let contents: ReactElement[];
+  if (!props.block) {
+    contents = props.text.split(/\n\* /mg).map(
+        (bulletItem: string, index: number) => {
+      return <li key={index}>{subSpansJsx(bulletItem)}</li>;
+    });
+  } else {
+    contents = hierarchicallySplit(props.text, splitRules).map(
+        (chunk: ChunkProps, index: number) => {
+        return chunkJsx(chunk, index);
       }
-    </ul>
-  )
+    );
+  }
+  return <ul className={general.bodyText}>{contents}</ul>;
 }
 
 function Image(props: {text: string}): ReactElement {
@@ -270,7 +284,7 @@ function BlockQuote(props: {text: string}): ReactElement {
     return chunkJsx(chunk, index);
   });
 
-  return <div className={styles.blockQuote}>{subChunksJsx}</div>;
+  return <blockquote>{subChunksJsx}</blockquote>;
 }
 
 export async function getStaticProps(context):

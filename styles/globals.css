@@ -27,3 +27,11 @@ img {
 * {
   box-sizing: border-box;
 }
+
+blockquote {
+  align-self: stretch;
+  margin: 8px 0;
+  padding-left: 20px;
+
+  border-left: 2px solid #888;
+}
