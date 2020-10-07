@@ -35,26 +35,23 @@ export async function getPosts(type: string):
   // the content listed in that type's file. Otherwise, merge the content from
   // all files into a single list and return it.
   if (TYPE_TO_PATH.hasOwnProperty(type)) {
-    /*const buffer: Buffer = readFileSync(
+    const buffer: Buffer = readFileSync(
         `content/${TYPE_TO_PATH[type]}.json`);
     const json: {posts: PostMetadata[]} = JSON.parse(buffer.toString());
     json.posts.forEach((post: PostMetadata) => {
       post.tags.push(type);
     });
-    return json;*/
-    return {posts: []};
+    return json;
   }
   let combined: PostMetadata[] = [];
   for (let postType in TYPE_TO_PATH) {
-    //console.log(readdir("./", () => {}));
-    //console.log(realpath(".", () => {}));
-    /*const buffer: Buffer = readFileSync(
-        `./metadata/${TYPE_TO_PATH[postType]}.json`);*/
-    /*const json: {posts: PostMetadata[]} = JSON.parse(buffer.toString());
+    const buffer: Buffer = readFileSync(
+        `content/${TYPE_TO_PATH[postType]}.json`);
+    const json: {posts: PostMetadata[]} = JSON.parse(buffer.toString());
     json.posts.forEach((post: PostMetadata) => {
       post.tags.push(postType);
     });
-    combined = combined.concat(json.posts);*/
+    combined = combined.concat(json.posts);
   }
   combined = combined.sort(
       (a: PostMetadata, b: PostMetadata) => {

@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "name": "it isn't funny anymore",
+      "code": "it-isnt-funny-anymore",
+      "dates": ["20200526"],
+      "description": "4:06",
+      "tags": ["new vocal songs"],
+      "thumbnail": "it-isnt-funny-anymore.png"
+    }
+  ]
+}
