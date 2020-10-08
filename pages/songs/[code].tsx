@@ -4,6 +4,7 @@ import general from "../../styles/general.module.css";
 import styles from "../../styles/blog.module.css";
 import Link from "next/link";
 import {PostMetadata, getPosts} from "../api/content";
+import {formatDate} from "../../components/MenuItem";
 
 export default function BlogPostWithDate(props: PostMetadata): ReactElement {
   return (
@@ -26,7 +27,7 @@ export default function BlogPostWithDate(props: PostMetadata): ReactElement {
           {props.name}
         </h1>
         <p className={styles.caption}>
-          released {props.dates[0]}
+          released {formatDate(props.dates[0])}
         </p>
       </div>
     </div>

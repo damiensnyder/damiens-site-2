@@ -4,8 +4,7 @@ import styles from "../styles/menu.module.css";
 import Link from "next/link";
 
 export default function MenuItem(props: PostMetadata): ReactElement {
-  const dateText: string = props.dates[0].slice(0, 4) + "." +
-      props.dates[0].slice(4, 6) + "." + props.dates[0].slice(6);
+  const dateText: string = formatDate(props.dates[0]);
   const thumbnailSrc: string = props.thumbnail ?
       "thumbs/" + props.thumbnail : "logo.svg";
 
@@ -41,4 +40,8 @@ export default function MenuItem(props: PostMetadata): ReactElement {
       </div>
     </div>
   );
+}
+
+export function formatDate(date: string): string {
+  return date.slice(0, 4) + "." + date.slice(4, 6) + "." + date.slice(6);
 }
