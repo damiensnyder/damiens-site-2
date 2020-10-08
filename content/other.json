@@ -1,3 +1,11 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "name": "Siphon State",
+      "code": "siphon-state",
+      "dates": ["20201007"],
+      "description": "a webgame of voting and lies",
+      "tags": ["game", "web", "fun", "featured"]
+    }
+  ]
 }

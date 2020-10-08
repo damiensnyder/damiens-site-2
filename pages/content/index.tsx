@@ -4,9 +4,10 @@ import general from "../../styles/general.module.css";
 import styles from "../../styles/menu.module.css";
 import Link from "next/link";
 import {getPosts, PostMetadata, TYPE_TO_PATH} from "../api/content";
+import MenuItem from "../../components/MenuItem";
 
 export default function ContentMenu(props: {posts: PostMetadata[]}):
-  ReactElement {
+    ReactElement {
   const sortedPosts: PostMetadata[] = props.posts.sort(
     (a: PostMetadata, b: PostMetadata): number => {
       return b.dates[0].localeCompare(a.dates[0]);
@@ -44,43 +45,9 @@ export default function ContentMenu(props: {posts: PostMetadata[]}):
   );
 }
 
-function MenuItem(props: PostMetadata): ReactElement {
-  const dateText: string = props.dates[0].slice(0, 4) + "." +
-      props.dates[0].slice(4, 6) + "." + props.dates[0].slice(6);
-  const thumbnailSrc: string = props.thumbnail ?
-      "thumbs/" + props.thumbnail : "thumbs/bucko.jpg";
-
-  let type: string;
-  Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
-    if (props.tags.includes(possibleType)) {
-      type = possibleType;
-    }
-  });
-
-  return (
-    <div className={styles.menuItem}>
-      <Link href={`/${TYPE_TO_PATH[type]}/${props.code}`}>
-        <img className={styles.thumbnail}
-             src={thumbnailSrc}
-             alt={props.name} />
-      </Link>
-      <div className={styles.itemText}>
-        <span className={styles.itemTitle}>
-          <Link href={`/${TYPE_TO_PATH[type]}/${props.code}`}>
-            {props.name}
-          </Link>
-        </span>
-        <span className={styles.itemMetadata}>
-          {dateText} &bull; {props.description}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export async function getStaticProps():
     Promise<{props: {posts: PostMetadata[]}}> {
   return {
-    props: await getPosts("all")
+    props: await getPosts()
   };
 }

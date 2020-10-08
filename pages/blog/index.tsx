@@ -4,13 +4,10 @@ import general from "../../styles/general.module.css";
 import styles from "../../styles/menu.module.css";
 import Link from "next/link";
 import {getPosts, PostMetadata} from "../api/content";
+import MenuItem from "../../components/MenuItem";
 
 export default function RecentPosts(props: {posts: PostMetadata[]}):
     ReactElement {
-  const sortedPosts: PostMetadata[] = props.posts.sort(
-      (a: PostMetadata, b: PostMetadata): number => {
-    return b.dates[0].localeCompare(a.dates[0]);
-  });
   return (
     <div className={general.pageContainer}>
       <Head>
@@ -27,9 +24,9 @@ export default function RecentPosts(props: {posts: PostMetadata[]}):
       </div>
       <div className={styles.plainLinksMenu}>
         {
-          sortedPosts.map((post: PostMetadata, index: number) => {
+          props.posts.map((post: PostMetadata, index: number) => {
             return (
-              <BlogItem name={post.name}
+              <MenuItem name={post.name}
                   code={post.code}
                   description={post.description}
                   dates={post.dates}
@@ -39,30 +36,6 @@ export default function RecentPosts(props: {posts: PostMetadata[]}):
             );
           })
         }
-      </div>
-    </div>
-  );
-}
-
-function BlogItem(props: PostMetadata): ReactElement {
-  const dateText: string = props.dates[0].slice(0, 4) + "." +
-      props.dates[0].slice(4, 6) + "." + props.dates[0].slice(6);
-  const thumbnailSrc: string = props.thumbnail ?
-    "thumbs/" + props.thumbnail : "thumbs/bucko.jpg";
-  return (
-    <div className={styles.menuItem}>
-      <Link href={"/blog/" + props.code}>
-        <img className={styles.thumbnail}
-             src={thumbnailSrc}
-             alt={props.name} />
-      </Link>
-      <div className={styles.itemText}>
-        <span className={styles.itemTitle}>
-          <Link href={"/blog/" + props.code}>{props.name}</Link>
-        </span>
-        <span className={styles.itemMetadata}>
-          {dateText} &bull; {props.description}
-        </span>
       </div>
     </div>
   );

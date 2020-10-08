@@ -22,18 +22,19 @@ export default function RecentPosts(req: NextApiRequest,
   if (req.method === "GET") {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(getPosts("all"));
+    res.end(getPosts());
   } else {
     res.statusCode = 500;
     res.end();
   }
 }
 
-export async function getPosts(type: string):
+export async function getPosts(type: string = "all", start: number = 0):
       Promise<{posts: PostMetadata[]}> {
   // If the type is one of the main four types (aka, not "all"), return only
   // the content listed in that type's file. Otherwise, merge the content from
   // all files into a single list and return it.
+  let result: PostMetadata[] = [];
   if (TYPE_TO_PATH.hasOwnProperty(type)) {
     const buffer: Buffer = readFileSync(
         `content/${TYPE_TO_PATH[type]}.json`);
@@ -41,21 +42,25 @@ export async function getPosts(type: string):
     json.posts.forEach((post: PostMetadata) => {
       post.tags.push(type);
     });
-    return json;
+    result = json.posts;
+  } else {
+    for (let postType in TYPE_TO_PATH) {
+      const buffer: Buffer = readFileSync(
+          `content/${TYPE_TO_PATH[postType]}.json`);
+      const json: { posts: PostMetadata[] } = JSON.parse(buffer.toString());
+      json.posts.forEach((post: PostMetadata) => {
+        post.tags.push(postType);
+      });
+      result = result.concat(json.posts);
+    }
   }
-  let combined: PostMetadata[] = [];
-  for (let postType in TYPE_TO_PATH) {
-    const buffer: Buffer = readFileSync(
-        `content/${TYPE_TO_PATH[postType]}.json`);
-    const json: {posts: PostMetadata[]} = JSON.parse(buffer.toString());
-    json.posts.forEach((post: PostMetadata) => {
-      post.tags.push(postType);
+  if (type != "all" && TYPE_TO_PATH[type] == undefined) {
+    result = result.filter((post: PostMetadata) => {
+      return post.tags.includes(type);
     });
-    combined = combined.concat(json.posts);
   }
-  combined = combined.sort(
-      (a: PostMetadata, b: PostMetadata) => {
-    return parseInt(a.dates[0]) - parseInt(b.dates[0]);
-  });
-  return {posts: combined};
+  result = result.sort((a: PostMetadata, b: PostMetadata) => {
+    return parseInt(b.dates[0]) - parseInt(a.dates[0]);
+  }).slice(start, start + 10);
+  return {posts: result};
 }
