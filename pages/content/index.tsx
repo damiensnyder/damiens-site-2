@@ -1,23 +1,18 @@
 import React, {ReactElement} from "react";
-import Head from "next/head";
 import general from "../../styles/general.module.css";
-import styles from "../../styles/menu.module.css";
 import Link from "next/link";
-import {getPosts, PostMetadata, TYPE_TO_PATH} from "../api/content";
-import MenuItem from "../../components/MenuItem";
+import {getPosts, PostMetadata} from "../api/content";
+import NormalHead from "../../components/NormalHead";
+import Menu from "../../components/Menu";
 
 export default function ContentMenu(props: {posts: PostMetadata[]}):
     ReactElement {
-  const sortedPosts: PostMetadata[] = props.posts.sort(
-    (a: PostMetadata, b: PostMetadata): number => {
-      return b.dates[0].localeCompare(a.dates[0]);
-    });
   return (
     <div className={general.pageContainer}>
-      <Head>
-        <title>content</title>
-        <link rel={"icon"} href={"/eye-of-judgment.jpg"} />
-      </Head>
+      <NormalHead title={"content"}
+          description={"content i've made"}
+          keywords={"menu,content"}
+          url={"content"} />
       <div className={general.postContainer}>
         <h3 className={general.navHeaderOuter}>
           <Link href={"/"}>
@@ -26,21 +21,7 @@ export default function ContentMenu(props: {posts: PostMetadata[]}):
         </h3>
         <h1 className={general.pageTitle}>content</h1>
       </div>
-      <div className={styles.plainLinksMenu}>
-        {
-          sortedPosts.map((post: PostMetadata, index: number) => {
-            return (
-              <MenuItem name={post.name}
-                  code={post.code}
-                  description={post.description}
-                  dates={post.dates}
-                  tags={post.tags}
-                  thumbnail={post.thumbnail}
-                  key={index} />
-            );
-          })
-        }
-      </div>
+      <Menu posts={props.posts} />
     </div>
   );
 }
