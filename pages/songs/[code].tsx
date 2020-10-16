@@ -5,6 +5,7 @@ import styles from "../../styles/blog.module.css";
 import Link from "next/link";
 import {PostMetadata, getPosts} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
+import LinkHeader from "../../components/LinkHeader";
 
 export default function BlogPostWithDate(props: PostMetadata): ReactElement {
   return (
@@ -14,15 +15,7 @@ export default function BlogPostWithDate(props: PostMetadata): ReactElement {
         <link rel={"icon"} href={"/eye-of-judgment.jpg"} />
       </Head>
       <div className={general.postContainer}>
-        <h3 className={general.navHeaderOuter}>
-          <Link href={"/"}>
-            <span className={general.navHeader}>home</span>
-          </Link>
-          &nbsp;/&nbsp;
-          <Link href={"/songs"}>
-            <span className={general.navHeader}>songs</span>
-          </Link>
-        </h3>
+        <LinkHeader path={["songs"]} />
         <h1 className={general.pageTitle}>
           {props.name}
         </h1>

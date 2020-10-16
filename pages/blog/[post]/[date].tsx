@@ -1,11 +1,12 @@
 import React, {ReactElement, SyntheticEvent} from "react";
-import Head from "next/head";
 import general from "../../../styles/general.module.css";
 import styles from "../../../styles/blog.module.css";
 import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
 import {PostMetadata, getPosts} from "../../api/content";
+import LinkHeader from "../../../components/LinkHeader";
+import NormalHead from "../../../components/NormalHead";
 
 const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
@@ -46,16 +47,9 @@ export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
 
   return (
     <div className={general.pageContainer}>
-      <Head>
-        <title>{props.name}</title>
-        <link rel={"icon"} href={"/eye-of-judgment.jpg"} />
-      </Head>
+      <NormalHead title={props.name} />
       <div className={general.postContainer}>
-        <h3 className={general.navHeaderOuter}>
-          <Link href={"/"}><span className={general.navHeader}>home</span></Link>
-          &nbsp;/&nbsp;
-          <Link href={"/blog"}><span className={general.navHeader}>blog</span></Link>
-        </h3>
+        <LinkHeader path={["blog"]} />
         <h1 className={general.pageTitle}>
           {props.name}
         </h1>
