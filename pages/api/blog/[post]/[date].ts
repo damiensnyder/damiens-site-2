@@ -11,14 +11,14 @@ export default function BlogPost(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(getPost(req.query.post.toString(), req.query.date.toString()));
+    res.end(getBlogPost(req.query.post.toString(), req.query.date.toString()));
   } else {
     res.statusCode = 500;
     res.end();
   }
 }
 
-export async function getPost(code: string, date?: string):
+export async function getBlogPost(code: string, date?: string):
     Promise<BlogPostProps> {
   const postsJson: {posts: PostMetadata[]} = JSON.parse(
       readFileSync('content/blog.json').toString());

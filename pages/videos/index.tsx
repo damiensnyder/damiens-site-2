@@ -4,12 +4,12 @@ import MenuPage from "../../components/MenuPage";
 
 export default function RecentSongs(props: {posts: PostMetadata[]}):
     ReactElement {
-  return <MenuPage title={"songs"} posts={props.posts} />;
+  return <MenuPage title={"videos"} posts={props.posts} />;
 }
 
 export async function getStaticProps():
     Promise<{props: {posts: PostMetadata[]}}> {
   return {
-    props: await getPosts("song")
+    props: await getPosts("video")
   };
 }

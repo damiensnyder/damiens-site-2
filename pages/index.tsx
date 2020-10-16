@@ -5,6 +5,7 @@ import styles from "../styles/menu.module.css";
 import Link from "next/link";
 import {getPosts, PostMetadata} from "./api/content";
 import MenuItem from "../components/MenuItem";
+import Menu from "../components/Menu";
 
 export default function Home(props: {posts: PostMetadata[]}): ReactElement {
   return (
@@ -19,20 +20,7 @@ export default function Home(props: {posts: PostMetadata[]}): ReactElement {
       <div className={styles.menusContainer}>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>recent content</h2>
-          {
-            props.posts.slice(0, 3).map(
-                (post: PostMetadata, index: number) => {
-              return (
-                <MenuItem name={post.name}
-                    code={post.code}
-                    description={post.description}
-                    dates={post.dates}
-                    tags={post.tags}
-                    thumbnail={post.thumbnail}
-                    key={index} />
-              );
-            })
-          }
+          <Menu posts={props.posts} />
           <Link href={"content"}>
             <span className={styles.moreLink}><i>more content</i> →</span>
           </Link>

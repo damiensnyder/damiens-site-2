@@ -1,7 +1,7 @@
 import React, {ReactElement, SyntheticEvent} from "react";
 import general from "../../../styles/general.module.css";
 import styles from "../../../styles/blog.module.css";
-import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
+import {BlogPostProps, getBlogPost} from "../../api/blog/[post]/[date]";
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
 import {PostMetadata, getPosts} from "../../api/content";
@@ -53,7 +53,7 @@ export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
         <h1 className={general.pageTitle}>
           {props.name}
         </h1>
-        <p className={styles.caption}>
+        <p className={general.caption}>
           {
             props.date == props.dates[0] ?
               "last edited" : "viewing version from"
@@ -284,7 +284,7 @@ function BlockQuote(props: {text: string}): ReactElement {
 export async function getStaticProps(context):
     Promise<{props: BlogPostProps}> {
   return {
-    props: await getPost(context.params.post, context.params.date)
+    props: await getBlogPost(context.params.post, context.params.date)
   };
 }
 

@@ -23,11 +23,6 @@
   font-weight: 700;
 }
 
-.caption {
-  font-style: oblique;
-  color: #888;
-}
-
 .codeBlock {
   align-self: stretch;
   margin: 8px 0;

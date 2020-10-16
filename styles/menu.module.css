@@ -22,7 +22,6 @@
 
 .plainLinksMenu {
   flex: 1;
-  margin: 32px 0;
   display: flex;
   flex-flow: column;
   white-space: nowrap;

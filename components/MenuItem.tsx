@@ -15,22 +15,24 @@ export default function MenuItem(props: PostMetadata): ReactElement {
     }
   });
   let url: string;
-  if (type == undefined || type == "other") {
-    url = "/";
+  if (props.code.startsWith("http") && props.code.includes("//")) {
+    url = props.code;
+  } else if (type == undefined || type == "other") {
+    url = "/" + props.code;
   } else {
-    url = "/" + TYPE_TO_PATH[type] + "/";
+    url = "/" + TYPE_TO_PATH[type] + "/" + props.code;
   }
 
   return (
     <div className={styles.menuItem}>
-      <Link href={url + props.code}>
+      <Link href={url}>
         <img className={styles.thumbnail}
              src={thumbnailSrc}
              alt={props.name} />
       </Link>
       <div className={styles.itemText}>
       <span className={styles.itemTitle}>
-        <Link href={url + props.code}>
+        <Link href={url}>
           {props.name}
         </Link>
       </span>

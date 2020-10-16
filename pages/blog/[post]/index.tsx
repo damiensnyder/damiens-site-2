@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {BlogPostProps, getPost} from "../../api/blog/[post]/[date]";
+import {BlogPostProps, getBlogPost} from "../../api/blog/[post]/[date]";
 import BlogPostWithDate from "./[date]";
 import {getPosts, PostMetadata} from "../../api/content";
 
@@ -18,7 +18,7 @@ export default function BlogPost(props: BlogPostProps): ReactElement {
 export async function getStaticProps(context):
     Promise<{props: BlogPostProps}> {
   return {
-    props: await getPost(context.params.post)
+    props: await getBlogPost(context.params.post)
   };
 }
 

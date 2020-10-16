@@ -64,3 +64,25 @@ export async function getPosts(type: string = "all", start: number = 0):
   }).slice(start, start + 10);
   return {posts: result};
 }
+
+export async function getSinglePost(type: string, code: string):
+    Promise<{props: PostMetadata}> {
+  const postsOfType: {posts: PostMetadata[]} = await getPosts(type);
+  const thisPost: PostMetadata = postsOfType.posts.filter(
+      (item: PostMetadata) => {
+    return item.code == code;
+  })[0];
+  return {props: thisPost};
+}
+
+export async function getPostPaths(type: string):
+    Promise<{paths: {params: {code: string}}[], fallback: boolean}> {
+  const posts: {posts: PostMetadata[]} = await getPosts(type);
+  const codes = posts.posts.map((song: PostMetadata) => {
+    return {params: {code: song.code}};
+  });
+  return {
+    paths: codes,
+    fallback: false
+  };
+}

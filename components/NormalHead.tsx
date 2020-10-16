@@ -21,6 +21,10 @@ const DEFAULT_KEYWORDS: string = "damien,snyder,";
 
 export default function NormalHead(props: HeadProps | AudioHeadProps):
     ReactElement {
+  let keywords = DEFAULT_KEYWORDS;
+  if (props.keywords != null) {
+    keywords += props.keywords.toString();
+  }
   return (
     <Head>
       <title>{props.title}</title>
@@ -29,7 +33,7 @@ export default function NormalHead(props: HeadProps | AudioHeadProps):
       <meta charSet={"UTF-8"} />
       <meta name={"description"} content={props.description} />
       <meta name={"keywords"}
-            content={DEFAULT_KEYWORDS + props.keywords.toString()} />
+            content={keywords} />
       <meta name={"author"} content={"Damien Snyder"} />
       <meta name={"viewport"}
             content={"width=device-width, initial-scale=1.0"} />

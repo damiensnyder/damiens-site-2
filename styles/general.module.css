@@ -53,6 +53,11 @@ settings */
   text-decoration: underline;
 }
 
+.caption {
+  font-style: oblique;
+  color: #888;
+}
+
 .bodyText {
   text-align: left;
   align-self: flex-start;
