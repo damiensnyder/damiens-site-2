@@ -30,7 +30,7 @@
 
 .menuTitle {
   text-align: center;
-  font-size: 36px;
+  font-size: x-large;
   font-weight: 600;
   cursor: default;
 }
@@ -60,12 +60,12 @@
 }
 
 .itemTitle {
-  font-size: 24px;
+  font-size: large;
   font-weight: 500;
 }
 
 .itemMetadata {
-  font-size: 18px;
+  font-size: medium;
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -74,7 +74,7 @@
 .moreLink {
   align-self: flex-end;
 
-  font-size: 18px;
+  font-size: medium;
   font-weight: 400;
   color: #f70;
   cursor: pointer;
@@ -101,7 +101,7 @@
 
   .menuTitle {
     margin: 8px;
-    font-size: 32px;
+    font-size: large;
   }
 
   .thumbnail {
@@ -115,15 +115,15 @@
   }
 
   .itemTitle {
-    font-size: 22px;
+    font-size: large;
   }
 
   .itemMetadata {
-    font-size: 18px;
+    font-size: medium;
   }
 
   .moreLink {
-    font-size: 18px;
+    font-size: medium;
   }
 }
 
@@ -136,7 +136,7 @@
 
   .menuTitle {
     margin: 8px;
-    font-size: 24px;
+    font-size: large;
   }
 
   .thumbnail {
@@ -150,14 +150,14 @@
   }
 
   .itemTitle {
-    font-size: 18px;
+    font-size: medium;
   }
 
   .itemMetadata {
-    font-size: 14px;
+    font-size: small;
   }
 
   .moreLink {
-    font-size: 14px;
+    font-size: small;
   }
 }

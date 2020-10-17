@@ -12,8 +12,10 @@
 }
 
 .pageTitle {
+  margin-bottom: 0;
+
   text-align: center;
-  font-size: 48px;
+  font-size: xx-large;
   font-weight: 600;
   cursor: default;
 }
@@ -61,6 +63,7 @@ settings */
 .bodyText {
   text-align: left;
   align-self: flex-start;
+  margin: 16px 0;
   line-height: 1.5;
 
   font-family: "Source Serif Pro", Merriweather, Georgia, serif;
@@ -95,20 +98,18 @@ settings */
 @media (max-width: 1200px) {
   .pageContainer {
     padding: 24px;
-  }
-
-  .pageTitle {
-    font-size: 40px;
+    overflow-x: hidden;
   }
 
   .postContainer {
-    width: auto;
+    width: available;
+    width: -moz-available;
     margin: 0 32px;
-    font-size: 24px;
+    font-size: medium;
   }
 
   .navHeader {
-    font-size: 20px;
+    font-size: medium;
   }
 }
 
@@ -118,15 +119,15 @@ settings */
   }
 
   .pageTitle {
-    font-size: 32px;
+    font-size: x-large;
   }
 
   .postContainer {
     margin: 0 16px;
-    font-size: 20px;
+    font-size: medium;
   }
 
   .navHeader {
-    font-size: 18px;
+    font-size: small;
   }
 }

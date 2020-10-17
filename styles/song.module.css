@@ -1,0 +1,9 @@
+.sideHeading {
+  align-self: flex-start;
+  margin-top: 40px;
+  margin-bottom: 16px;
+
+  font-size: medium;
+  font-weight: 500;
+  font-style: italic;
+}

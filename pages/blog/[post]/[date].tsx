@@ -134,24 +134,24 @@ function Paragraph(props: {text: string}): ReactElement {
   let escaped: string = props.text.replace(/\\\\/g, "🀣");
   if (escaped.startsWith("### ")) {
     return (
-      <h3 className={styles.heading3}
-          id={props.text}>{subSpansJsx(escaped.slice(4))}</h3>
+      <h4 className={styles.subSubHeading}
+          id={props.text}>{subSpansJsx(escaped.slice(4))}</h4>
     );
   }
   if (escaped.startsWith("## ")) {
     return (
-        <h2 className={styles.heading2}
-            id={props.text}>{subSpansJsx(escaped.slice(3))}</h2>
+      <h3 className={styles.subHeading}
+          id={props.text}>{subSpansJsx(escaped.slice(3))}</h3>
     );
   }
   if (escaped.startsWith("# ")) {
     return (
-        <h1 className={styles.heading1}
-            id={props.text}>{subSpansJsx(escaped.slice(2))}</h1>
+      <h2 className={styles.heading}
+          id={props.text}>{subSpansJsx(escaped.slice(2))}</h2>
     );
   }
   if (escaped.startsWith("caption: ")) {
-    return <p className={styles.caption}>{subSpansJsx(escaped.slice(9))}</p>;
+    return <p className={general.caption}>{subSpansJsx(escaped.slice(9))}</p>;
   }
   if (escaped.startsWith("* ")) {
     return <BulletedList text={props.text.slice(2)} block={false} />;
@@ -189,7 +189,7 @@ function Image(props: {text: string}): ReactElement {
   const altText: string = unescaped.match(/[.*]/)[0].slice(1, -1);
   const imageSource: string = unescaped.match(/\(\S+\)/)[0].slice(1, -1);
   return (
-    <img className={styles.caption}
+    <img className={styles.insertImage}
         src={imageSource}
         alt={altText} />
   );

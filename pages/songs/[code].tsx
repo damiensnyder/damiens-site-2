@@ -1,5 +1,6 @@
 import React, {ReactElement} from "react";
 import general from "../../styles/general.module.css";
+import styles from "../../styles/song.module.css";
 import {PostMetadata, getSinglePost, getPostPaths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
@@ -11,15 +12,49 @@ interface SongMetadata extends PostMetadata {
   youtube?: string
 }
 
+const soundcloudEmbedUrl: string = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{}&color=%23ff7700&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
+const youtubeHeader: ReactElement = (
+  <h4 className={styles.sideHeading}>watch the music video:</h4>
+);
+const soundcloudHeader: ReactElement = (
+  <h4 className={styles.sideHeading}>listen on soundcloud:</h4>
+);
+const mp3Header: ReactElement = (
+  <h4 className={styles.sideHeading}>or just a good old-fashioned mp3:</h4>
+);
+
 export default function SongPage(props: PostMetadata): ReactElement {
-  let wavSource: ReactElement = null;
+  let wavSource: ReactElement,
+      youtubeEmbed: ReactElement,
+      soundcloudEmbed: ReactElement = null;
   const songProps: SongMetadata = props as SongMetadata;
   if (songProps.wav != null) {
     wavSource = (
       <source src={"/songs/" + props.code + ".wav"}
-              type={"audio/wav"} />
+          type={"audio/wav"} />
     );
   }
+  if (songProps.youtube != null) {
+    youtubeEmbed = (
+      <iframe width={"100%"}
+              height={600}
+              scrolling={"no"}
+              frameBorder={"no"}
+              src={"https://www.youtube.com/embed/" + songProps.youtube}>
+      </iframe>
+    );
+  }
+  if (songProps.soundcloud != null) {
+    soundcloudEmbed = (
+      <iframe width={"100%"}
+              height={"300"}
+              scrolling={"no"}
+              frameBorder={"no"}
+              allow={"autoplay"}
+              src={soundcloudEmbedUrl.replace("{}", songProps.soundcloud)} />
+    );
+  }
+
 
   return (
     <div className={general.pageContainer}>
@@ -32,10 +67,16 @@ export default function SongPage(props: PostMetadata): ReactElement {
         <p className={general.caption}>
           released {formatDate(props.dates[0])}
         </p>
+        {songProps.youtube != null ? youtubeHeader : null}
+        {youtubeEmbed}
+        {songProps.soundcloud != null ? soundcloudHeader : null}
+        {soundcloudEmbed}
+        {songProps.youtube != null || songProps.soundcloud != null ?
+            mp3Header : null}
         <audio controls={true}>
-          {wavSource}
-          <source src={"/songs/" + props.code + ".mp3"}
-                  type={"audio/mpeg"} />
+            {wavSource}
+            <source src={"/songs/" + props.code + ".mp3"}
+                    type={"audio/mpeg"} />
         </audio>
       </div>
     </div>
