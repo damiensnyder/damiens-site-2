@@ -20,7 +20,7 @@ export default function Home(props: {posts: PostMetadata[]}): ReactElement {
       <div className={styles.menusContainer}>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>recent content</h2>
-          <Menu posts={props.posts} />
+          <Menu posts={props.posts} hideControls={true} />
           <Link href={"content"}>
             <span className={styles.moreLink}><i>more content</i> →</span>
           </Link>

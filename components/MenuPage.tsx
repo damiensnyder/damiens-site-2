@@ -5,7 +5,13 @@ import NormalHead from "./NormalHead";
 import LinkHeader from "./LinkHeader";
 import Menu from "./Menu";
 
-export default function MenuPage(props: {title: string, posts: PostMetadata[]}):
+interface MenuPageProps {
+  title: string,
+  posts: PostMetadata[],
+  hideControls?: boolean
+}
+
+export default function MenuPage(props: MenuPageProps):
     ReactElement {
   return (
     <div className={general.pageContainer}>
@@ -15,7 +21,8 @@ export default function MenuPage(props: {title: string, posts: PostMetadata[]}):
         <LinkHeader path={["content"]} />
         <h1 className={general.pageTitle}>{props.title}</h1>
       </div>
-      <Menu posts={props.posts} />
+      <Menu posts={props.posts}
+          hideControls={props.hideControls} />
     </div>
   );
 }
