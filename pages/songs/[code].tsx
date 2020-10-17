@@ -1,7 +1,7 @@
 import React, {ReactElement} from "react";
 import general from "../../styles/general.module.css";
 import styles from "../../styles/song.module.css";
-import {PostMetadata, getSinglePost, getPostPaths} from "../api/content";
+import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
@@ -60,7 +60,10 @@ export default function SongPage(props: PostMetadata): ReactElement {
     <div className={general.pageContainer}>
       <NormalHead title={props.name}
                   thumbnail={props.thumbnail}
-                  keywords={props.tags} />
+                  keywords={props.tags}
+                  isAudio={true}
+                  audioUrl={"/songs/" + props.code + "/mp3"}
+                  album={props.tags[1]} />
       <div className={general.postContainer}>
         <LinkHeader path={["songs"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
@@ -87,6 +90,6 @@ export async function getStaticProps(context): Promise<{props: any}> {
   return await getSinglePost("song", context.params.code);
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<Paths> {
   return await getPostPaths("song");
 }

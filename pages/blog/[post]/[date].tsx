@@ -4,7 +4,7 @@ import styles from "../../../styles/blog.module.css";
 import {BlogPostProps, getBlogPost} from "../../api/blog/[post]/[date]";
 import Link from "next/link";
 import {NextRouter, useRouter} from "next/router";
-import {PostMetadata, getPosts} from "../../api/content";
+import {PostMetadata, getPosts, Paths} from "../../api/content";
 import LinkHeader from "../../../components/LinkHeader";
 import NormalHead from "../../../components/NormalHead";
 
@@ -288,7 +288,7 @@ export async function getStaticProps(context):
   };
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<Paths> {
   const recentPosts: {posts: PostMetadata[]} = await getPosts("blog");
   const codesAndDates: {params: {post: string, date: string}}[] = [];
   recentPosts.posts.forEach((post: PostMetadata) => {

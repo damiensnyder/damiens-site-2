@@ -10,6 +10,20 @@ export interface PostMetadata {
   thumbnail?: string
 }
 
+export interface Paths {
+  paths: {
+    params: {
+      code: string
+    } | {
+      post: string,
+      date?: string
+    } | {
+      tag: string
+    }
+  }[],
+  fallback: boolean
+}
+
 export const TYPE_TO_PATH: any = {
   blog: "blog",
   song: "songs",
@@ -75,8 +89,7 @@ export async function getSinglePost(type: string, code: string):
   return {props: thisPost};
 }
 
-export async function getPostPaths(type: string):
-    Promise<{paths: {params: {code: string}}[], fallback: boolean}> {
+export async function getPostPaths(type: string): Promise<Paths> {
   const posts: {posts: PostMetadata[]} = await getPosts(type);
   const codes = posts.posts.map((song: PostMetadata) => {
     return {params: {code: song.code}};

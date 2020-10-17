@@ -1,6 +1,5 @@
 import React, {ReactElement} from "react";
 import general from "../../styles/general.module.css";
-import Link from "next/link";
 import {getPosts, PostMetadata} from "../api/content";
 import NormalHead from "../../components/NormalHead";
 import Menu from "../../components/Menu";

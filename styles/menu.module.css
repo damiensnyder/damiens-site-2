@@ -65,7 +65,7 @@
 }
 
 .itemMetadata {
-  font-size: medium;
+  font-size: small;
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -74,7 +74,7 @@
 .moreLink {
   align-self: flex-end;
 
-  font-size: medium;
+  font-size: small;
   font-weight: 400;
   color: #f70;
   cursor: pointer;
@@ -113,18 +113,6 @@
   .itemText {
     margin: 8px;
   }
-
-  .itemTitle {
-    font-size: large;
-  }
-
-  .itemMetadata {
-    font-size: medium;
-  }
-
-  .moreLink {
-    font-size: medium;
-  }
 }
 
 @media (max-width: 600px) {
@@ -154,10 +142,10 @@
   }
 
   .itemMetadata {
-    font-size: small;
+    font-size: x-small;
   }
 
   .moreLink {
-    font-size: small;
+    font-size: x-small;
   }
 }

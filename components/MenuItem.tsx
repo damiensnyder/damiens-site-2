@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function MenuItem(props: PostMetadata): ReactElement {
   const dateText: string = formatDate(props.dates[0]);
   const thumbnailSrc: string = props.thumbnail ?
-      "thumbs/" + props.thumbnail : "logo.svg";
+      "/thumbs/" + props.thumbnail : "/logo.svg";
 
   let type: string;
   Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {

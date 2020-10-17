@@ -13,13 +13,13 @@ export default function Menu(props: {posts: PostMetadata[]}): ReactElement {
       {
         sortedPosts.map((post: PostMetadata, index: number) => {
           return (
-              <MenuItem name={post.name}
-                        code={post.code}
-                        description={post.description}
-                        dates={post.dates}
-                        tags={post.tags}
-                        thumbnail={post.thumbnail}
-                        key={index} />
+            <MenuItem name={post.name}
+                      code={post.code}
+                      description={post.description}
+                      dates={post.dates}
+                      tags={post.tags}
+                      thumbnail={post.thumbnail}
+                      key={index} />
           );
         })
       }

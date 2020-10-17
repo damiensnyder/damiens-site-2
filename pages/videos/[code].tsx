@@ -1,6 +1,6 @@
 import React, {ReactElement} from "react";
 import general from "../../styles/general.module.css";
-import {PostMetadata, getSinglePost, getPostPaths} from "../api/content";
+import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
@@ -26,6 +26,6 @@ export async function getStaticProps(context): Promise<{props: any}> {
   return await getSinglePost("video", context.params.code);
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<Paths> {
   return await getPostPaths("video");
 }

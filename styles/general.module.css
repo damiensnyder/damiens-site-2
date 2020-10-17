@@ -12,7 +12,7 @@
 }
 
 .pageTitle {
-  margin-bottom: 0;
+  margin: 16px 0;
 
   text-align: center;
   font-size: xx-large;
@@ -30,13 +30,14 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-x: hidden;
 
-  font-size: 28px;
+  font-size: large;
 }
 
 .navHeaderOuter {
   align-self: flex-start;
-  font-size: 24px;
+  font-size: medium;
 
   font-family: Menlo, monospace;
   font-weight: 400;
@@ -119,6 +120,7 @@ settings */
   }
 
   .pageTitle {
+    margin: 8px 0;
     font-size: x-large;
   }
 

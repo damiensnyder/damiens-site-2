@@ -2,7 +2,7 @@
   "posts": [
     {
       "name": "Siphon State",
-      "code": "siphon-state",
+      "code": "http://www.siphonstate.com",
       "dates": ["20201007"],
       "description": "a webgame of voting and lies",
       "tags": ["game", "web", "fun", "featured"]
