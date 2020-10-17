@@ -4,22 +4,11 @@ import {getPosts, PostMetadata} from "../api/content";
 import NormalHead from "../../components/NormalHead";
 import Menu from "../../components/Menu";
 import LinkHeader from "../../components/LinkHeader";
+import MenuPage from "../../components/MenuPage";
 
 export default function ContentMenu(props: {posts: PostMetadata[]}):
     ReactElement {
-  return (
-    <div className={general.pageContainer}>
-      <NormalHead title={"content"}
-          description={"content i've made"}
-          keywords={"menu,content"}
-          url={"content"} />
-      <div className={general.postContainer}>
-        <LinkHeader path={[]} />
-        <h1 className={general.pageTitle}>content</h1>
-      </div>
-      <Menu posts={props.posts} />
-    </div>
-  );
+  return <MenuPage title={"content"} posts={props.posts} />;
 }
 
 export async function getStaticProps():

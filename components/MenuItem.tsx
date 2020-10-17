@@ -6,32 +6,10 @@ import Link from "next/link";
 
 export default function MenuItem(props: PostMetadata): ReactElement {
   const dateText: string = formatDate(props.dates[0]);
-  const thumbnailSrc: string = props.thumbnail ?
-      "/thumbs/" + props.thumbnail : "/favicon.png";
-
-  let type: string;
-  Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
-    if (props.tags.includes(possibleType)) {
-      type = possibleType;
-    }
-  });
-  let url: string;
-  if (props.code.startsWith("http") && props.code.includes("//")) {
-    url = props.code;
-  } else if (type == undefined || type == "other") {
-    url = "/" + props.code;
-  } else {
-    url = "/" + TYPE_TO_PATH[type] + "/" + props.code;
-  }
-
-  let dateClass = "";
-  if (props.description.length > 60) {
-    dateClass = general.hide;
-  } else if (props.description.length > 40) {
-    dateClass = general.showIfMedium;
-  } else if (props.description.length > 10) {
-    dateClass = general.showIfMediumOrWide;
-  }
+  const thumbnailSrc: string = formatThumbnailSrc(props.thumbnail);
+  const type: string = getType(props.tags);
+  const url: string = formatUrl(props.code, type);
+  const dateClass: string = chooseDateClass(props.description);
 
   return (
     <div className={styles.menuItem}>
@@ -57,4 +35,47 @@ export default function MenuItem(props: PostMetadata): ReactElement {
 
 export function formatDate(date: string): string {
   return date.slice(0, 4) + "." + date.slice(4, 6) + "." + date.slice(6);
+}
+
+function formatThumbnailSrc(src: string): string {
+  if (!src) {
+    return "/favicon.png";
+  }
+  if (src.startsWith("http") && src.includes("//")) {
+    return src;
+  }
+  return "/thumbs/" + src;
+}
+
+function formatUrl(code: string, type: string): string {
+  if (code.startsWith("http") && code.includes("//")) {
+    return code;
+  }
+  if (type == undefined || type == "other") {
+    return "/" + code;
+  }
+  return "/" + TYPE_TO_PATH[type] + "/" + code;
+}
+
+function getType(tags: string[]): string {
+  let type: string;
+  Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
+    if (tags.includes(possibleType)) {
+      type = possibleType;
+    }
+  });
+  return type;
+}
+
+function chooseDateClass(description: string): string {
+  if (description.length > 60) {
+    return general.hide;
+  }
+  if (description.length > 40) {
+    return general.showIfMedium;
+  }
+  if (description.length > 10) {
+    return general.showIfMediumOrWide;
+  }
+  return "";
 }
