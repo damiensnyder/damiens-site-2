@@ -22,10 +22,12 @@
 
 .plainLinksMenu {
   flex: 1;
+  max-width: 100%;
   display: flex;
   flex-flow: column;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow-x: hidden;
 }
 
 .menuTitle {
@@ -110,8 +112,20 @@
     margin: 8px;
   }
 
+  .itemTitle {
+    font-size: medium;
+  }
+
   .itemText {
     margin: 8px;
+  }
+
+  .itemMetadata {
+    font-size: x-small;
+  }
+
+  .moreLink {
+    font-size: x-small;
   }
 }
 
@@ -135,17 +149,5 @@
 
   .itemText {
     margin: 8px;
-  }
-
-  .itemTitle {
-    font-size: medium;
-  }
-
-  .itemMetadata {
-    font-size: x-small;
-  }
-
-  .moreLink {
-    font-size: x-small;
   }
 }

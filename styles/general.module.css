@@ -70,6 +70,14 @@ settings */
   font-family: "Source Serif Pro", Merriweather, Georgia, serif;
 }
 
+.hide {
+  display: none;
+}
+
+.showIfMedium {
+  display: none;
+}
+
 @keyframes rainbow {
   0%, 100% {
     color: #f00;
@@ -112,15 +120,24 @@ settings */
   .navHeader {
     font-size: medium;
   }
+
+  .showIfMedium {
+    display: contents;
+    visibility: visible;
+  }
+
+  .showIfWide {
+    display: none;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .pageContainer {
     padding: 16px;
   }
 
   .pageTitle {
-    margin: 8px 0;
+    margin-top: 8px;
     font-size: x-large;
   }
 
@@ -131,5 +148,13 @@ settings */
 
   .navHeader {
     font-size: small;
+  }
+
+  .showIfMedium {
+    display: none;
+  }
+
+  .showIfMediumOrWide {
+    display: none;
   }
 }

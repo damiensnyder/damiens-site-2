@@ -4,6 +4,7 @@ import Link from "next/link";
 import {getPosts, PostMetadata} from "../api/content";
 import NormalHead from "../../components/NormalHead";
 import Menu from "../../components/Menu";
+import LinkHeader from "../../components/LinkHeader";
 
 export default function RecentPosts(props: {posts: PostMetadata[]}):
     ReactElement {
@@ -12,9 +13,7 @@ export default function RecentPosts(props: {posts: PostMetadata[]}):
       <NormalHead title={"blog"} />
       <div className={general.postContainer}>
         <h3 className={general.navHeaderOuter}>
-          <Link href={"/"}>
-            <span className={general.navHeader}>home</span>
-          </Link>
+          <LinkHeader path={["content"]} />
         </h3>
         <h1 className={general.pageTitle}>blog</h1>
       </div>

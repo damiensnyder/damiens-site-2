@@ -28,7 +28,7 @@ export default function NormalHead(props: HeadProps | AudioHeadProps):
   return (
     <Head>
       <title>{props.title}</title>
-      <link rel={"icon"} href={"/eye-of-judgment.jpg"} />
+      <link rel={"icon"} href={"/favicon.png"} />
 
       <meta charSet={"UTF-8"} />
       <meta name={"description"} content={props.description} />

@@ -1,12 +1,13 @@
 import {PostMetadata, TYPE_TO_PATH} from "../pages/api/content";
 import React, {ReactElement} from "react";
+import general from "../styles/general.module.css";
 import styles from "../styles/menu.module.css";
 import Link from "next/link";
 
 export default function MenuItem(props: PostMetadata): ReactElement {
   const dateText: string = formatDate(props.dates[0]);
   const thumbnailSrc: string = props.thumbnail ?
-      "/thumbs/" + props.thumbnail : "/logo.svg";
+      "/thumbs/" + props.thumbnail : "/favicon.png";
 
   let type: string;
   Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
@@ -23,6 +24,15 @@ export default function MenuItem(props: PostMetadata): ReactElement {
     url = "/" + TYPE_TO_PATH[type] + "/" + props.code;
   }
 
+  let dateClass = "";
+  if (props.description.length > 60) {
+    dateClass = general.hide;
+  } else if (props.description.length > 40) {
+    dateClass = general.showIfMedium;
+  } else if (props.description.length > 10) {
+    dateClass = general.showIfMediumOrWide;
+  }
+
   return (
     <div className={styles.menuItem}>
       <Link href={url}>
@@ -37,7 +47,8 @@ export default function MenuItem(props: PostMetadata): ReactElement {
         </Link>
       </span>
         <span className={styles.itemMetadata}>
-        {dateText} &bull; {props.description}
+          <span className={dateClass}>{dateText} &bull; </span>
+          {props.description}
       </span>
       </div>
     </div>
