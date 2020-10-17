@@ -28,7 +28,7 @@ export const TYPE_TO_PATH: any = {
   blog: "blog",
   song: "songs",
   video: "videos",
-  other: "other"
+  misc: "misc"
 }
 
 export default function RecentPosts(req: NextApiRequest,

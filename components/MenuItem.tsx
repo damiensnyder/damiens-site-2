@@ -37,7 +37,7 @@ export function formatDate(date: string): string {
   return date.slice(0, 4) + "." + date.slice(4, 6) + "." + date.slice(6);
 }
 
-function formatThumbnailSrc(src: string): string {
+export function formatThumbnailSrc(src: string): string {
   if (!src) {
     return "/favicon.png";
   }
@@ -47,7 +47,7 @@ function formatThumbnailSrc(src: string): string {
   return "/thumbs/" + src;
 }
 
-function formatUrl(code: string, type: string): string {
+export function formatUrl(code: string, type: string): string {
   if (code.startsWith("http") && code.includes("//")) {
     return code;
   }
@@ -57,7 +57,7 @@ function formatUrl(code: string, type: string): string {
   return "/" + TYPE_TO_PATH[type] + "/" + code;
 }
 
-function getType(tags: string[]): string {
+export function getType(tags: string[]): string {
   let type: string;
   Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
     if (tags.includes(possibleType)) {
@@ -67,7 +67,7 @@ function getType(tags: string[]): string {
   return type;
 }
 
-function chooseDateClass(description: string): string {
+export function chooseDateClass(description: string): string {
   if (description.length > 60) {
     return general.hide;
   }

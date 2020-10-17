@@ -41,7 +41,9 @@ export default class Menu extends React.Component {
   dropdownJsx(tags: Map<string, number>): ReactElement {
     let mostUsedTags: string[] = [];
     tags.forEach((uses: number, tag: string) => {
-      mostUsedTags.push(tag);
+      if (tag != this.state.tag) {
+        mostUsedTags.push(tag);
+      }
     });
     mostUsedTags = mostUsedTags.sort((a: string, b: string) => {
       return tags.get(b) - tags.get(a);
@@ -51,11 +53,11 @@ export default class Menu extends React.Component {
       <div className={styles.tagsDropdown}>
         {
           this.state.tag != null ? (
-                <span className={styles.resetTags}
-                    onClick={() => this.selectTag.bind(this)(null)}>
-                  [reset tags]
-                </span>
-              ) : null
+            <span className={styles.resetTags}
+                onClick={() => this.selectTag.bind(this)(null)}>
+              [reset tags]
+            </span>
+          ) : null
         }
         {
           mostUsedTags.map((tag: string, index: number) => {
@@ -144,7 +146,7 @@ export default class Menu extends React.Component {
           })
         }
 
-        {!this.props.hideControls ? (
+        {!this.props.hideControls && sortedPosts.length > 0 ? (
             <div className={styles.footerControls}>
               {this.pageSwitcherJsx.bind(this)(true)}
               <div className={styles.filterByTag}

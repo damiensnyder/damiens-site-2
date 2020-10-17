@@ -13,7 +13,7 @@ export default function OtherPage(props: PostMetadata): ReactElement {
                   description={props.description}
                   keywords={props.tags} />
       <div className={general.postContainer}>
-        <LinkHeader path={["other"]} />
+        <LinkHeader path={["misc"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
         <p className={general.caption}>
           released {formatDate(props.dates[0])}
@@ -24,9 +24,9 @@ export default function OtherPage(props: PostMetadata): ReactElement {
 }
 
 export async function getStaticProps(context): Promise<{props: any}> {
-  return await getSinglePost("other", context.params.code);
+  return await getSinglePost("misc", context.params.code);
 }
 
 export async function getStaticPaths(): Promise<Paths> {
-  return await getPostPaths("other");
+  return await getPostPaths("misc");
 }
