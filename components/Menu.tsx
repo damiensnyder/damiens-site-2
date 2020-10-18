@@ -75,7 +75,7 @@ export default class Menu extends React.Component {
     );
   }
 
-  pageSwitcherJsx(isPrev: boolean, numPosts: number): ReactElement {
+  pageSwitcherJsx(isPrev: boolean, numPosts?: number): ReactElement {
     if (isPrev && this.state.page > 1) {
       return (
         <div className={styles.pageSwitcher}
@@ -114,10 +114,13 @@ export default class Menu extends React.Component {
       return b.dates[0].localeCompare(a.dates[0]);
     });
 
-    const postsOnPage: PostMetadata[] = sortedPosts.filter(
+    let postsOnPage: PostMetadata[] = sortedPosts.filter(
         (post: PostMetadata) => {
       return this.state.tag == null || post.tags.includes(this.state.tag);
-    }).slice((this.state.page - 1) * 10, this.state.page * 10);
+    });
+    const numPosts: number = postsOnPage.length;
+    postsOnPage = postsOnPage.slice(
+        (this.state.page - 1) * 10, this.state.page * 10);
 
     const tags: Map<string, number> = new Map<string, number>();
     sortedPosts.forEach((post: PostMetadata) => {
@@ -154,7 +157,7 @@ export default class Menu extends React.Component {
                    onClick={this.toggleTagsDropdown.bind(this)}>
                 filter by tag
               </div>
-              {this.pageSwitcherJsx.bind(this)(false)}
+              {this.pageSwitcherJsx.bind(this)(false, numPosts)}
             </div>
           ) : null
         }

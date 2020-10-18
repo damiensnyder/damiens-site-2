@@ -3,9 +3,10 @@
     {
       "name": "Siphon State",
       "code": "http://www.siphonstate.com",
-      "dates": ["20201007"],
+      "dates": ["20200907"],
       "description": "a webgame of voting and lies",
-      "tags": ["game", "web", "fun", "featured"]
+      "tags": ["game", "web", "fun", "featured"],
+      "thumbnail": "siphon-state.png"
     }
   ]
 }

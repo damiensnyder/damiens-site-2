@@ -1,20 +1,6 @@
 {
   "posts": [
     {
-      "name": "résumé",
-      "code": "/resume",
-      "dates": ["20200927"],
-      "description": "give me money",
-      "tags": ["resume", "featured-other"]
-    },
-    {
-      "name": "also my resume",
-      "code": "/cool-resume",
-      "dates": ["20200927"],
-      "description": "the COOL resume for people with good taste",
-      "tags": ["resume"]
-    },
-    {
       "name": "twitter",
       "code": "https://twitter.com/damien__snyder",
       "dates": ["20190225"],
@@ -27,7 +13,7 @@
       "code": "https://soundcloud.com/damiensnyder",
       "dates": ["20150801"],
       "description": "my soundcloud",
-      "tags": ["social"],
+      "tags": ["social", "featured-other"],
       "thumbnail": "soundcloud.jpg"
     },
     {
