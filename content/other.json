@@ -1,15 +1,15 @@
 {
   "posts": [
     {
-      "name": "resume",
-      "code": "resume",
+      "name": "résumé",
+      "code": "/resume",
       "dates": ["20200927"],
       "description": "give me money",
       "tags": ["resume", "featured-other"]
     },
     {
       "name": "also my resume",
-      "code": "cool-resume",
+      "code": "/cool-resume",
       "dates": ["20200927"],
       "description": "the COOL resume for people with good taste",
       "tags": ["resume"]

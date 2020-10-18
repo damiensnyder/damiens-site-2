@@ -4,12 +4,16 @@ import general from "../styles/general.module.css";
 import styles from "../styles/menu.module.css";
 import Link from "next/link";
 
-export default function MenuItem(props: PostMetadata): ReactElement {
+interface MenuItemProps extends PostMetadata {
+  isHome?: boolean
+}
+
+export default function MenuItem(props: MenuItemProps): ReactElement {
   const dateText: string = formatDate(props.dates[0]);
   const thumbnailSrc: string = formatThumbnailSrc(props.thumbnail);
   const type: string = getType(props.tags);
   const url: string = formatUrl(props.code, type);
-  const dateClass: string = chooseDateClass(props.description);
+  const dateClass: string = chooseDateClass(props.description, props.isHome);
 
   return (
     <div className={styles.menuItem}>
@@ -51,8 +55,8 @@ export function formatUrl(code: string, type: string): string {
   if (code.startsWith("http") && code.includes("//")) {
     return code;
   }
-  if (type == undefined || type == "other" || type == "misc") {
-    return "/" + code;
+  if (code.startsWith("/")) {
+    return code;
   }
   return "/" + TYPE_TO_PATH[type] + "/" + code;
 }
@@ -67,7 +71,19 @@ export function getType(tags: string[]): string {
   return type;
 }
 
-export function chooseDateClass(description: string): string {
+export function chooseDateClass(description: string, isHome: boolean): string {
+  if (!isHome) {
+    if (description.length > 100) {
+      return general.hide;
+    }
+    if (description.length > 60) {
+      return general.showIfMedium;
+    }
+    if (description.length > 40) {
+      return general.showIfMediumOrWide;
+    }
+    return "";
+  }
   if (description.length > 60) {
     return general.hide;
   }

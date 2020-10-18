@@ -4,9 +4,9 @@ import general from "../styles/general.module.css";
 import styles from "../styles/menu.module.css";
 import Link from "next/link";
 import {getPosts, PostMetadata} from "./api/content";
-import MenuItem from "../components/MenuItem";
 import Menu from "../components/Menu";
 import {MenuProps, MenuStaticProps} from "./content";
+import NormalHead from "../components/NormalHead";
 
 interface HomeProps extends MenuProps {
   other?: PostMetadata[]
@@ -22,10 +22,9 @@ interface HomeStaticProps extends MenuStaticProps {
 export default function Home(props: HomeProps): ReactElement {
   return (
     <div className={general.pageContainer}>
-      <Head>
-        <title>damien snyder</title>
-        <link rel={"icon"} href={"/eye-of-judgment.jpg"} />
-      </Head>
+      <NormalHead title={"damien snyder"}
+          description={"damien snyder's personal website"}
+          keywords={["homepage"]} />
       <h1 className={general.pageTitle}>
         damien snyder
       </h1>

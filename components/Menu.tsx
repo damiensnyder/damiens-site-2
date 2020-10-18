@@ -135,13 +135,14 @@ export default class Menu extends React.Component {
         {
           postsOnPage.map((post: PostMetadata, index: number) => {
             return (
-                <MenuItem name={post.name}
-                          code={post.code}
-                          description={post.description}
-                          dates={post.dates}
-                          tags={post.tags}
-                          thumbnail={post.thumbnail}
-                          key={index} />
+              <MenuItem name={post.name}
+                        code={post.code}
+                        description={post.description}
+                        dates={post.dates}
+                        tags={post.tags}
+                        thumbnail={post.thumbnail}
+                        isHome={this.props.hideControls}
+                        key={index} />
             );
           })
         }

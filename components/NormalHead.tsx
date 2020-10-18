@@ -42,7 +42,9 @@ export default function NormalHead(props: HeadProps | AudioHeadProps):
 
       <meta property={"og:title"} content={props.title} />
       <meta name={"og:description"} content={props.description} />
-      <meta property={"og:image"} content={props.thumbnail} />
+      <meta property={"og:image"}
+            content={props.thumbnail == undefined ?
+                "/favicon.png" : props.thumbnail} />
       <meta property={"og:url"}
             content={"https://www.damiensnyder.com/" + props.url} />
       <meta name={"og:site_name"} content={"damien snyder"} />
