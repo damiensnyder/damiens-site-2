@@ -1,5 +1,6 @@
 import {readFileSync} from "fs";
 import {NextApiRequest, NextApiResponse} from "next";
+import {MenuProps} from "../../content";
 
 export interface PostMetadata {
   name: string,
@@ -28,7 +29,8 @@ export const TYPE_TO_PATH: any = {
   blog: "blog",
   song: "songs",
   video: "videos",
-  misc: "misc"
+  misc: "misc",
+  other: "other"
 }
 
 export default function RecentPosts(req: NextApiRequest,
@@ -43,39 +45,46 @@ export default function RecentPosts(req: NextApiRequest,
   }
 }
 
-export async function getPosts(type: string = "all", start: number = 0):
-      Promise<{posts: PostMetadata[]}> {
-  // If the type is one of the main four types (aka, not "all"), return only
+export async function getPosts(tag: string = "all"): Promise<MenuProps> {
+  // If the type is one of the main five types (aka, not "all"), return only
   // the content listed in that type's file. Otherwise, merge the content from
-  // all files into a single list and return it.
+  // all files into a single list.
   let result: PostMetadata[] = [];
-  if (TYPE_TO_PATH.hasOwnProperty(type)) {
+  if (TYPE_TO_PATH.hasOwnProperty(tag)) {
     const buffer: Buffer = readFileSync(
-        `content/${TYPE_TO_PATH[type]}.json`);
+        `content/${TYPE_TO_PATH[tag]}.json`);
     const json: {posts: PostMetadata[]} = JSON.parse(buffer.toString());
     json.posts.forEach((post: PostMetadata) => {
-      post.tags.push(type);
+      post.tags.push(tag);
     });
     result = json.posts;
   } else {
     for (let postType in TYPE_TO_PATH) {
-      const buffer: Buffer = readFileSync(
-          `content/${TYPE_TO_PATH[postType]}.json`);
-      const json: { posts: PostMetadata[] } = JSON.parse(buffer.toString());
-      json.posts.forEach((post: PostMetadata) => {
-        post.tags.push(postType);
-      });
-      result = result.concat(json.posts);
+      // Skip if the post type is "other" and the search tag is "all".
+      if (postType != "other" || tag != "all") {
+        const buffer: Buffer = readFileSync(
+            `content/${TYPE_TO_PATH[postType]}.json`);
+        const json: { posts: PostMetadata[] } = JSON.parse(buffer.toString());
+        json.posts.forEach((post: PostMetadata) => {
+          post.tags.push(postType);
+        });
+        result = result.concat(json.posts);
+      }
     }
   }
-  if (type != "all" && TYPE_TO_PATH[type] == undefined) {
+
+  // If the tag is not "all" or one of the main types, filter for only results
+  // with that tag.
+  if (tag != "all" && TYPE_TO_PATH[tag] == undefined) {
     result = result.filter((post: PostMetadata) => {
-      return post.tags.includes(type);
+      return post.tags.includes(tag);
     });
   }
+
+  // Sort by date, with most recent first.
   result = result.sort((a: PostMetadata, b: PostMetadata) => {
-    return parseInt(b.dates[0]) - parseInt(a.dates[0]);
-  }).slice(start, start + 10);
+    return b.dates[0].localeCompare(a.dates[0]);
+  });
   return {posts: result};
 }
 

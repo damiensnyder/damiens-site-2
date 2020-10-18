@@ -22,7 +22,7 @@ const DEFAULT_KEYWORDS: string = "damien,snyder,";
 export default function NormalHead(props: HeadProps | AudioHeadProps):
     ReactElement {
   let keywords = DEFAULT_KEYWORDS;
-  if (props.keywords != null) {
+  if (props.keywords != undefined) {
     keywords += props.keywords.toString();
   }
   return (

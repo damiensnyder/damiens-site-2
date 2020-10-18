@@ -1,23 +1,25 @@
 import React, {ReactElement} from "react";
 import {getPostPaths, getPosts, Paths, PostMetadata} from "../api/content";
 import MenuPage from "../../components/MenuPage";
+import {MenuProps} from "./index";
 
-interface TagProps {
+interface TagProps extends MenuProps {
   posts: PostMetadata[],
-  tag?: string
+  tag: string
 }
 
-export default function RecentPosts(props: TagProps):
-    ReactElement {
-  return <MenuPage title={props.tag} posts={props.posts} />;
+export default function RecentPosts(props: TagProps): ReactElement {
+  const tag: string = props.tag == undefined ? "" : props.tag;
+  return <MenuPage title={tag} posts={props.posts} />;
 }
 
 
 export async function getStaticProps(context): Promise<{props: TagProps}> {
-  const posts: TagProps = await getPosts(context.params.tag);
-  posts.tag = context.params.tag;
   return {
-    props: posts
+    props: {
+      posts: (await getPosts(context.params.tag)).posts,
+      tag: context.params.tag
+    }
   };
 }
 

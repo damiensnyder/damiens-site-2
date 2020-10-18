@@ -51,14 +51,14 @@ export function formatUrl(code: string, type: string): string {
   if (code.startsWith("http") && code.includes("//")) {
     return code;
   }
-  if (type == undefined || type == "other") {
+  if (type == undefined || type == "other" || type == "misc") {
     return "/" + code;
   }
   return "/" + TYPE_TO_PATH[type] + "/" + code;
 }
 
 export function getType(tags: string[]): string {
-  let type: string;
+  let type: string = "";
   Object.keys(TYPE_TO_PATH).forEach((possibleType: string) => {
     if (tags.includes(possibleType)) {
       type = possibleType;

@@ -111,7 +111,7 @@ export default class Menu extends React.Component {
       if (b.tags.includes("featured") && !a.tags.includes("featured")) {
         return 1;
       }
-      return Number.parseInt(b.dates[0]) - Number.parseInt(a.dates[0]);
+      return b.dates[0].localeCompare(a.dates[0]);
     });
 
     const postsOnPage: PostMetadata[] = sortedPosts.filter(

@@ -6,8 +6,20 @@ import Link from "next/link";
 import {getPosts, PostMetadata} from "./api/content";
 import MenuItem from "../components/MenuItem";
 import Menu from "../components/Menu";
+import {MenuProps, MenuStaticProps} from "./content";
 
-export default function Home(props: {posts: PostMetadata[]}): ReactElement {
+interface HomeProps extends MenuProps {
+  other?: PostMetadata[]
+}
+
+interface HomeStaticProps extends MenuStaticProps {
+  props: {
+    posts: PostMetadata[],
+    other?: PostMetadata[]
+  }
+}
+
+export default function Home(props: HomeProps): ReactElement {
   return (
     <div className={general.pageContainer}>
       <Head>
@@ -27,24 +39,7 @@ export default function Home(props: {posts: PostMetadata[]}): ReactElement {
         </div>
         <div className={styles.linksMenu}>
           <h2 className={styles.menuTitle}>other pages</h2>
-          <MenuItem name={"résumé"}
-              code={"resume"}
-              description={"give me money"}
-              dates={["20201007"]}
-              tags={[]}
-              thumbnail={"number.jpg"} />
-          <MenuItem name={"youtube"}
-              code={"youtube"}
-              description={"my youtube channel"}
-              dates={["20201007"]}
-              tags={[]}
-              thumbnail={"youtube.jpg"} />
-          <MenuItem name={"notes"}
-              code={"notes"}
-              description={"tweets, minus the twitter"}
-              dates={["20201007"]}
-              tags={[]}
-              thumbnail={"notes.jpg"} />
+          <Menu posts={props.other} hideControls={true} />
           <Link href={"other"}>
             <span className={styles.moreLink}><i>more other</i> →</span>
           </Link>
@@ -54,8 +49,10 @@ export default function Home(props: {posts: PostMetadata[]}): ReactElement {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<HomeStaticProps> {
+  const props: HomeProps = await getPosts("featured");
+  props.other = (await getPosts("featured-other")).posts;
   return {
-    props: await getPosts("featured")
+    props: props
   };
 }

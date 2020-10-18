@@ -11,17 +11,17 @@ interface MenuPageProps {
   hideControls?: boolean
 }
 
-export default function MenuPage(props: MenuPageProps):
-    ReactElement {
+export default function MenuPage(props: MenuPageProps): ReactElement {
+  const posts: PostMetadata[] = props.posts == undefined ? [] : props.posts;
   return (
     <div className={general.pageContainer}>
       <NormalHead title={props.title}
-                  keywords={props.title} />
+                  keywords={[props.title, "menu"]} />
       <div className={general.postContainer}>
         <LinkHeader path={["content"]} />
         <h1 className={general.pageTitle}>{props.title}</h1>
       </div>
-      <Menu posts={props.posts}
+      <Menu posts={posts}
           hideControls={props.hideControls} />
     </div>
   );

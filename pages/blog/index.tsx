@@ -1,16 +1,13 @@
 import React, {ReactElement} from "react";
-import {getPosts, PostMetadata} from "../api/content";
+import {getPosts} from "../api/content";
 import MenuPage from "../../components/MenuPage";
+import {MenuProps, MenuStaticProps} from "../content";
 
-export default function RecentPosts(props: {posts: PostMetadata[]}):
-    ReactElement {
-  return (
-    <MenuPage title={"blog"} posts={props.posts} />
-  );
+export default function RecentPosts(props: MenuProps): ReactElement {
+  return <MenuPage title={"blog"} posts={props.posts} />;
 }
 
-export async function getStaticProps():
-    Promise<{props: {posts: PostMetadata[]}}> {
+export async function getStaticProps(): Promise<MenuStaticProps> {
   return {
     props: await getPosts("blog")
   };
