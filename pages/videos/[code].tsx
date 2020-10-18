@@ -18,7 +18,7 @@ export default function VideoPage(props: VideoMetadata): ReactElement {
                   thumbnail={props.thumbnail}
                   keywords={props.tags} />
       <div className={general.postContainer}>
-        <LinkHeader path={["songs"]} />
+        <LinkHeader path={["videos"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
         <p className={general.caption}>
           released {formatDate(props.dates[0])}

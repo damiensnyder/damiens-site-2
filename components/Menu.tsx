@@ -65,7 +65,7 @@ export default class Menu extends React.Component {
               <span>
                 <a onClick={() => this.selectTag.bind(this)(tag)}
                     key={index}>
-                  {tag}
+                  {tag.replaceAll("-", " ")}
                 </a> ({tags.get(tag)})
               </span>
             );

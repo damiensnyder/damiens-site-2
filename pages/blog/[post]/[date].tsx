@@ -185,7 +185,7 @@ function BulletedList(props: {text: string, block: boolean}): ReactElement {
 }
 
 function Image(props: {text: string}): ReactElement {
-  const unescaped: string = props.text.replace("🀣", "\\");
+  const unescaped: string = props.text.replace(/🀣/g, "\\");
   const altText: string = unescaped.match(/[.*]/)[0].slice(1, -1);
   const imageSource: string = unescaped.match(/\(\S+\)/)[0].slice(1, -1);
   return (
@@ -253,9 +253,9 @@ function CodeBlock(props: {text: string}): ReactElement {
   const lines: string[] = props.text.split(/\n/g);
   const linesJsx: ReactElement[] = lines.map(
       (line: string, lineIndex: number) => {
-        line = line.replace(/\\```\n/, "```\n");
-        return <CodeLine text={line} key={lineIndex} />;
-      });
+    line = line.replace(/\\```\n/, "```\n");
+    return <CodeLine text={line} key={lineIndex} />;
+  });
   return <div className={styles.codeBlock}>{linesJsx}</div>;
 }
 
