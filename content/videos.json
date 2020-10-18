@@ -1,3 +1,14 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "name": "a video about angles",
+      "code": "a-video-about-angles",
+      "dates": ["20170826"],
+      "description": "2:08",
+      "tags": ["tutorial"],
+      "thumbnail": "it-isnt-funny-anymore.png",
+      "youtube": "zV7bdSwHNpM",
+      "videoDescription": "now watch and learn and here's the deal. imma `code` in my own description"
+    }
+  ]
 }

@@ -81,7 +81,7 @@ export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
   );
 }
 
-function markdownToJsx(text): ReactElement[] {
+export function markdownToJsx(text): ReactElement[] {
   const chunks: ChunkProps[] = hierarchicallySplit(text, splitRules);
 
   const document: ReactElement[] = chunks.map(

@@ -4,8 +4,14 @@ import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
+import {markdownToJsx} from "../blog/[post]/[date]";
 
-export default function VideoPage(props: PostMetadata): ReactElement {
+interface VideoMetadata extends PostMetadata {
+  youtube: string
+  videoDescription: string
+}
+
+export default function VideoPage(props: VideoMetadata): ReactElement {
   return (
     <div className={general.pageContainer}>
       <NormalHead title={props.name}
@@ -17,6 +23,17 @@ export default function VideoPage(props: PostMetadata): ReactElement {
         <p className={general.caption}>
           released {formatDate(props.dates[0])}
         </p>
+        <iframe width={"100%"}
+                height={600}
+                scrolling={"no"}
+                frameBorder={"no"}
+                src={"https://www.youtube.com/embed/" + props.youtube}>
+        </iframe>
+        {
+          props.videoDescription == undefined ?
+              null :
+              markdownToJsx("# description:\n\n" + props.videoDescription)
+        }
       </div>
     </div>
   );
