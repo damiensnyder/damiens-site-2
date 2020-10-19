@@ -31,7 +31,7 @@ export async function getStaticPaths(): Promise<Paths> {
   });
   const paths: Paths = {
     paths: [],
-    fallback: true
+    fallback: false
   };
   tags.forEach((tagName: string) => {
     paths.paths.push({params: {tag: tagName}});
