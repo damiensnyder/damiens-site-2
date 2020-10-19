@@ -7,6 +7,7 @@ import {NextRouter, useRouter} from "next/router";
 import {PostMetadata, getPosts, Paths} from "../../api/content";
 import LinkHeader from "../../../components/LinkHeader";
 import NormalHead from "../../../components/NormalHead";
+import {MenuProps} from "../../content";
 
 const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
@@ -289,10 +290,10 @@ export async function getStaticProps(context):
 }
 
 export async function getStaticPaths(): Promise<Paths> {
-  const recentPosts: {posts: PostMetadata[]} = await getPosts("blog");
+  const recentPosts: MenuProps = await getPosts("blog");
   const codesAndDates: {params: {post: string, date: string}}[] = [];
   recentPosts.posts.forEach((post: PostMetadata) => {
-    return post.dates.forEach((date: string) => {
+    post.dates.forEach((date: string) => {
       codesAndDates.push({
         params: {
           post: post.code,
@@ -303,6 +304,6 @@ export async function getStaticPaths(): Promise<Paths> {
   });
   return {
     paths: codesAndDates,
-    fallback: true
+    fallback: false
   };
 }
