@@ -1,10 +1,14 @@
 import React, {ReactElement} from "react";
 import general from "../../styles/general.module.css";
+import styles from "../../styles/blog.module.css";
 import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
-import {markdownToJsx} from "../blog/[code]";
+
+// Markdown parsing
+import ReactMarkdown from "react-markdown";
+import {markdownRenderers, markdownPlugins} from "../blog/[code]";
 
 interface VideoMetadata extends PostMetadata {
   youtube: string
@@ -29,11 +33,11 @@ export default function VideoPage(props: VideoMetadata): ReactElement {
                 frameBorder={"no"}
                 src={"https://www.youtube.com/embed/" + props.youtube}>
         </iframe>
-        {
-          props.videoDescription == undefined ?
-              null :
-              markdownToJsx("# description:\n\n" + props.videoDescription)
-        }
+        <div className={styles.blogContainer}>
+          <ReactMarkdown renderers={markdownRenderers}
+                         plugins={markdownPlugins}
+                         source={props.videoDescription} />
+        </div>
       </div>
     </div>
   );

@@ -14,10 +14,15 @@ import {InlineMath, BlockMath} from "react-katex";
 import math from "remark-math";
 import "katex/dist/katex.min.css";
 
-const renderers = {
+export const markdownRenderers: any = {
   inlineMath: ({value}) => <InlineMath math={value} />,
   math: ({value}) => <BlockMath math={value} />
 }
+
+export const markdownPlugins: any[] = [
+  math,
+  [gfm, {singleTilde: false}]
+];
 
 export default function BlogPostPage(props: BlogPostProps): ReactElement {
   return (
@@ -32,8 +37,8 @@ export default function BlogPostPage(props: BlogPostProps): ReactElement {
           posted {formatDate(props.date)}
         </p>
         <div className={styles.blogContainer}>
-          <ReactMarkdown renderers={renderers}
-                         plugins={[math, [gfm, {singleTilde: false}]]}
+          <ReactMarkdown renderers={markdownRenderers}
+                         plugins={markdownPlugins}
                          source={props.text} />
         </div>
       </div>
