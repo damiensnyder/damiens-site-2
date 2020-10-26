@@ -68,7 +68,7 @@ export default function SongPage(props: PostMetadata): ReactElement {
         <LinkHeader path={["songs"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
         <p className={general.caption}>
-          released {formatDate(props.dates[0])}
+          released {formatDate(props.date)}
         </p>
         {songProps.youtube != null ? youtubeHeader : null}
         {youtubeEmbed}

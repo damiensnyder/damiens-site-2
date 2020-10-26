@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {getPostPaths, getPosts, Paths, PostMetadata} from "../api/content";
+import {getPosts, Paths, PostMetadata} from "../api/content";
 import MenuPage from "../../components/MenuPage";
 import {MenuProps} from "./index";
 

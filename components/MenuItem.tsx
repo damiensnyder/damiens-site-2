@@ -9,7 +9,7 @@ interface MenuItemProps extends PostMetadata {
 }
 
 export default function MenuItem(props: MenuItemProps): ReactElement {
-  const dateText: string = formatDate(props.dates[0]);
+  const dateText: string = formatDate(props.date);
   const thumbnailSrc: string = formatThumbnailSrc(props.thumbnail);
   const type: string = getType(props.tags);
   const url: string = formatUrl(props.code, type);

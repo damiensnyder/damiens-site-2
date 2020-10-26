@@ -4,7 +4,7 @@ import {MenuProps} from "../../content";
 
 export interface PostMetadata {
   name: string,
-  dates: string[],
+  date: string,
   code: string,
   description: string,
   tags: string[],
@@ -15,9 +15,6 @@ export interface Paths {
   paths: {
     params: {
       code: string
-    } | {
-      post: string,
-      date?: string
     } | {
       tag: string
     }
@@ -46,44 +43,25 @@ export default function RecentPosts(req: NextApiRequest,
 }
 
 export async function getPosts(tag: string = "all"): Promise<MenuProps> {
-  // If the type is one of the main five types (aka, not "all"), return only
-  // the content listed in that type's file. Otherwise, merge the content from
-  // all files into a single list.
-  let result: PostMetadata[] = [];
-  if (TYPE_TO_PATH.hasOwnProperty(tag)) {
-    const buffer: Buffer = readFileSync(
-        `content/${TYPE_TO_PATH[tag]}.json`);
-    const json: {posts: PostMetadata[]} = JSON.parse(buffer.toString());
-    json.posts.forEach((post: PostMetadata) => {
-      post.tags.push(tag);
-    });
-    result = json.posts;
-  } else {
-    for (let postType in TYPE_TO_PATH) {
-      // Skip if the post type is "other" and the search tag is "all".
-      if (postType != "other" || tag != "all") {
-        const buffer: Buffer = readFileSync(
-            `content/${TYPE_TO_PATH[postType]}.json`);
-        const json: { posts: PostMetadata[] } = JSON.parse(buffer.toString());
-        json.posts.forEach((post: PostMetadata) => {
-          post.tags.push(postType);
-        });
-        result = result.concat(json.posts);
-      }
-    }
-  }
+  const buffer: Buffer = readFileSync('content/content.json');
+  const json: { posts: PostMetadata[] } = JSON.parse(buffer.toString());
+  let result: PostMetadata[] = json.posts;
 
-  // If the tag is not "all" or one of the main types, filter for only results
-  // with that tag.
-  if (tag != "all" && TYPE_TO_PATH[tag] == undefined) {
+  // If the tag is not "all", filter for only results with that tag. If the tag
+  // is "all", filter out results tagged as "other".
+  if (tag != "all") {
     result = result.filter((post: PostMetadata) => {
       return post.tags.includes(tag);
+    });
+  } else {
+    result = result.filter((post: PostMetadata) => {
+      return !post.tags.includes("other");
     });
   }
 
   // Sort by date, with most recent first.
   result = result.sort((a: PostMetadata, b: PostMetadata) => {
-    return b.dates[0].localeCompare(a.dates[0]);
+    return b.date.localeCompare(a.date);
   });
   return {posts: result};
 }
@@ -100,8 +78,8 @@ export async function getSinglePost(type: string, code: string):
 
 export async function getPostPaths(type: string): Promise<Paths> {
   const posts: {posts: PostMetadata[]} = await getPosts(type);
-  const codes = posts.posts.map((song: PostMetadata) => {
-    return {params: {code: song.code}};
+  const codes = posts.posts.map((post: PostMetadata) => {
+    return {params: {code: post.code}};
   });
   return {
     paths: codes,

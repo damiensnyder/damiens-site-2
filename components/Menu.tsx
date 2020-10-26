@@ -41,7 +41,7 @@ export default class Menu extends React.Component {
   dropdownJsx(tags: Map<string, number>): ReactElement {
     let mostUsedTags: string[] = [];
     tags.forEach((uses: number, tag: string) => {
-      if (tag != this.state.tag) {
+      if (tag != this.state.tag && tags.get(tag) > 1) {
         mostUsedTags.push(tag);
       }
     });
@@ -111,7 +111,7 @@ export default class Menu extends React.Component {
       if (b.tags.includes("featured") && !a.tags.includes("featured")) {
         return 1;
       }
-      return b.dates[0].localeCompare(a.dates[0]);
+      return b.date.localeCompare(a.date);
     });
 
     let postsOnPage: PostMetadata[] = sortedPosts.filter(
@@ -141,7 +141,7 @@ export default class Menu extends React.Component {
               <MenuItem name={post.name}
                         code={post.code}
                         description={post.description}
-                        dates={post.dates}
+                        date={post.date}
                         tags={post.tags}
                         thumbnail={post.thumbnail}
                         isHome={this.props.hideControls}

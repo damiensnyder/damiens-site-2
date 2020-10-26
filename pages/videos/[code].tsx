@@ -4,7 +4,7 @@ import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
-import {markdownToJsx} from "../blog/[post]/[date]";
+import {markdownToJsx} from "../blog/[post]";
 
 interface VideoMetadata extends PostMetadata {
   youtube: string
@@ -21,7 +21,7 @@ export default function VideoPage(props: VideoMetadata): ReactElement {
         <LinkHeader path={["videos"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
         <p className={general.caption}>
-          released {formatDate(props.dates[0])}
+          released {formatDate(props.date)}
         </p>
         <iframe width={"100%"}
                 height={600}

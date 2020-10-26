@@ -1,0 +1,129 @@
+{
+  "posts": [
+    {
+      "name": "Siphon State",
+      "code": "http://www.siphonstate.com",
+      "date": "20200907",
+      "description": "a webgame of voting and lies",
+      "tags": ["misc", "game", "web", "fun", "featured"],
+      "thumbnail": "siphon-state.png"
+    },
+    {
+      "name": "it isn't funny anymore",
+      "code": "it-isnt-funny-anymore",
+      "date": "20200526",
+      "description": "4:06 ♬",
+      "tags": ["song", "new", "vocal", "featured"],
+      "thumbnail": "it-isnt-funny-anymore.png",
+      "wav": true,
+      "soundcloud": "807321139"
+    },
+    {
+      "name": "paradise",
+      "code": "paradise",
+      "date": "20190530",
+      "description": "3:14 ♬",
+      "tags": ["song", "new"],
+      "thumbnail": "paradise.jpg",
+      "soundcloud": "629377857"
+    },
+    {
+      "name": "yeastie boys",
+      "code": "yeastie-boys",
+      "date": "20200906",
+      "description": "3:31 ♬ you see the title. you know what you're getting into",
+      "tags": ["song", "rap-beat"],
+      "thumbnail": "yeastie-boys.jpg",
+      "wav": true,
+      "soundcloud": "889029961"
+    },
+    {
+      "name": "oh lord",
+      "code": "oh-lord",
+      "date": "20190822",
+      "description": "3:42 ♬",
+      "tags": ["song", "new", "vocal", "featured", "music-video"],
+      "thumbnail": "oh-lord.jpg",
+      "soundcloud": "669806780",
+      "wav": true,
+      "youtube": "xkXZ4vJLgtE"
+    },
+    {
+      "name": "staygo",
+      "code": "staygo",
+      "date": "20190626",
+      "description": "3:37 ♬",
+      "tags": ["song", "new", "vocal", "music-video"],
+      "thumbnail": "staygo.jpg",
+      "soundcloud": "642657795",
+      "youtube": "X5eXa1Hjy_o"
+    },
+    {
+      "name": "a video about angles",
+      "code": "a-video-about-angles",
+      "date": "20171221",
+      "description": "2:13 ▶ precalculus but with more annoying music",
+      "tags": ["video", "tutorial", "animated"],
+      "youtube": "7gobsxSvQc8"
+    },
+    {
+      "name": "ignorant boomer DESTROYED by informed citizen",
+      "code": "ignorant-boomer-destroyed",
+      "date": "20190821",
+      "description": "1:20 ▶ this is my civic duty",
+      "tags": ["video", "live", "comedy"],
+      "youtube": "Ee_UWLsogLs",
+      "videoDescription": "Written by Yuval Talby\n\nlink referenced: www.snopes.com"
+    },
+    {
+      "name": "neat facts about factors",
+      "code": "neat-facts-about-factors",
+      "date": "20170826",
+      "description": "2:02 ▶ pandering to the greatest common denominator",
+      "tags": ["video", "animated", "tutorial"],
+      "youtube": "D5B7CirKdeg"
+    },
+    {
+      "name": "good thing",
+      "code": "good-thing",
+      "date": "20190407",
+      "description": "0:06 ▶",
+      "tags": ["video", "animated", "comedy", "short"],
+      "youtube": "3immXfDLj94",
+      "videoDescription": "i read that fact ten years ago, toilet paper technology may have improved since then"
+    },
+    {
+      "name": "bucko",
+      "code": "bucko",
+      "date": "20190411",
+      "description": "0:07 ▶",
+      "tags": ["video", "animated", "comedy", "short"],
+      "thumbnail": "bucko.jpg",
+      "youtube": "w4lm2pNDRv4"
+    },
+    {
+      "name": "twitter",
+      "code": "https://twitter.com/damien__snyder",
+      "date": "20190225",
+      "description": "i have not made a serious tweet in my life",
+      "tags": ["other", "social", "featured-other"],
+      "thumbnail": "twitter.jpg"
+    },
+    {
+      "name": "soundcloud",
+      "code": "https://soundcloud.com/damiensnyder",
+      "date": "20150801",
+      "description": "my soundcloud",
+      "tags": ["other", "social", "featured-other"],
+      "thumbnail": "soundcloud.jpg"
+    },
+    {
+      "name": "youtube",
+      "code": "https://www.youtube.com/channel/UC_JMabjdOb2k57k5pvHnfEg",
+      "date": "20190225",
+      "description": "i post videos here",
+      "tags": ["other", "social", "featured-other"],
+      "thumbnail": "youtube.jpg"
+    }
+  ]
+}

@@ -1,13 +1,12 @@
-import React, {ReactElement, SyntheticEvent} from "react";
-import general from "../../../styles/general.module.css";
-import styles from "../../../styles/blog.module.css";
-import {BlogPostProps, getBlogPost} from "../../api/blog/[post]/[date]";
+import React, {ReactElement} from "react";
+import general from "../../styles/general.module.css";
+import styles from "../../styles/blog.module.css";
+import {BlogPostProps, getBlogPost} from "../api/blog/[post]";
 import Link from "next/link";
-import {NextRouter, useRouter} from "next/router";
-import {PostMetadata, getPosts, Paths} from "../../api/content";
-import LinkHeader from "../../../components/LinkHeader";
-import NormalHead from "../../../components/NormalHead";
-import {MenuProps} from "../../content";
+import {Paths, getPostPaths} from "../api/content";
+import LinkHeader from "../../components/LinkHeader";
+import NormalHead from "../../components/NormalHead";
+import {formatDate} from "../../components/MenuItem";
 
 const splitRules: RuleWithLabel[] = [
   {label: "code", rule: /\n```\n/g},
@@ -39,13 +38,6 @@ interface RuleWithLabel {
 }
 
 export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
-  const router: NextRouter = useRouter();
-  const changeDate: (e: SyntheticEvent) => void = (e: SyntheticEvent) => {
-    // @ts-ignore
-    const newDate: string = e.target.value;
-    router.push("/blog/" + props.code + "/" + newDate).then(null);
-  };
-
   return (
     <div className={general.pageContainer}>
       <NormalHead title={props.name} />
@@ -55,26 +47,7 @@ export default function BlogPostWithDate(props: BlogPostProps): ReactElement {
           {props.name}
         </h1>
         <p className={general.caption}>
-          {
-            props.date == props.dates[0] ?
-              "last edited" : "viewing version from"
-          }
-          <select className={styles.versionSelect}
-              defaultValue={props.date}
-              onChange={changeDate}>
-            {
-              props.dates.map((date: string, index: number) => {
-                const dateText: string = date.slice(0, 4) + "." +
-                    date.slice(4, 6) + "." + date.slice(6);
-                return (
-                  <option className={styles.versionOption}
-                      value={date}
-                      key={index}
-                      label={dateText} />
-                );
-              })
-            }
-          </select>
+          posted {formatDate(props.date)}
         </p>
         {markdownToJsx(props.text)}
       </div>
@@ -282,28 +255,12 @@ function BlockQuote(props: {text: string}): ReactElement {
   return <blockquote>{subChunksJsx}</blockquote>;
 }
 
-export async function getStaticProps(context):
-    Promise<{props: BlogPostProps}> {
+export async function getStaticProps(context): Promise<{props: BlogPostProps}> {
   return {
-    props: await getBlogPost(context.params.post, context.params.date)
+    props: await getBlogPost(context.params.post)
   };
 }
 
 export async function getStaticPaths(): Promise<Paths> {
-  const recentPosts: MenuProps = await getPosts("blog");
-  const codesAndDates: {params: {post: string, date: string}}[] = [];
-  recentPosts.posts.forEach((post: PostMetadata) => {
-    post.dates.forEach((date: string) => {
-      codesAndDates.push({
-        params: {
-          post: post.code,
-          date: date
-        }
-      });
-    });
-  });
-  return {
-    paths: codesAndDates,
-    fallback: false
-  };
+  return await getPostPaths("blog");
 }
