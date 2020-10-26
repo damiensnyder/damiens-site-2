@@ -32,6 +32,10 @@ img {
   box-sizing: border-box;
 }
 
+hr {
+  margin-top: 48px;
+}
+
 blockquote {
   align-self: stretch;
   margin: 8px 0;

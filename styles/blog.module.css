@@ -1,6 +1,6 @@
 .blogContainer {
   text-align: left;
-  align-self: flex-start;
+  align-self: stretch;
   margin: 16px 0;
   line-height: 1.5;
 
@@ -35,6 +35,27 @@
   margin-top: 32px;
   max-width: 100%;
   max-height: 1080px;
+}
+
+.footnoteDefinition {
+  margin: 8px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.backToRef {
+  margin: 0 32px;
+  font-size: smaller;
+}
+
+.footnoteBody > p {
+  margin-top: 0;
+}
+
+.footnoteBody {
+  line-height: 115%;
 }
 
 @media (max-width: 1200px) {

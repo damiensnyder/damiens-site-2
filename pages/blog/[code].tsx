@@ -10,19 +10,42 @@ import {formatDate} from "../../components/MenuItem";
 // Markdown parsing
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
+import footnotes from 'remark-footnotes';
 import {InlineMath, BlockMath} from "react-katex";
 import math from "remark-math";
 import "katex/dist/katex.min.css";
+import Link from "next/link";
 
 export const markdownRenderers: any = {
   inlineMath: ({value}) => <InlineMath math={value} />,
-  math: ({value}) => <BlockMath math={value} />
+  math: ({value}) => <BlockMath math={value} />,
+  footnoteReference: FootnoteReference,
+  footnoteDefinition: FootnoteDefinition
 }
 
 export const markdownPlugins: any[] = [
-  math,
-  [gfm, {singleTilde: false}]
+  [gfm, {singleTilde: false}],
+  footnotes,
+  math
 ];
+
+function FootnoteReference(props): ReactElement {
+  return (
+    <sup id={"ref-" + props.identifier}>
+      <a href={"#def-" + props.identifier}>{props.label}</a>
+    </sup>
+  );
+}
+
+function FootnoteDefinition(props): ReactElement {
+  return (
+    <div className={styles.footnoteDefinition} id={"def-" + props.identifier}>
+      <a className={styles.backToRef}
+              href={"#ref-" + props.identifier}>{props.label}</a>
+      <div className={styles.footnoteBody}>{props.children}</div>
+    </div>
+  );
+}
 
 export default function BlogPostPage(props: BlogPostProps): ReactElement {
   return (

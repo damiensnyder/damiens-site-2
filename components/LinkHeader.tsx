@@ -10,12 +10,12 @@ export default function LinkHeader(props: {path: string[]}): ReactElement {
   ];
 
   let url: string = "/";
-  props.path.forEach((directory: string) => {
+  props.path.forEach((directory: string, index: number) => {
     url += directory;
     linksJsx.push(<span>&nbsp;/&nbsp;</span>);
     linksJsx.push(
       <Link href={url}>
-        <span className={general.navHeader}>{directory}</span>
+        <span className={general.navHeader} key={index}>{directory}</span>
       </Link>
     )
   });
