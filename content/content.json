@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "name": "this is my first blog post",
+      "code": "this-is-my-first-blog-post",
+      "date": "20201003",
+      "description": "thats right folks. step riiiight up",
+      "tags": ["blog", "first-posts"]
+    },
+    {
       "name": "Siphon State",
       "code": "http://www.siphonstate.com",
       "date": "20200907",
