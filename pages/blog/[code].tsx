@@ -31,9 +31,11 @@ export default function BlogPostPage(props: BlogPostProps): ReactElement {
         <p className={general.caption}>
           posted {formatDate(props.date)}
         </p>
-        <ReactMarkdown renderers={renderers}
-                       plugins={[math, [gfm, {singleTilde: false}]]}
-                       source={props.text} />
+        <div className={styles.blogContainer}>
+          <ReactMarkdown renderers={renderers}
+                         plugins={[math, [gfm, {singleTilde: false}]]}
+                         source={props.text} />
+        </div>
       </div>
     </div>
   );
