@@ -4,7 +4,7 @@ import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
-import {markdownToJsx} from "../blog/[post]";
+import {markdownToJsx} from "../blog/[code]";
 
 interface VideoMetadata extends PostMetadata {
   youtube: string
