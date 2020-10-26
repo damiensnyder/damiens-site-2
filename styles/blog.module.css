@@ -13,7 +13,6 @@
 
   font-size: 36px;
   font-weight: 600;
-  font-family: Inter, -apple-system, Helvetica, sans-serif;
 }
 
 .blogContainer > h2 {
@@ -22,7 +21,6 @@
 
   font-size: 28px;
   font-weight: 700;
-  font-family: Inter, -apple-system, Helvetica, sans-serif;
 }
 
 .blogContainer > h3 {
@@ -31,23 +29,6 @@
 
   font-size: 28px;
   font-weight: 600;
-  font-family: Inter, -apple-system, Helvetica, sans-serif;
-}
-
-.blogContainer > pre {
-  align-self: stretch;
-  margin: 8px 0;
-  padding: 16px;
-  text-align: left;
-  line-height: 120%;
-
-  font-family: Menlo, monospace;
-  background-color: #333;
-}
-
-.blogContainer > code {
-  font-family: Menlo, monospace;
-  background-color: #333;
 }
 
 .blogContainer > img {

@@ -4,6 +4,10 @@ html, body {
   font-family: Inter, -apple-system, Helvetica, sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: Inter, -apple-system, Helvetica, sans-serif;
+}
+
 a {
   color: #f70;
   cursor: pointer;
@@ -34,4 +38,19 @@ blockquote {
   padding-left: 20px;
 
   border-left: 2px solid #888;
+}
+
+code {
+  font-family: Menlo, monospace;
+  background-color: #333;
+}
+
+pre {
+  align-self: stretch;
+  margin: 8px 0;
+  padding: 16px;
+  text-align: left;
+  line-height: 120%;
+
+  background-color: #333;
 }
