@@ -15,6 +15,10 @@
   font-weight: 500;
 }
 
+.tweetLink {
+  color: #111;
+}
+
 @media (max-width: 1200px) {
   .noteOuter {
     width: 75%;

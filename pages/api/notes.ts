@@ -3,7 +3,8 @@ import {NextApiRequest, NextApiResponse} from "next";
 
 export interface NoteMetadata {
   date: string,
-  text: string
+  text: string,
+  tweet?: string
 }
 
 export interface NotesProps {

@@ -6,6 +6,8 @@ import NormalHead from "../components/NormalHead";
 import {formatDate} from "../components/MenuItem";
 import {getNotes, NoteMetadata, NotesProps} from "./api/notes";
 
+const tweetUrlStart: string = "https://twitter.com/damien__snyder/status/";
+
 export default function NotesPage(props: NotesProps): ReactElement {
   return (
     <div className={general.pageContainer}>
@@ -13,10 +15,16 @@ export default function NotesPage(props: NotesProps): ReactElement {
       <div className={general.postContainer}>
         <LinkHeader path={["other"]} />
         {
-          props.posts.map((post: NoteMetadata) => {
+          props.posts.map((post: NoteMetadata, index: number) => {
             return (
-              <div className={styles.noteOuter}>
-                <p className={styles.noteDate}>{formatDate(post.date)}</p>
+              <div className={styles.noteOuter} key={index}>
+                <p className={styles.noteDate}>
+                  {formatDate(post.date)}
+                  &nbsp;&bull;&nbsp;
+                  {post.tweet == undefined ?
+                      null : <a className={styles.tweetLink}
+                                href={tweetUrlStart + post.tweet}>tweet</a>}
+                </p>
                 <p className={styles.noteText}>{post.text}</p>
               </div>
             );
