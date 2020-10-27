@@ -113,7 +113,7 @@
       "code": "https://twitter.com/damien__snyder",
       "date": "20190225",
       "description": "i have not made a serious tweet in my life",
-      "tags": ["other", "social", "featured-other"],
+      "tags": ["other", "social"],
       "thumbnail": "twitter.jpg"
     },
     {
@@ -131,6 +131,14 @@
       "description": "i post videos here",
       "tags": ["other", "social", "featured-other"],
       "thumbnail": "youtube.jpg"
+    },
+    {
+      "name": "notes",
+      "code": "/notes",
+      "date": "20160626",
+      "description": "like twitter but less targeted ads",
+      "tags": ["other", "featured-other"],
+      "thumbnail": "notes.jpg"
     }
   ]
 }

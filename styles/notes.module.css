@@ -1,0 +1,37 @@
+.noteOuter {
+  margin: 160px 0;
+  width: 50%;
+  line-height: 150%;
+
+  font-size: 32px;
+  text-align: center;
+}
+
+.noteDate {
+  color: #111;
+}
+
+.noteText {
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .noteOuter {
+    width: 75%;
+
+    font-size: 24px;
+  }
+}
+
+@media (max-height: 600px) {
+  .noteOuter {
+    margin: 100px 0;
+  }
+}
+
+@media (max-width: 750px) {
+  .noteOuter {
+    width: 90%;
+    font-size: 20px;
+  }
+}
