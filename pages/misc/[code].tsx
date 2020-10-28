@@ -15,7 +15,7 @@ export default function OtherPage(props: PostMetadata): ReactElement {
       <div className={general.postContainer}>
         <LinkHeader path={["misc"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
-        <p className={general.caption}>
+        <p className={general.byline}>
           released {formatDate(props.date)}
         </p>
       </div>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 	{
+	background-color: #dfdfff;
+	color: #202020;
+	font-family: "verdana";
+}
+h1   	{
+	color: #80c880;
+	text-align: center;
+}
+h2   	{
+	font-size: 24px;
+	color: #f8f8f8;
+	text-align: center;
+}
+h3   	{
+	color: #4fbf4f;
+}
+p    	{
+	color: #202020;
+}
+a		{
+	color: #ff7000;
+}
+</style>
+</head>
+<body>
+
+<h1>personality quiz</h1>
+
+<br>
+<br>
+<br>
+
+<p>QUESTION 1:</p>
+
+<p>What adjective best describes you?</p>
+
+<input type="text" id="answer1"/>
+
+<br>
+
+<p>QUESTION 2:</p>
+
+<p>How do other people see you?</p>
+
+<input type="text" id="answer2"/>
+
+<br>
+
+<p>QUESTION 3:</p>
+
+<p>Name a trait you have that you consider a flaw.</p>
+
+<input type="text" id="answer3"/>
+
+<br>
+
+<p>QUESTION 4:</p>
+
+<p>Name a trait you have that you consider a strength.</p>
+
+<input type="text" id="answer4"/>
+
+<br>
+<br>
+
+<button type="button" onclick="tellIt()">find out your TRUE personality!</button>
+
+<p id="personality"></p>
+
+<script>
+function tellIt() {
+	var input1 = document.getElementById("answer1").value;
+	var input2 = document.getElementById("answer2").value;
+	var input3 = document.getElementById("answer3").value;
+	var input4 = document.getElementById("answer4").value;
+	var rarity = Math.floor((Math.random() * 100) + 1);
+	var numString = "" + rarity + "% of the population is " + input1 + ".";
+	if (rarity <= 21) {
+		numString = "Only " + rarity + "% of the population is " + input1 + ". Wow!";
+	}
+	
+	document.getElementById("personality").innerHTML = "<b>Your UNIQUE results:</b><br>You are " + input1 + ". " + numString + "<br>Because you are so " + input1 + ", others see you as " + input2 + ". Though they're not necessarily wrong, what they don't see is your unique flaws and strengths. For example, you have " + input3 + ", but on the other hand, you have a good deal of " + input4 + ", making you a very unique and complex person overall.";
+}
+</script>
+
+</body>
+</html>

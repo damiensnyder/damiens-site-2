@@ -16,6 +16,28 @@
       "thumbnail": "siphon-state.png"
     },
     {
+      "name": "PopOff",
+      "code": "/popoff.jar",
+      "date": "20170407",
+      "description": "a ripoff of Clonium from an Android game pack called BGC",
+      "tags": ["misc", "game", "fun"]
+    },
+    {
+      "name": "Square Pushing Simulator 2017",
+      "code": "/square-pushing-simulator.zip",
+      "date": "20170411",
+      "description": "a game where you are a square pushing another square",
+      "tags": ["misc", "game", "fun"]
+    },
+    {
+      "name": "ULTIMATE Personality Quiz",
+      "code": "/ultimate-personality-quiz.html",
+      "date": "20190227",
+      "description": "Find out your TRUE personality!",
+      "tags": ["misc", "web", "fun"],
+      "thumbnail": "ultimate-personality-quiz.png"
+    },
+    {
       "name": "it isn't funny anymore",
       "code": "it-isnt-funny-anymore",
       "date": "20200526",

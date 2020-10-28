@@ -56,7 +56,9 @@ settings */
   text-decoration: underline;
 }
 
-.caption {
+.byline {
+  margin-top: 4px;
+
   font-style: oblique;
   color: #888;
 }

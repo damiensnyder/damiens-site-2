@@ -24,7 +24,7 @@ export default function VideoPage(props: VideoMetadata): ReactElement {
       <div className={general.postContainer}>
         <LinkHeader path={["videos"]} />
         <h1 className={general.pageTitle}>{props.name}</h1>
-        <p className={general.caption}>
+        <p className={general.byline}>
           released {formatDate(props.date)}
         </p>
         <iframe width={"100%"}

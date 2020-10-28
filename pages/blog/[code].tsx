@@ -14,7 +14,6 @@ import footnotes from 'remark-footnotes';
 import {InlineMath, BlockMath} from "react-katex";
 import math from "remark-math";
 import "katex/dist/katex.min.css";
-import Link from "next/link";
 
 export const markdownRenderers: any = {
   inlineMath: ({value}) => <InlineMath math={value} />,
@@ -56,14 +55,14 @@ export default function BlogPostPage(props: BlogPostProps): ReactElement {
         <h1 className={general.pageTitle}>
           {props.name}
         </h1>
-        <p className={general.caption}>
+        <p className={general.byline}>
           posted {formatDate(props.date)}
         </p>
-        <div className={styles.blogContainer}>
+        <article className={styles.blogContainer}>
           <ReactMarkdown renderers={markdownRenderers}
                          plugins={markdownPlugins}
                          source={props.text} />
-        </div>
+        </article>
       </div>
     </div>
   );
