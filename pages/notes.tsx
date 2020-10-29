@@ -28,7 +28,13 @@ export default function NotesPage(props: NotesProps): ReactElement {
                     </>
                   }
                 </p>
-                <p className={styles.noteText}>{post.text}</p>
+                {
+                  post.text.split("\n").map((paragraph, index) => {
+                    return <p className={styles.noteText} key={index}>
+                      {paragraph}
+                    </p>;
+                  })
+                }
               </div>
             );
           })
