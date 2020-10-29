@@ -42,7 +42,7 @@
       "code": "it-isnt-funny-anymore",
       "date": "20200526",
       "description": "4:06 ♬",
-      "tags": ["song", "new", "vocal", "featured"],
+      "tags": ["song", "vocal", "featured"],
       "thumbnail": "it-isnt-funny-anymore.png",
       "wav": true,
       "soundcloud": "807321139"
@@ -71,7 +71,7 @@
       "code": "oh-lord",
       "date": "20190822",
       "description": "3:42 ♬",
-      "tags": ["song", "new", "vocal", "featured", "music-video"],
+      "tags": ["song", "vocal", "music-video"],
       "thumbnail": "oh-lord.jpg",
       "soundcloud": "669806780",
       "wav": true,
@@ -82,7 +82,7 @@
       "code": "staygo",
       "date": "20190626",
       "description": "3:37 ♬",
-      "tags": ["song", "new", "vocal", "music-video"],
+      "tags": ["song", "vocal", "music-video"],
       "thumbnail": "staygo.jpg",
       "soundcloud": "642657795",
       "youtube": "X5eXa1Hjy_o"
@@ -161,6 +161,16 @@
       "description": "like twitter but less targeted ads",
       "tags": ["other", "featured-other"],
       "thumbnail": "notes.jpg"
+    },
+    {
+      "name": "All Night",
+      "code": "all-night",
+      "date": "20200524",
+      "description": "3:01 ♬",
+      "tags": ["song", "featured"],
+      "thumbnail": "all-night.png",
+      "soundcloud": "642657795",
+      "youtube": "X5eXa1Hjy_o"
     }
   ]
 }
