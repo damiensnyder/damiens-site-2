@@ -22,7 +22,7 @@ export default function MenuPage(props: MenuPageProps): ReactElement {
         <h1 className={general.pageTitle}>{props.title}</h1>
       </div>
       <Menu posts={posts}
-          hideControls={props.hideControls} />
+            hideControls={props.hideControls} />
     </div>
   );
 }

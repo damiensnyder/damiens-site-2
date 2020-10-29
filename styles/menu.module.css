@@ -112,7 +112,7 @@
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   user-select: none;
 }
@@ -141,20 +141,15 @@
 }
 
 .filterByTag {
+  margin-bottom: 16px;
   padding: 4px 8px;
 
   font-size: 24px;
   color: #aaa;
+  text-align: center;
   font-style: italic;
   font-weight: 600;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color ease-in-out 0.25s;
-}
-
-.filterByTag:hover {
-  background-color: #333333;
-  transition: background-color ease-in-out 0.25s;
 }
 
 .tagsDropdown {
@@ -174,9 +169,17 @@
 
 .resetTags {
   align-self: center;
-  margin-bottom: 8px;
+  margin: 4px;
 
   cursor: pointer;
+}
+
+.filterAndDropdown {
+  position: absolute;
+  right: 32px;
+  top: 210px;
+  width: 200px;
+  height: max-content;
 }
 
 @media (max-width: 1200px) {
@@ -212,10 +215,6 @@
     border-radius: 6px;
   }
 
-  .filterByTag {
-    font-size: 20px;
-  }
-
   .itemTitle {
     font-size: 20px;
   }
@@ -233,12 +232,32 @@
   }
 
   .filterByTag {
+    margin-bottom: 8px;
     align-self: normal;
+
     font-size: 20px;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.25s;
+  }
+
+  .filterByTag:hover {
+    background-color: #333333;
+    transition: background-color ease-in-out 0.25s;
   }
 
   .tagsDropdown {
     font-size: 16px;
+  }
+
+  .hiddenTagsDropdown {
+    visibility: hidden;
+  }
+
+  .filterAndDropdown {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
   }
 }
 

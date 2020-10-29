@@ -11,7 +11,8 @@ export interface MenuProps {
 }
 
 export default function ContentMenu(props: MenuProps): ReactElement {
-  return <MenuPage title={"content"} posts={props.posts} />;
+  return <MenuPage title={"content"}
+                   posts={props.posts} />;
 }
 
 export async function getStaticProps(): Promise<MenuStaticProps> {

@@ -2,6 +2,7 @@ import styles from "../styles/menu.module.css";
 import {PostMetadata} from "../pages/api/content";
 import MenuItem from "./MenuItem";
 import React, {ReactElement} from "react";
+import FilterByTag from "./FilterByTag";
 
 export default class Menu extends React.Component {
   props: {
@@ -10,69 +11,23 @@ export default class Menu extends React.Component {
   }
   state: {
     page: number,
-    tag: string | null,
-    showDropdown: boolean
+    tag: string | null
   }
 
   constructor(props: {posts: PostMetadata[]}) {
     super(props);
     this.state = {
       page: 1,
-      tag: null,
-      showDropdown: false
+      tag: null
     };
-  }
-
-  toggleTagsDropdown(): void {
-    this.setState({
-      showDropdown: !this.state.showDropdown
-    });
   }
 
   selectTag(tag: string): void {
     this.setState({
       tag: tag,
-      page: 1,
-      showDropdown: false
+      page: 1
     });
     window.scroll(0, 0);
-  }
-
-  dropdownJsx(tags: Map<string, number>): ReactElement {
-    let mostUsedTags: string[] = [];
-    tags.forEach((uses: number, tag: string) => {
-      if (tag != this.state.tag && tags.get(tag) > 1) {
-        mostUsedTags.push(tag);
-      }
-    });
-    mostUsedTags = mostUsedTags.sort((a: string, b: string) => {
-      return tags.get(b) - tags.get(a);
-    });
-
-    return (
-      <div className={styles.tagsDropdown}>
-        {
-          this.state.tag != null ? (
-            <span className={styles.resetTags}
-                onClick={() => this.selectTag.bind(this)(null)}>
-              [reset tags]
-            </span>
-          ) : null
-        }
-        {
-          mostUsedTags.map((tag: string, index: number) => {
-            return (
-              <span>
-                <a onClick={() => this.selectTag.bind(this)(tag)}
-                    key={index}>
-                  {tag.replaceAll("-", " ")}
-                </a> ({tags.get(tag)})
-              </span>
-            );
-          })
-        }
-      </div>
-    );
   }
 
   pageSwitcherJsx(isPrev: boolean, numPosts?: number): ReactElement {
@@ -150,18 +105,17 @@ export default class Menu extends React.Component {
           })
         }
 
-        {!this.props.hideControls && sortedPosts.length > 0 ? (
+        {!this.props.hideControls && sortedPosts.length > 1 ?
+          (
             <div className={styles.footerControls}>
               {this.pageSwitcherJsx.bind(this)(true)}
-              <div className={styles.filterByTag}
-                   onClick={this.toggleTagsDropdown.bind(this)}>
-                filter by tag
-              </div>
+              <FilterByTag tags={tags}
+                           selectTag={this.selectTag.bind(this)}
+                           tag={this.state.tag} />
               {this.pageSwitcherJsx.bind(this)(false, numPosts)}
             </div>
           ) : null
         }
-        {this.state.showDropdown ? this.dropdownJsx(tags) : null}
       </div>
     );
   }

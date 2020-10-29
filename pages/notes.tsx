@@ -20,10 +20,13 @@ export default function NotesPage(props: NotesProps): ReactElement {
               <div className={styles.noteOuter} key={index}>
                 <p className={styles.noteDate}>
                   {formatDate(post.date)}
-                  &nbsp;&bull;&nbsp;
-                  {post.tweet == undefined ?
-                      null : <a className={styles.tweetLink}
-                                href={tweetUrlStart + post.tweet}>tweet</a>}
+                  {
+                    post.tweet == undefined ? null : <>
+                      &nbsp;&bull;&nbsp
+                      <a className={styles.tweetLink}
+                         href={tweetUrlStart + post.tweet}>tweet</a>
+                    </>
+                  }
                 </p>
                 <p className={styles.noteText}>{post.text}</p>
               </div>
