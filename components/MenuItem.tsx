@@ -56,7 +56,7 @@ export function formatUrl(code: string, type: string): string {
     return code;
   }
   if (code.startsWith("/")) {
-    return code;
+    return code.replace("-html", ".html");
   }
   return "/" + TYPE_TO_PATH[type] + "/" + code;
 }
