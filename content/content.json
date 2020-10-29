@@ -44,7 +44,6 @@
       "description": "4:06 ♬",
       "tags": ["song", "vocal", "featured"],
       "thumbnail": "it-isnt-funny-anymore.png",
-      "wav": true,
       "soundcloud": "807321139"
     },
     {
@@ -52,7 +51,7 @@
       "code": "paradise",
       "date": "20190530",
       "description": "3:14 ♬",
-      "tags": ["song", "new"],
+      "tags": ["song", "vocal"],
       "thumbnail": "paradise.jpg",
       "soundcloud": "629377857"
     },
@@ -63,7 +62,6 @@
       "description": "3:31 ♬ you see the title. you know what you're getting into",
       "tags": ["song", "rap-beat"],
       "thumbnail": "yeastie-boys.jpg",
-      "wav": true,
       "soundcloud": "889029961"
     },
     {
@@ -74,7 +72,6 @@
       "tags": ["song", "vocal", "music-video"],
       "thumbnail": "oh-lord.jpg",
       "soundcloud": "669806780",
-      "wav": true,
       "youtube": "xkXZ4vJLgtE"
     },
     {
@@ -169,8 +166,52 @@
       "description": "3:01 ♬",
       "tags": ["song", "featured"],
       "thumbnail": "all-night.png",
-      "soundcloud": "642657795",
-      "youtube": "X5eXa1Hjy_o"
+      "soundcloud": "789544819"
+    },
+    {
+      "name": "10 pm",
+      "code": "10-pm",
+      "date": "20181105",
+      "description": "2:50 ♬",
+      "tags": ["song", "vocal"],
+      "thumbnail": "10-pm.jpg",
+      "soundcloud": "525497418"
+    },
+    {
+      "name": "worried for you",
+      "code": "worried-for-you",
+      "date": "20190412",
+      "description": "2:56 ♬",
+      "tags": ["song", "vocal"],
+      "thumbnail": "worried-for-you.jpg",
+      "soundcloud": "605162595"
+    },
+    {
+      "name": "sunglasses",
+      "code": "sunglasses",
+      "date": "20180810",
+      "description": "3:25 ♬",
+      "tags": ["song", "vocal"],
+      "thumbnail": "sunglasses.jpg",
+      "soundcloud": "483930288"
+    },
+    {
+      "name": "brightening the world",
+      "code": "brightening-the-world",
+      "date": "20180624",
+      "description": "3:33 ♬",
+      "tags": ["song", "vocal"],
+      "thumbnail": "brightening-the-world.jpg",
+      "soundcloud": "462638418"
+    },
+    {
+      "name": "I Don't Wanna Get",
+      "code": "i-dont-wanna-get",
+      "date": "20190223",
+      "description": "3:14 ♬",
+      "tags": ["song", "vocal"],
+      "thumbnail": "i-dont-wanna-get.jpg",
+      "soundcloud": "593958948"
     }
   ]
 }
