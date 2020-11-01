@@ -5,7 +5,7 @@ import React, {ReactElement} from "react";
 export default function LinkHeader(props: {path: string[]}): ReactElement {
   const linksJsx: ReactElement[] = [
     <Link href={"/"}>
-      <span className={general.navHeader}>home</span>
+      <span className={general.navHeader} key={-1}>home</span>
     </Link>
   ];
 

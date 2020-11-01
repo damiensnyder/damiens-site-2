@@ -29,6 +29,8 @@ export default function NormalHead(props: HeadProps | AudioHeadProps):
     <Head>
       <title>{props.title}</title>
       <link rel={"icon"} href={"/favicon.png"} />
+      <link rel={"alternate"} type={"application/rss+xml"} title={"RSS feed"}
+            href={"https://www.damiensnyder.com/rss.xml"} />
 
       <meta charSet={"UTF-8"} />
       <meta name={"description"} content={props.description} />
