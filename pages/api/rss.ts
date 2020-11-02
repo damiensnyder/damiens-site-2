@@ -24,9 +24,9 @@ const HTML_ESCAPES: [RegExp, string][] = [
 ];
 
 async function markdownToHtml(post: PostMetadata): Promise<string> {
-  const postWithText: BlogPostProps = await getBlogPost(post.code);
   let markupString: string = post.description;
   if (post.tags.includes("blog")) {
+    const postWithText: BlogPostProps = await getBlogPost(post.code);
     unified().use(remarkParser).use(remarkHtml).process(postWithText.text,
     (err, file) => {
       markupString = String(file);
