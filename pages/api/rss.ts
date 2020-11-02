@@ -2,6 +2,12 @@ import {PostMetadata} from "./content";
 import {writeFileSync} from "fs";
 import {formatDate, getType} from "../../components/MenuItem";
 
+// Parsing blog posts to markdown
+import unified from "unified";
+import remarkParser from "remark-parse";
+import remarkHtml from "remark-html";
+import {BlogPostProps, getBlogPost} from "./blog/[post]";
+
 export interface RssFeedMetadata {
   code: string,
   name: string,
@@ -9,20 +15,52 @@ export interface RssFeedMetadata {
   posts: PostMetadata[]
 }
 
-export function rssItem(post: PostMetadata): string {
-  // I don't know why replaceAll() doesn't work, but this... functions.
+const HTML_ESCAPES: [RegExp, string][] = [
+  [/&/g, "&amp;"],
+  [/>/g, "&gt;"],
+  [/</g, "&lt;"],
+  [/"/g, "&quot;"],
+  [/'/g, "&apos;"],
+];
+
+async function markdownToHtml(post: PostMetadata): Promise<string> {
+  const postWithText: BlogPostProps = await getBlogPost(post.code);
+  let markupString: string = post.description;
+  if (post.tags.includes("blog")) {
+    unified().use(remarkParser).use(remarkHtml).process(postWithText.text,
+    (err, file) => {
+      markupString = String(file);
+    });
+  }
+  return escapeRssCharacters(markupString);
+}
+
+function escapeRssCharacters(text: string): string {
+  HTML_ESCAPES.forEach(([character, replacement ]) => {
+    text = text.replace(character, replacement);
+  });
+  return text
+}
+
+async function rssItem(post: PostMetadata): Promise<string> {
   return `
     <item>
-      <title>${post.name}</title>
-      <description>${post.description}</description>
+      <title>${escapeRssCharacters(post.name)}</title>
+      <description>${await markdownToHtml(post)}</description>
       <guid>https://www.damiensnyder.com/${getType(post.tags)}/${post.code}</guid>
       <link>https://www.damiensnyder.com/${getType(post.tags)}/${post.code}</link>
-      <date>${(new Date(formatDate(post.date).replace(".", "-").replace(".", "-"))).toUTCString()}</date>
+      <date>${
+        (new Date(formatDate(post.date).replace(/\./g, "-"))).toUTCString()
+      }</date>
     </item>
   `;
 }
 
-export function createRssChannel(feed: RssFeedMetadata): void {
+export async function createRssChannel(feed: RssFeedMetadata): Promise<void> {
+  const posts: string = (await Promise.all(
+    feed.posts.map(item => rssItem(item)))
+  ).join('');
+
   const rss: string = `
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>
@@ -33,7 +71,7 @@ export function createRssChannel(feed: RssFeedMetadata): void {
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
         <atom:link href="https://www.damiensnyder.com${feed.code}.xml"
                 rel="self" type="application/rss+xml"/>
-        ${feed.posts.map(rssItem).join('')}
+        ${posts}
       </channel>
     </rss>
   `;
