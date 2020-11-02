@@ -4,9 +4,9 @@ import React, {ReactElement} from "react";
 
 export default function LinkHeader(props: {path: string[]}): ReactElement {
   const linksJsx: ReactElement[] = [
-    <Link href={"/"}>
-      <span className={general.navHeader} key={-1}>home</span>
-    </Link>
+    <span className={general.navHeader} key={-1}>
+      <Link href={"/"}>home</Link>
+    </span>
   ];
 
   let url: string = "/";
@@ -14,9 +14,9 @@ export default function LinkHeader(props: {path: string[]}): ReactElement {
     url += directory;
     linksJsx.push(<span key={index + props.path.length}>&nbsp;/&nbsp;</span>);
     linksJsx.push(
-      <Link href={url}>
-        <span className={general.navHeader} key={index}>{directory}</span>
-      </Link>
+      <span className={general.navHeader} key={index}>
+        <Link href={url}>{directory}</Link>
+      </span>
     )
   });
 

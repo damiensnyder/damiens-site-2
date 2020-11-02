@@ -6,6 +6,9 @@ import {formatDate, getType} from "../../components/MenuItem";
 import unified from "unified";
 import remarkParser from "remark-parse";
 import remarkHtml from "remark-html";
+import gfm from "remark-gfm";
+import footnotes from 'remark-footnotes';
+import math from "remark-math";
 import {BlogPostProps, getBlogPost} from "./blog/[post]";
 
 export interface RssFeedMetadata {
@@ -27,8 +30,13 @@ async function markdownToHtml(post: PostMetadata): Promise<string> {
   let markupString: string = post.description;
   if (post.tags.includes("blog")) {
     const postWithText: BlogPostProps = await getBlogPost(post.code);
-    unified().use(remarkParser).use(remarkHtml).process(postWithText.text,
-    (err, file) => {
+    unified()
+        .use(remarkParser)
+        .use(remarkHtml)
+        .use([gfm, {singleTilde: false}])
+        .use(footnotes)
+        .use(math)
+        .process(postWithText.text, (err, file) => {
       markupString = String(file);
     });
   }

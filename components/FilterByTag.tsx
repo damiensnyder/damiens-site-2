@@ -74,13 +74,12 @@ export default class FilterByTag extends React.Component {
             // The replaceAll check shouldn't be necessary but is for some
             // reason? I don't know why it's ever not a function.
             return (
-                <span>
-              <a onClick={() => this.selectTag.bind(this)(tag)}
-                 key={index}>
-                {(typeof(tag.replaceAll) == "function") ?
-                    tag.replaceAll("-", " ") : tag}
-              </a> ({this.props.tags.get(tag)})
-            </span>
+              <span key={index}>
+                <a onClick={() => this.selectTag.bind(this)(tag)}>
+                  {(typeof(tag.replaceAll) == "function") ?
+                      tag.replaceAll("-", " ") : tag}
+                </a> ({this.props.tags.get(tag)})
+              </span>
             );
           })
         }
