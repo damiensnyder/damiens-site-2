@@ -16,7 +16,7 @@ export async function getStaticProps(): Promise<MenuStaticProps> {
     code: "/blog",
     posts: posts.posts
   }
-  createRssChannel(channelProps);
+  await createRssChannel(channelProps);
 
   return {
     props: posts

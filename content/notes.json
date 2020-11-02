@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "text": "i started using the unix time at update release to version my software package, but i'm realizing this may not be a sustainable solution in 20 years",
+      "date": "20201102"
+    },
+    {
+      "text": "a more apt name for pangram would be 'pangramqwetyuiosdfhjklzxcvb'",
+      "date": "20201101"
+    },
+    {
       "tweet": "1320549393502621696",
       "text": "(me doin a good thing) \"man! my BSR [bird to stone ratio] is off the charts today\"",
       "date": "20201025"
