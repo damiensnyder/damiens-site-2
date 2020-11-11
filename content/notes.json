@@ -1,6 +1,10 @@
 {
   "posts": [
     {
+      "text": "athenian plays not showing violence onstage because \"it's obscene\" is an awfully convenient excuse for \"we can't afford special effects\"",
+      "date": "20201109"
+    },
+    {
       "text": "i started using the unix time at update release to version my software package, but i'm realizing this may not be a sustainable solution in 20 years",
       "date": "20201102"
     },
