@@ -1,0 +1,87 @@
+.pageContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+
+  background-color: #111;
+  color: #ddd;
+}
+
+.menuBar {
+  margin: 16px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  background-color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.menuItem {
+  height: 100%;
+  padding: 16px 32px;
+  border-radius: 6px;
+  cursor: default;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.menuItem:hover {
+  background-color: #666;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.scratchpad {
+  flex: 1;
+  margin: 16px;
+  padding: 8px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  background-color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.row {
+  margin: 8px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cell {
+  width: 200px;
+  height: 150px;
+  margin: 0 8px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 4px solid #666;
+  transition: background-color 0.25s ease-in-out;
+  border-radius: 8px;
+}
+
+.cell:hover {
+  background-color: #666;
+  transition: background-color 0.25s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 750px) {
+
+}

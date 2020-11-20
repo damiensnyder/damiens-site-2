@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "name": "Bayes Scratchpad",
+      "code": "/bayes",
+      "date": "20201119",
+      "description": "a scratchpad for computing posterior distributions",
+      "tags": ["misc", "web", "featured"]
+    },
+    {
       "name": "No Such Thing As Free Leverage",
       "code": "no-such-thing-as-free-leverage",
       "date": "20201119",
