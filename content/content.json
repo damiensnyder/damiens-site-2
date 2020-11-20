@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "name": "No Such Thing As Free Leverage",
+      "code": "no-such-thing-as-free-leverage",
+      "date": "20201119",
+      "description": "leverage as in expected influence over a game",
+      "thumbnail": "no-such-thing-as-free-leverage.png",
+      "tags": ["blog", "game-design", "featured"]
+    },
+    {
       "name": "this is my first blog post",
       "code": "this-is-my-first-blog-post",
       "date": "20201003",
@@ -164,7 +172,7 @@
       "code": "all-night",
       "date": "20200524",
       "description": "3:01 ♬",
-      "tags": ["song", "featured"],
+      "tags": ["song"],
       "thumbnail": "all-night.png",
       "soundcloud": "789544819"
     },

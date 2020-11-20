@@ -33,7 +33,7 @@ export default function Home(props: HomeProps): ReactElement {
           <h2 className={styles.menuTitle}>recent content</h2>
           <Menu posts={props.posts} hideControls={true} />
           <span className={styles.moreLink}>
-            <Link href={"other"}>more content →</Link>
+            <Link href={"content"}>more content →</Link>
           </span>
         </div>
         <div className={styles.linksMenu}>

@@ -49,13 +49,14 @@ export async function getPosts(tag: string = "all"): Promise<MenuProps> {
 
   // If the tag is not "all", filter for only results with that tag. If the tag
   // is "all", filter out results tagged as "other".
-  if (tag != "all") {
-    result = result.filter((post: PostMetadata) => {
-      return post.tags.includes(tag);
-    });
-  } else {
+  if (tag == "all") {
     result = result.filter((post: PostMetadata) => {
       return !post.tags.includes("other");
+    });
+  } else {
+    console.log(tag)
+    result = result.filter((post: PostMetadata) => {
+      return post.tags.includes(tag);
     });
   }
 
