@@ -1,7 +1,6 @@
 import React, {ReactElement} from "react";
-import styles from "../styles/bayes.module.css";
 import NormalHead from "../components/NormalHead";
-import {ScratchpadManager} from "../components/bayes";
+import {ScratchpadManager} from "../components/bayes/ScratchpadManager";
 
 export default function BayesScratchpad(props): ReactElement {
   return <>
