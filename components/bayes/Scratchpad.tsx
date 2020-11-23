@@ -11,22 +11,48 @@ export class Scratchpad extends React.Component {
     super(props);
 
     this.state = {
-      cells: [[]]
+      cells: this.startingGrid()
     };
   }
 
-  render(): ReactElement {
-    const temp = new CellInfo(0, 0);
+  startingGrid(): CellInfo[][] {
+    let cells: CellInfo[][] = [];
+    for (let i = 0; i < 3; i++) {
+      cells.push([]);
+      for (let j = 0; j < 5; j++) {
+        cells[i].push(new CellInfo(0, 0, this.callback.bind(this)));
+      }
+    }
+    return cells;
+  }
 
+  callback(from: CellInfo, recalculate: boolean): void {
+    if (recalculate) {
+      this.state.cells.forEach((row) => {
+        row.forEach((cell) => {
+          cell.recalculate(this.state.cells);
+        });
+      });
+
+      this.setState({
+        cells: this.state.cells
+      });
+    }
+  }
+
+  cellRow(cells: CellInfo[], index: number): ReactElement {
+    return <div className={styles.row} key={index}>
+      {cells.map((cell: CellInfo, index) => {
+        return <Cell info={cell} key={index} />;
+      })}
+    </div>;
+  }
+
+  render(): ReactElement {
     return <div className={styles.scratchpad}>
-      <div className={styles.row}>
-        <Cell info={temp} />
-        <Cell info={temp} />
-      </div>
-      <div className={styles.row}>
-        <Cell info={temp} />
-        <Cell info={temp} />
-      </div>
+      {this.state.cells.map((row: CellInfo[], index) => {
+        return this.cellRow(row, index);
+      })}
     </div>
   }
 }

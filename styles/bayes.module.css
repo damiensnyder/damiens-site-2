@@ -75,10 +75,34 @@
   border-radius: 8px;
 }
 
+.cell:hover > .addInCell {
+  opacity: 1;
+
+  transition: 0.1s opacity ease-in-out;
+}
+
 .addInCell {
+  opacity: 0;
+  width: 80%;
+  margin: 4px;
+
+  font-size: 24px;
+  text-align: left;
+  color: #aaa;
   background-color: inherit;
-  color: inherit;
   border: 4px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: 0.1s opacity ease-in-out;
+}
+
+.addInCell:hover {
+  background-color: #666;
+}
+
+.addInCell:focus {
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {
