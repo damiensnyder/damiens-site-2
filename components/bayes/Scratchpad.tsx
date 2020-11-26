@@ -1,41 +1,31 @@
 import React, {ReactElement} from "react";
 import styles from "../../styles/bayes.module.css";
 import Cell, {CellInfo} from "./Cell";
+import {BayesTable} from "./ScratchpadManager";
 
 export class Scratchpad extends React.Component {
   state: {
-    cells: CellInfo[][]
+    table: BayesTable
   }
 
   constructor(props) {
     super(props);
 
     this.state = {
-      cells: this.startingGrid()
+      table: new BayesTable()
     };
-  }
-
-  startingGrid(): CellInfo[][] {
-    let cells: CellInfo[][] = [];
-    for (let i = 0; i < 3; i++) {
-      cells.push([]);
-      for (let j = 0; j < 5; j++) {
-        cells[i].push(new CellInfo(0, 0, this.callback.bind(this)));
-      }
-    }
-    return cells;
   }
 
   callback(from: CellInfo, recalculate: boolean): void {
     if (recalculate) {
-      this.state.cells.forEach((row) => {
+      this.state.table.cells.forEach((row) => {
         row.forEach((cell) => {
-          cell.recalculate(this.state.cells);
+          cell.recalculate(this.state.table.cells);
         });
       });
 
       this.setState({
-        cells: this.state.cells
+        cells: this.state.table.cells
       });
     }
   }
@@ -49,10 +39,14 @@ export class Scratchpad extends React.Component {
   }
 
   render(): ReactElement {
-    return <div className={styles.scratchpad}>
-      {this.state.cells.map((row: CellInfo[], index) => {
-        return this.cellRow(row, index);
-      })}
-    </div>
+    return <div className={styles.scratchpadOuter}>
+      <div className={styles.scratchpadFrame}>
+        <div className={styles.scratchpadInner}>
+          {this.state.table.cells.map((row: CellInfo[], index) => {
+            return this.cellRow(row, index);
+          })}
+        </div>
+      </div>
+    </div>;
   }
 }

@@ -53,13 +53,9 @@ export default class Cell extends React.Component {
 
   emptyCell(): ReactElement {
     return <>
-      <button className={styles.addInCell}
-          onClick={this.props.info.createPrior.bind(this.props.info)}>
-        Add prior...
-      </button>
-      <button className={styles.addInCell}
+      <button className={styles.initCellBtn}
               onClick={this.props.info.createFormula.bind(this.props.info)}>
-        Add formula...
+        ✚
       </button>
     </>;
   }
