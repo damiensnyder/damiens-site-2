@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "name": "my resume",
+      "code": "/resume.pdf",
+      "date": "20201031",
+      "description": "give me money",
+      "tags": ["other", "work", "featured-other"]
+    },
+    {
       "name": "No Such Thing As Free Leverage",
       "code": "no-such-thing-as-free-leverage",
       "date": "20201119",
@@ -156,7 +163,7 @@
       "code": "https://www.youtube.com/channel/UC_JMabjdOb2k57k5pvHnfEg",
       "date": "20190225",
       "description": "i post videos here",
-      "tags": ["other", "social", "featured-other"],
+      "tags": ["other", "social"],
       "thumbnail": "youtube.jpg"
     },
     {
