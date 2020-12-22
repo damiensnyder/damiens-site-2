@@ -108,7 +108,7 @@
       "code": "https://soundcloud.com/damiensnyder",
       "date": "20150801",
       "description": "my soundcloud",
-      "tags": ["other", "social", "featured-other"],
+      "tags": ["other", "social"],
       "thumbnail": "soundcloud.jpg"
     },
     {
@@ -130,9 +130,9 @@
     {
       "name": "partner drawings",
       "code": "/drawings",
-      "date": "20??????",
+      "date": "20151030",
       "description": "partner drawings with friends",
-      "tags": ["other"]
+      "tags": ["other", "featured-other"]
     },
     {
       "name": "it isn't funny anymore",
