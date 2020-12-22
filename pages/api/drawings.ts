@@ -3,7 +3,8 @@ import {NextApiRequest, NextApiResponse} from "next";
 
 export interface DrawingMetadata {
   date: string,
-  title: string
+  title: string,
+  collaborators?: string
 }
 
 export interface DrawingsProps {

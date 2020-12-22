@@ -19,25 +19,42 @@
 }
 
 .drawingOuter {
+  position: relative;
   margin: 2px 0;
   width: 90%;
 
   text-align: left;
 }
 
-.drawingDate {
+.drawingInfo {
   margin: 0;
 }
 
-.drawingText {
+.drawingLink {
   color: #181;
   font-weight: 500;
 }
 
-@media (max-width: 1200px) {
+.collaborators {
+  position: absolute;
+  bottom: 48px;
+  width: fit-content;
+  padding: 4px 8px;
+  opacity: 0;
+
+  border-radius: 8px;
+  color: #aaa;
+  background-color: rgba(51, 51, 51, 0.9);
+  transition: visibility 0.25s ease-in-out;
 }
 
-@media (max-height: 600px) {
+.drawingOuter:hover > .collaborators {
+  opacity: 100%;
+
+  transition: opacity 0.25s ease-in-out;
+}
+
+@media (max-width: 1200px) {
 }
 
 @media (max-width: 750px) {

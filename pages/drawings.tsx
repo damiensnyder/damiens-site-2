@@ -13,26 +13,31 @@ export default function NotesPage(props: DrawingsProps): ReactElement {
       <NormalHead title={"partner drawings"} />
       <div className={general.postContainer + " " + styles.postContainer}>
         <p className={styles.headerLinks}>
-          <a className={styles.drawingText} href={"/"}>home</a>
+          <a className={styles.drawingLink} href={"/"}>home</a>
           &nbsp;/&nbsp;
-          <a className={styles.drawingText} href={"/other"}>other</a>
+          <a className={styles.drawingLink} href={"/other"}>other</a>
         </p>
         <h1 className={general.pageTitle + " " + styles.pageTitle}>drawings</h1>
         {
           props.posts.map((post: DrawingMetadata, index: number) => {
-            const code = post.title.replace(/[#'",.¿?]/, "")
-                .replace(/\W/g, " ")
-                .replace(/ /g, "-")
+            const code = post.title.replace(/[#'",.¿?+]/g, "")
+                .replace(/\W/g, "-")
                 .toLowerCase();
 
             return <>
               <div className={styles.drawingOuter} key={index}>
-                <p className={styles.drawingDate}>
+                <p className={styles.drawingInfo}>
                   {formatDate(post.date)}
                   &nbsp;&bull;&nbsp;
-                  <a className={styles.drawingText}
+                  <a className={styles.drawingLink}
                      href={urlStart + code + ".png"}>{post.title}</a>
                 </p>
+                <div className={styles.collaborators}>
+                  {
+                    post.collaborators == null ?
+                        "with Cooper" : post.collaborators
+                  }
+                </div>
               </div>
             </>;
           })
