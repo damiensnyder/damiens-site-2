@@ -9,14 +9,14 @@ export default function RecentPosts(props: MenuProps): ReactElement {
 }
 
 export async function getStaticProps(): Promise<MenuStaticProps> {
-  const posts: MenuProps = await getPosts("blog");
+  const posts: MenuProps = await getPosts("song");
   const channelProps: RssFeedMetadata = {
     name: "damien snyder - songs",
     description: "damien snyder's music",
     code: "/songs",
     posts: posts.posts
   }
-  createRssChannel(channelProps);
+  await createRssChannel(channelProps);
 
   return {
     props: posts

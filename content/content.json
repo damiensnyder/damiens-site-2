@@ -46,7 +46,7 @@
     },
     {
       "name": "ULTIMATE Personality Quiz",
-      "code": "http://static.damiensnyder.com/ultimate-personality-quiz-html",
+      "code": "http://static.damiensnyder.com/ultimate-personality-quiz.html",
       "date": "20190227",
       "description": "Find out your TRUE personality!",
       "tags": ["misc", "web", "fun"],
@@ -234,7 +234,7 @@
       "soundcloud": "462638418"
     },
     {
-      "name": "last minute",
+      "name": "Last Minute",
       "code": "last-minute",
       "date": "20170216",
       "description": "1:55 ♬",
@@ -242,7 +242,7 @@
       "soundcloud": "308093031"
     },
     {
-      "name": "inferno",
+      "name": "Inferno",
       "code": "inferno",
       "date": "20161023",
       "description": "2:22 ♬",
