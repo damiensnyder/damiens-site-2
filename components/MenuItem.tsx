@@ -52,11 +52,10 @@ export function formatThumbnailSrc(src: string): string {
 }
 
 export function formatUrl(code: string, type: string): string {
-  if (code.startsWith("http") && code.includes("//")) {
+  code = code.replace("-html", ".html");
+  if (code.startsWith("/") ||
+      (code.startsWith("http") && code.includes("//"))) {
     return code;
-  }
-  if (code.startsWith("/")) {
-    return code.replace("-html", ".html");
   }
   return "/" + TYPE_TO_PATH[type] + "/" + code;
 }
