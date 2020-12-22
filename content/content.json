@@ -2,7 +2,7 @@
   "posts": [
     {
       "name": "my resume",
-      "code": "/resume.pdf",
+      "code": "http://static.damiensnyder.com/resume.pdf",
       "date": "20201031",
       "description": "give me money",
       "tags": ["other", "work", "featured-other"]
@@ -32,72 +32,25 @@
     },
     {
       "name": "PopOff",
-      "code": "/popoff.jar",
+      "code": "http://static.damiensnyder.com/popoff.jar",
       "date": "20170407",
       "description": "a ripoff of Clonium from an Android game pack called BGC",
       "tags": ["misc", "game", "fun"]
     },
     {
       "name": "Square Pushing Simulator 2017",
-      "code": "/square-pushing-simulator.zip",
+      "code": "http://static.damiensnyder.com/square-pushing-simulator.zip",
       "date": "20170411",
       "description": "a game where you are a square pushing another square",
       "tags": ["misc", "game", "fun"]
     },
     {
       "name": "ULTIMATE Personality Quiz",
-      "code": "/ultimate-personality-quiz-html",
+      "code": "http://static.damiensnyder.com/ultimate-personality-quiz-html",
       "date": "20190227",
       "description": "Find out your TRUE personality!",
       "tags": ["misc", "web", "fun"],
       "thumbnail": "ultimate-personality-quiz.jpg"
-    },
-    {
-      "name": "it isn't funny anymore",
-      "code": "it-isnt-funny-anymore",
-      "date": "20200526",
-      "description": "4:06 ♬",
-      "tags": ["song", "vocal", "featured"],
-      "thumbnail": "it-isnt-funny-anymore.png",
-      "soundcloud": "807321139"
-    },
-    {
-      "name": "paradise",
-      "code": "paradise",
-      "date": "20190530",
-      "description": "3:14 ♬",
-      "tags": ["song", "vocal"],
-      "thumbnail": "paradise.jpg",
-      "soundcloud": "629377857"
-    },
-    {
-      "name": "yeastie boys",
-      "code": "yeastie-boys",
-      "date": "20200906",
-      "description": "3:31 ♬ you see the title. you know what you're getting into",
-      "tags": ["song", "rap-beat"],
-      "thumbnail": "yeastie-boys.jpg",
-      "soundcloud": "889029961"
-    },
-    {
-      "name": "oh lord",
-      "code": "oh-lord",
-      "date": "20190822",
-      "description": "3:42 ♬",
-      "tags": ["song", "vocal", "music-video"],
-      "thumbnail": "oh-lord.jpg",
-      "soundcloud": "669806780",
-      "youtube": "xkXZ4vJLgtE"
-    },
-    {
-      "name": "staygo",
-      "code": "staygo",
-      "date": "20190626",
-      "description": "3:37 ♬",
-      "tags": ["song", "vocal", "music-video"],
-      "thumbnail": "staygo.jpg",
-      "soundcloud": "642657795",
-      "youtube": "X5eXa1Hjy_o"
     },
     {
       "name": "a video about angles",
@@ -182,6 +135,53 @@
       "tags": ["other"]
     },
     {
+      "name": "it isn't funny anymore",
+      "code": "it-isnt-funny-anymore",
+      "date": "20200526",
+      "description": "4:06 ♬",
+      "tags": ["song", "vocal", "featured"],
+      "thumbnail": "it-isnt-funny-anymore.png",
+      "soundcloud": "807321139"
+    },
+    {
+      "name": "paradise",
+      "code": "paradise",
+      "date": "20190530",
+      "description": "3:14 ♬",
+      "tags": ["song", "vocal"],
+      "thumbnail": "paradise.jpg",
+      "soundcloud": "629377857"
+    },
+    {
+      "name": "yeastie boys",
+      "code": "yeastie-boys",
+      "date": "20200906",
+      "description": "3:31 ♬ you see the title. you know what you're getting into",
+      "tags": ["song", "rap-beat"],
+      "thumbnail": "yeastie-boys.jpg",
+      "soundcloud": "889029961"
+    },
+    {
+      "name": "oh lord",
+      "code": "oh-lord",
+      "date": "20190822",
+      "description": "3:42 ♬",
+      "tags": ["song", "vocal", "music-video"],
+      "thumbnail": "oh-lord.jpg",
+      "soundcloud": "669806780",
+      "youtube": "xkXZ4vJLgtE"
+    },
+    {
+      "name": "staygo",
+      "code": "staygo",
+      "date": "20190626",
+      "description": "3:37 ♬",
+      "tags": ["song", "vocal", "music-video"],
+      "thumbnail": "staygo.jpg",
+      "soundcloud": "642657795",
+      "youtube": "X5eXa1Hjy_o"
+    },
+    {
       "name": "All Night",
       "code": "all-night",
       "date": "20200524",
@@ -208,6 +208,14 @@
       "soundcloud": "605162595"
     },
     {
+      "name": "I Don't Wanna Get",
+      "code": "i-dont-wanna-get",
+      "date": "20190223",
+      "description": "3:14 ♬",
+      "tags": ["song", "vocal"],
+      "soundcloud": "593958948"
+    },
+    {
       "name": "sunglasses",
       "code": "sunglasses",
       "date": "20180810",
@@ -226,12 +234,20 @@
       "soundcloud": "462638418"
     },
     {
-      "name": "I Don't Wanna Get",
-      "code": "i-dont-wanna-get",
-      "date": "20190223",
-      "description": "3:14 ♬",
-      "tags": ["song", "vocal"],
-      "soundcloud": "593958948"
+      "name": "last minute",
+      "code": "last-minute",
+      "date": "20170216",
+      "description": "1:55 ♬",
+      "tags": ["song"],
+      "soundcloud": "308093031"
+    },
+    {
+      "name": "inferno",
+      "code": "inferno",
+      "date": "20161023",
+      "description": "2:22 ♬",
+      "tags": ["song"],
+      "soundcloud": "289681977"
     }
   ]
 }

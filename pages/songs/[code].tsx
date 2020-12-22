@@ -30,7 +30,7 @@ export default function SongPage(props: PostMetadata): ReactElement {
   const songProps: SongMetadata = props as SongMetadata;
   if (songProps.wav != null) {
     wavSource = (
-      <source src={"/songs/" + props.code + ".wav"}
+      <source src={"static.damiensnyder.com/" + props.code + ".wav"}
           type={"audio/wav"} />
     );
   }
@@ -78,7 +78,7 @@ export default function SongPage(props: PostMetadata): ReactElement {
             mp3Header : null}
         <audio controls={true}>
             {wavSource}
-            <source src={"/songs/" + props.code + ".mp3"}
+            <source src={"static.damiensnyder.com/" + props.code + ".mp3"}
                     type={"audio/mpeg"} />
         </audio>
       </div>
