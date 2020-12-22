@@ -1,18 +1,16 @@
 import React, {ReactElement} from "react";
 import general from "../styles/general.module.css";
 import styles from "../styles/drawings.module.css";
-import LinkHeader from "../components/LinkHeader";
 import NormalHead from "../components/NormalHead";
 import {formatDate} from "../components/MenuItem";
 import {getDrawings, DrawingMetadata, DrawingsProps} from "./api/drawings";
-import Link from "next/link";
 
 const urlStart: string = "http://static.damiensnyder.com/";
 
 export default function NotesPage(props: DrawingsProps): ReactElement {
   return (
     <div className={general.pageContainer + " " + styles.background}>
-      <NormalHead title={"notes"} />
+      <NormalHead title={"partner drawings"} />
       <div className={general.postContainer + " " + styles.postContainer}>
         <p className={styles.headerLinks}>
           <a className={styles.drawingText} href={"/"}>home</a>
