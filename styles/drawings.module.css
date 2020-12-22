@@ -1,0 +1,30 @@
+.background {
+  color: #181;
+  background-color: #114;
+}
+
+.drawingOuter {
+  margin: 2px 0;
+  width: 90%;
+
+  font-family: "Source Serif Pro", serif;
+  text-align: left;
+}
+
+.drawingDate {
+  margin: 0;
+  color: #677;
+}
+
+.drawingText {
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-height: 600px) {
+}
+
+@media (max-width: 750px) {
+}
