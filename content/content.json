@@ -175,6 +175,13 @@
       "thumbnail": "notes.jpg"
     },
     {
+      "name": "partner drawings",
+      "code": "/drawings",
+      "date": "20??????",
+      "description": "partner drawings with friends",
+      "tags": ["other"]
+    },
+    {
       "name": "All Night",
       "code": "all-night",
       "date": "20200524",
