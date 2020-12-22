@@ -1,22 +1,36 @@
 .background {
-  color: #181;
+  color: #677;
   background-color: #114;
+  font-family: "Source Serif Pro", serif;
+}
+
+.headerLinks {
+  width: 90%;
+
+  text-align: left;
+}
+
+.postContainer {
+  width: 100%;
+}
+
+.pageTitle {
+  font-family: inherit;
 }
 
 .drawingOuter {
   margin: 2px 0;
   width: 90%;
 
-  font-family: "Source Serif Pro", serif;
   text-align: left;
 }
 
 .drawingDate {
   margin: 0;
-  color: #677;
 }
 
 .drawingText {
+  color: #181;
   font-weight: 500;
 }
 

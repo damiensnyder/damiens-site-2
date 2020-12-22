@@ -13,12 +13,16 @@ export default function NotesPage(props: DrawingsProps): ReactElement {
   return (
     <div className={general.pageContainer + " " + styles.background}>
       <NormalHead title={"notes"} />
-      <div className={general.postContainer}>
-        <LinkHeader path={["other"]} />
-        <h1 className={general.pageTitle}>drawings</h1>
+      <div className={general.postContainer + " " + styles.postContainer}>
+        <p className={styles.headerLinks}>
+          <a className={styles.drawingText} href={"/"}>home</a>
+          &nbsp;/&nbsp;
+          <a className={styles.drawingText} href={"/other"}>other</a>
+        </p>
+        <h1 className={general.pageTitle + " " + styles.pageTitle}>drawings</h1>
         {
           props.posts.map((post: DrawingMetadata, index: number) => {
-            const code = post.title.replace(/['",.?]/, "")
+            const code = post.title.replace(/[#'",.¿?]/, "")
                 .replace(/\W/g, " ")
                 .replace(/ /g, "-")
                 .toLowerCase();
@@ -28,7 +32,8 @@ export default function NotesPage(props: DrawingsProps): ReactElement {
                 <p className={styles.drawingDate}>
                   {formatDate(post.date)}
                   &nbsp;&bull;&nbsp;
-                  <Link href={urlStart + code + ".png"}>{post.title}</Link>
+                  <a className={styles.drawingText}
+                     href={urlStart + code + ".png"}>{post.title}</a>
                 </p>
               </div>
             </>;
