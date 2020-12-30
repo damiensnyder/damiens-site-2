@@ -87,6 +87,15 @@
       "videoDescription": "i read that fact ten years ago, toilet paper technology may have improved since then"
     },
     {
+      "name": "wwjd",
+      "code": "wwjd",
+      "date": "20201230",
+      "description": "0:32 ▶",
+      "tags": ["video", "animated", "comedy", "short", "featured"],
+      "thumbnail": "wwjd.png",
+      "youtube": "RZ0uQluHlRw"
+    },
+    {
       "name": "bucko",
       "code": "bucko",
       "date": "20190411",
@@ -139,7 +148,7 @@
       "code": "it-isnt-funny-anymore",
       "date": "20200526",
       "description": "4:06 ♬",
-      "tags": ["song", "vocal", "featured"],
+      "tags": ["song", "vocal"],
       "thumbnail": "it-isnt-funny-anymore.png",
       "soundcloud": "807321139"
     },
