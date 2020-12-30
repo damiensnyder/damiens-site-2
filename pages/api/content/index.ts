@@ -54,7 +54,6 @@ export async function getPosts(tag: string = "all"): Promise<MenuProps> {
       return !post.tags.includes("other");
     });
   } else {
-    console.log(tag)
     result = result.filter((post: PostMetadata) => {
       return post.tags.includes(tag);
     });
