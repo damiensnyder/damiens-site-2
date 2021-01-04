@@ -16,6 +16,10 @@ import math from "remark-math";
 import "katex/dist/katex.min.css";
 
 export const markdownRenderers: any = {
+  heading: ({level, children}) => <Heading level={level} children={children} />,
+  image: ({src, alt}) => <img className={styles.blogImage}
+                              src={src}
+                              alt={alt} />,
   inlineMath: ({value}) => <InlineMath math={value} />,
   math: ({value}) => <BlockMath math={value} />,
   footnoteReference: FootnoteReference,
@@ -27,6 +31,16 @@ export const markdownPlugins: any[] = [
   footnotes,
   math
 ];
+
+// Set the classname of heading elements
+function Heading(props): ReactElement {
+  if (props.level == 1) {
+    return <h1 className={styles.blogHeading1}>{props.children}</h1>;
+  } else if (props.level == 2) {
+    return <h2 className={styles.blogHeading2}>{props.children}</h2>;
+  }
+  return <h3 className={styles.blogHeading3}>{props.children}</h3>;
+}
 
 function FootnoteReference(props): ReactElement {
   return (

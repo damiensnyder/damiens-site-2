@@ -1,5 +1,3 @@
-[[ MyShortcode info="myInfo" ]]
-
 Imagine you're staying in a hotel alone, and you take a shower before breakfast. Out of habit you sing in the shower, and, well, you're not much of a singer. Going to breakfast, you run into the couple in the room next door. The walls are thin, and you can tell by their looks that they're not impressed.
 
 This sucks! Being judged sucks. But there's a fact about the situation that's easy to forget: *there are no further consequences*.[^1] But even knowing that there are no consequences, I think few people would sing in the shower knowing they would be judged. There are, as far as I can tell, three reasons not to:
