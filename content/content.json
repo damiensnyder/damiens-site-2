@@ -14,7 +14,14 @@
       "date": "20201119",
       "description": "leverage as in expected influence over a game",
       "thumbnail": "no-such-thing-as-free-leverage.png",
-      "tags": ["blog", "game-design", "featured"]
+      "tags": ["blog", "game-design"]
+    },
+    {
+      "name": "Embarrassment and Instinct",
+      "code": "embarrassment-and-instinct",
+      "date": "20210103",
+      "description": "does embarrassment make sense in a modern world?",
+      "tags": ["blog", "featured"]
     },
     {
       "name": "this is my first blog post",

@@ -101,20 +101,20 @@ Surprise! This is obvious advice, but it cannot be ignored. At the risk of sayin
 [^1]: This is similar to the [Koch snowflake](https://en.wikipedia.org/wiki/Koch_snowflake), a fractal with infinite perimeter but finite area.
 
 [^2]: If a game has $n$ states where the probability of winning at state $i$ is $p_i$, then we would describe the total excitement as
-$$
-E = \sum_{i = 1}^n (p_{i - 1} - p_{i})^2
-$$
+    $$
+    E = \sum_{i = 1}^n (p_{i - 1} - p_{i})^2
+    $$
 
 [^3]: For those of you interested in the math behind this, here is the explanation. For a given game state, let $f_p(x)$ be the probability of having probability $x$ to win (or achieve some other outcome) after the next event occurs, when the current state has probability $p$ to win. Multiple functions of this type can exist in the same game for the same value of $p$, but they will all follow this rule. Because of the conservation of expected evidence, the values of $f$ must satisfy $\int_0^1 x f_p(x) \textrm{d}x = p$. As well, because the total probability mass of the expectation after the event must be exactly 1, the equation $\int_0^1 f_p(x) \textrm{d}x = 1$ must hold. The expected future leverage is the leverage of the next event plus the expected future leverage of the probability after it. This is captured by the equation
-$$
-E(p) = \int_0^1 f_p(x) [(x - p)^2 + E(x)] \textrm{d}x
-$$
-where $E(p)$ is the expected future leverage. Expanding the product inside the integral gives
-$$
-E(p) = \int_0^1 x^2 f_p(x) - 2px f_p(x) + p^2 f_p(x) + E(x) f_p(x) \textrm{d}x
-$$
-We can substitute the values of some of the integrals from earlier, removing the $- 2px f_p(x) + p^2 f_p(x)$ and simplifying to get
-$$
-E(p) + p^2 = \int_0^1 f_p(x) [E(x) + x^2] \textrm{d}x
-$$
-From the conservation of expected evidence we know that $\int_0^1 x f_p(x) \textrm{d}x = p$. For $E(p) + p^2$ to equal $p$, $E(p)$ must be $p(1 - p)$. The only other formula for $E(p)$ that would technically satisfy this integral is $-p^2$, but this produces negative values for EFL. (Frankly, I don't have a satisfactory proof for the lack of other solutions, but I am nevertheless very confident in it.)
+    $$
+    E(p) = \int_0^1 f_p(x) [(x - p)^2 + E(x)] \textrm{d}x
+    $$
+    where $E(p)$ is the expected future leverage. Expanding the product inside the integral gives
+    $$
+    E(p) = \int_0^1 x^2 f_p(x) - 2px f_p(x) + p^2 f_p(x) + E(x) f_p(x) \textrm{d}x
+    $$
+    We can substitute the values of some of the integrals from earlier, removing the $- 2px f_p(x) + p^2 f_p(x)$ and simplifying to get
+    $$
+    E(p) + p^2 = \int_0^1 f_p(x) [E(x) + x^2] \textrm{d}x
+    $$
+    From the conservation of expected evidence we know that $\int_0^1 x f_p(x) \textrm{d}x = p$. For $E(p) + p^2$ to equal $p$, $E(p)$ must be $p(1 - p)$. The only other formula for $E(p)$ that would technically satisfy this integral is $-p^2$, but this produces negative values for EFL. (Frankly, I don't have a satisfactory proof for the lack of other solutions, but I am nevertheless very confident in it.)
