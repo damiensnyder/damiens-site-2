@@ -7,25 +7,29 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="128"
+   inkscape:export-xdpi="128"
+   inkscape:export-filename="/Users/damien/projects/personal-website/public/logo.png"
    inkscape:version="1.0 (4035a4f, 2020-05-01)"
    sodipodi:docname="logo.svg"
-   id="svg22"
+   id="svg20"
    viewBox="0 0 200 200"
    version="1.1"
    height="200mm"
    width="200mm">
   <defs
-     id="defs26" />
+     id="defs24" />
   <sodipodi:namedview
-     inkscape:current-layer="svg22"
+     showguides="false"
+     inkscape:current-layer="svg20"
      inkscape:window-maximized="0"
      inkscape:window-y="0"
      inkscape:window-x="0"
-     inkscape:cy="425.34939"
-     inkscape:cx="539.47248"
-     inkscape:zoom="0.59598064"
+     inkscape:cy="377.95276"
+     inkscape:cx="377.95276"
+     inkscape:zoom="0.88503125"
      showgrid="false"
-     id="namedview24"
+     id="namedview22"
      inkscape:window-height="900"
      inkscape:window-width="1440"
      inkscape:pageshadow="2"
@@ -44,32 +48,34 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <circle
+     inkscape:export-ydpi="128"
+     inkscape:export-xdpi="128"
+     inkscape:export-filename="/Users/damien/logo.png"
+     r="99.21875"
      id="circle12"
-     stroke-width="0.4235"
-     r="100"
-     cy="100"
-     cx="100" />
-  <g
-     id="g20">
-    <path
-       id="path14"
-       stroke-width="0.3279"
-       fill="#f2ece6"
-       d="M 100,190 A 90,90 0 0 1 22.06,145 90,90 0 0 1 22.06,55 90,90 0 0 1 100,10 v 90 z" />
-    <path
-       id="path16"
-       stroke-width="0.2754"
-       fill="#a6a29e"
-       d="m 100,10 a 65,90 0 0 1 65,90 65,90 0 0 1 -65,90 v -90 z" />
-    <path
-       id="path18"
-       stroke-width="0.2556"
-       fill="#f2ece6"
-       d="m 99,10 a 56,90 0 0 1 56,90 56,90 0 0 1 -56,90 v -90 z" />
-  </g>
+     stroke-width="0.420194"
+     cy="99.21875"
+     cx="99.21875" />
+  <path
+     id="path14"
+     stroke-width="0.313264"
+     fill="#f2ece6"
+     d="m 99.218749,185.20834 a 85.994147,85.994583 0 0 1 -74.468552,-42.9923 85.994147,85.994583 0 0 1 0,-85.994582 85.994147,85.994583 0 0 1 74.468552,-42.992291 V 99.22375 Z" />
+  <path
+     id="path16"
+     stroke-width="0.242888"
+     fill="#a6a29e"
+     d="M 99.218749,13.229167 A 52.916661,85.989581 0 0 1 152.13542,99.218748 52.916661,85.989581 0 0 1 99.218749,185.20833 V 99.218748 Z" />
+  <path
+     inkscape:export-ydpi="128"
+     inkscape:export-xdpi="128"
+     id="path18"
+     stroke-width="0.172606"
+     fill="#f2ece6"
+     d="M 98.954166,13.229167 A 26.722913,85.989583 0 0 1 125.67708,99.21875 26.722913,85.989583 0 0 1 98.954166,185.20834 V 99.21875 Z" />
 </svg>

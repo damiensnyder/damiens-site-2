@@ -14,14 +14,22 @@
       "date": "20201119",
       "description": "leverage as in expected influence over a game",
       "thumbnail": "no-such-thing-as-free-leverage.png",
-      "tags": ["blog", "game-design"]
+      "tags": ["blog"]
+    },
+    {
+      "name": "If Things Went As I'd Hoped",
+      "code": "if-things-went-as-id-hoped",
+      "date": "20210130",
+      "description": "be careful what you wish for",
+      "thumbnail": "if-things-went-as-id-hoped.png",
+      "tags": ["blog", "featured"]
     },
     {
       "name": "Embarrassment and Instinct",
       "code": "embarrassment-and-instinct",
       "date": "20210103",
       "description": "does embarrassment make sense in a modern world?",
-      "tags": ["blog", "featured"]
+      "tags": ["blog"]
     },
     {
       "name": "this is my first blog post",
@@ -104,13 +112,22 @@
       "youtube": "RZ0uQluHlRw"
     },
     {
-      "name": "bucko",
-      "code": "bucko",
-      "date": "20190411",
-      "description": "0:07 ▶",
+      "name": "wwjd",
+      "code": "wwjd",
+      "date": "20201230",
+      "description": "0:32 ▶",
+      "tags": ["video", "animated", "comedy", "short", "featured"],
+      "thumbnail": "wwjd.png",
+      "youtube": "RZ0uQluHlRw"
+    },
+    {
+      "name": "hardest part",
+      "code": "hardest-part",
+      "date": "20210123",
+      "description": "0:20 ▶",
       "tags": ["video", "animated", "comedy", "short"],
-      "thumbnail": "bucko.jpg",
-      "youtube": "w4lm2pNDRv4"
+      "thumbnail": "hardest-part.png",
+      "youtube": "ybOr9bQc_nQ"
     },
     {
       "name": "twitter",
