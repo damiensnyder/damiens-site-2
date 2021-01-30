@@ -107,25 +107,25 @@
       "code": "wwjd",
       "date": "20201230",
       "description": "0:32 ▶",
-      "tags": ["video", "animated", "comedy", "short", "featured"],
+      "tags": ["video", "animated", "comedy", "short"],
       "thumbnail": "wwjd.png",
       "youtube": "RZ0uQluHlRw"
     },
     {
-      "name": "wwjd",
-      "code": "wwjd",
-      "date": "20201230",
-      "description": "0:32 ▶",
-      "tags": ["video", "animated", "comedy", "short", "featured"],
-      "thumbnail": "wwjd.png",
-      "youtube": "RZ0uQluHlRw"
+      "name": "bucko",
+      "code": "bucko",
+      "date": "20190411",
+      "description": "0:07 ▶",
+      "tags": ["video", "animated", "comedy", "short"],
+      "thumbnail": "bucko.png",
+      "youtube": "w4lm2pNDRv4"
     },
     {
       "name": "hardest part",
       "code": "hardest-part",
       "date": "20210123",
       "description": "0:20 ▶",
-      "tags": ["video", "animated", "comedy", "short"],
+      "tags": ["video", "animated", "comedy", "short", "featured"],
       "thumbnail": "hardest-part.png",
       "youtube": "ybOr9bQc_nQ"
     },

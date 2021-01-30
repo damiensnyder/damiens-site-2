@@ -26,7 +26,7 @@ I develop a [party-style webgame](http://www.siphonstate.com), advertise it on t
 
 ## ...at age 20
 
-!["You Are Here" sign](https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/You_are_here.svg/1059px-You_are_here.svg.png)
+!["You Are Here" sign](/blog/you-are-here.png)
 
 Uh oh!
 
