@@ -30,33 +30,6 @@ export default class Menu extends React.Component {
     window.scroll(0, 0);
   }
 
-  pageSwitcherJsx(isPrev: boolean, numPosts?: number): ReactElement {
-    if (isPrev && this.state.page > 1) {
-      return (
-        <div className={styles.pageSwitcher}
-            onClick={() => this.switchPage.bind(this)(true)}>
-          ← prev
-        </div>
-      );
-    }
-    if (!isPrev && this.state.page * 10 < numPosts) {
-      return (
-        <div className={styles.pageSwitcher}
-             onClick={() => this.switchPage.bind(this)(false)}>
-          next →
-        </div>
-      );
-    }
-    return <div className={styles.pageSwitcherInactive} />;
-  }
-
-  switchPage(goBack: boolean): void {
-    this.setState({
-      page: goBack ? this.state.page - 1 : this.state.page + 1
-    });
-    window.scroll(0, 0);
-  }
-
   render(): ReactElement {
     const sortedPosts: PostMetadata[] = this.props.posts.sort(
     (a: PostMetadata, b: PostMetadata): number => {
@@ -73,9 +46,6 @@ export default class Menu extends React.Component {
         (post: PostMetadata) => {
       return this.state.tag == null || post.tags.includes(this.state.tag);
     });
-    const numPosts: number = postsOnPage.length;
-    postsOnPage = postsOnPage.slice(
-        (this.state.page - 1) * 10, this.state.page * 10);
 
     const tags: Map<string, number> = new Map<string, number>();
     sortedPosts.forEach((post: PostMetadata) => {
@@ -108,11 +78,9 @@ export default class Menu extends React.Component {
         {!this.props.hideControls && sortedPosts.length > 1 ?
           (
             <div className={styles.footerControls}>
-              {this.pageSwitcherJsx.bind(this)(true)}
               <FilterByTag tags={tags}
                            selectTag={this.selectTag.bind(this)}
                            tag={this.state.tag} />
-              {this.pageSwitcherJsx.bind(this)(false, numPosts)}
             </div>
           ) : null
         }
