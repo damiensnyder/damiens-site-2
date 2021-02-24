@@ -16,8 +16,8 @@ export default function AnimatePage(): ReactElement {
         </p>
       </div>
       <div className={styles.textContainer}>
-        <p className={styles.spinnyText2}>
-          <span className={styles.rainbow2}>{text}</span>
+        <p className={styles.spinnyText + " " +  styles.backSpinnyText}>
+          <span className={styles.backRainbow}>{text}</span>
         </p>
       </div>
     </div>

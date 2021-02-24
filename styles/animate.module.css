@@ -11,14 +11,12 @@
 
 .spinnyText {
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 120px;
   animation: spinning 10.5s linear infinite;
-  transform: perspective(0);
 }
 
-.spinnyText2 {
-  text-align: center;
-  font-weight: 600;
+.backSpinnyText {
   animation: spinning2 10.5s linear infinite;
 }
 
@@ -26,7 +24,7 @@
   animation: rainbow 2.5s linear infinite;
 }
 
-.rainbow2 {
+.backRainbow {
   animation: rainbow2 2.5s linear infinite;
   animation-delay: 1s;
 }
@@ -86,69 +84,71 @@
 @keyframes spinning {
   0% {
     transform: rotate3d(0, 1, 0, 0deg) translate3d(0, 0, 5px);
-    font-size: 120px;
   }
   14% {
     transform: rotate3d(-0.1, 1, -0.1, 90deg) translate3d(0, 0, 5px);
   }
   25% {
     transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, 5px);
-    font-size: 96px;
   }
   38% {
     transform: rotate3d(0.1, 1, 0.1, 270deg) translate3d(0, 0, 5px);
   }
   50% {
     transform: rotate3d(0, 1, 0, 360deg) translate3d(0, 0, 5px);
-    font-size: 120px;
   }
   64% {
     transform: rotate3d(0.1, 1, 0.1, 450deg) translate3d(0, 0, 5px);
   }
   75% {
     transform: rotate3d(0, 1, 0, 540deg) translate3d(0, 0, 5px);
-    font-size: 96px;
   }
   86% {
     transform: rotate3d(-0.1, 1, -0.1, 630deg) translate3d(0, 0, 5px);
   }
   100% {
     transform: rotate3d(0, 1, 0, 720deg) translate3d(0, 0, 5px);
-    font-size: 120px;
   }
 }
 
 @keyframes spinning2 {
   0% {
     transform: rotate3d(0, 1, 0, 0deg);
-    font-size: 120px;
   }
   14% {
     transform: rotate3d(-0.1, 1, -0.1, 90deg);
   }
   25% {
     transform: rotate3d(0, 1, 0, 180deg);
-    font-size: 96px;
   }
   36% {
     transform: rotate3d(0.1, 1, 0.1, 270deg);
   }
   50% {
     transform: rotate3d(0, 1, 0, 360deg);
-    font-size: 120px;
   }
   64% {
     transform: rotate3d(0.1, 1, 0.1, 450deg);
   }
   75% {
     transform: rotate3d(0, 1, 0, 540deg);
-    font-size: 96px;
   }
   86% {
     transform: rotate3d(-0.1, 1, -0.1, 630deg);
   }
   100% {
     transform: rotate3d(0, 1, 0, 720deg);
-    font-size: 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .spinnyText {
+    font-size: 96px;
+  }
+}
+
+@media (max-width: 750px) {
+  .spinnyText {
+    font-size: 60px;
   }
 }
