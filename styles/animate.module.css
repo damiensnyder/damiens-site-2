@@ -1,0 +1,119 @@
+.textContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinnyText {
+  text-align: center;
+  font-weight: 600;
+  animation: spinning 10.5s linear infinite;
+}
+
+.spinnyText2 {
+  text-align: center;
+  font-weight: 600;
+  animation: spinning 10.5s linear infinite;
+  perspective: 10px;
+}
+
+.rainbow {
+  animation: rainbow 2.5s linear infinite;
+}
+
+.rainbow2 {
+  animation: rainbow2 2.5s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes rainbow {
+  0%, 100% {
+    color: #f00;
+  }
+
+  15% {
+    color: #b0b;
+  }
+
+  33% {
+    color: #66f;
+  }
+
+  50% {
+    color: #0bb;
+  }
+
+  67% {
+    color: #0d0;
+  }
+
+  80% {
+    color: #bb0;
+  }
+}
+
+@keyframes rainbow2 {
+  0%, 100% {
+    color: #b00;
+  }
+
+  20% {
+    color: #880;
+  }
+
+  33% {
+    color: #0a0;
+  }
+
+  50% {
+    color: #099;
+  }
+
+  67% {
+    color: #55c;
+  }
+
+  85% {
+    color: #808;
+  }
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+    font-size: 100px;
+  }
+  13% {
+    transform: rotate3d(-0.1, 1, -0.1, 90deg);
+  }
+  25% {
+    transform: rotate3d(0, 1, 0, 180deg);
+    font-size: 84px;
+  }
+  37% {
+    transform: rotate3d(0.1, 1, 0.1, 270deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 360deg);
+    font-size: 100px;
+  }
+  63% {
+    transform: rotate3d(0.1, 1, 0.1, 450deg);
+  }
+  75% {
+    transform: rotate3d(0, 1, 0, 540deg);
+    font-size: 84px;
+  }
+  87% {
+    transform: rotate3d(-0.1, 1, -0.1, 630deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 720deg);
+    font-size: 100px;
+  }
+}

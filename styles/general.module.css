@@ -21,7 +21,7 @@
 }
 
 .pageTitle:hover {
-  animation: rainbow 0.75s ease-in-out infinite;
+  animation: rainbow 0.75s linear infinite;
 }
 
 .postContainer {
