@@ -22,7 +22,7 @@ export default function NotesPage(props: NotesProps): ReactElement {
                   {formatDate(post.date)}
                   {
                     post.tweet == undefined ? null : <>
-                      &nbsp;&bull;&nbsp
+                      &nbsp;&bull;&nbsp;
                       <a className={styles.tweetLink}
                          href={tweetUrlStart + post.tweet}>tweet</a>
                     </>

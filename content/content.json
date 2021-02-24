@@ -9,6 +9,14 @@
       "tags": ["other", "work", "featured-other"]
     },
     {
+      "name": "Units Of Measurement That Never Caught On",
+      "code": "units-of-measurement-that-never-caught-on",
+      "date": "20210223",
+      "description": "the metric system is passé",
+      "thumbnail": "units-of-measurement-that-never-caught-on.png",
+      "tags": ["blog", "featured"]
+    },
+    {
       "name": "No Such Thing As Free Leverage",
       "code": "no-such-thing-as-free-leverage",
       "date": "20201119",
@@ -22,7 +30,7 @@
       "date": "20210130",
       "description": "be careful what you wish for",
       "thumbnail": "if-things-went-as-id-hoped.png",
-      "tags": ["blog", "featured"]
+      "tags": ["blog"]
     },
     {
       "name": "Embarrassment and Instinct",
