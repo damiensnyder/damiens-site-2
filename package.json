@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "next": "^9.5.5",
+    "pixi.js": "^6.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-katex": "^2.0.2",

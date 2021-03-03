@@ -26,7 +26,7 @@ assets which i host elsewhere
 # be more specific
 
 the site is hosted on Vercel, except the static assets which are hosted on
-iWebFusion. it auto-deploys whenever i push to my git repo. the blog posts are
+AWS S3. it auto-deploys whenever i push to my git repo. the blog posts are
 rendered with Remark and the GFM, footnotes, and KaTeX plugins. everything else
 i made for myself. look at the source code to find out my secrets. oh and pro
 tip, don't make a site entirely from scratch
@@ -41,10 +41,9 @@ there is an RSS feed for [the whole site](/rss.xml), as well as feeds for
 [just blog posts](/blog/rss.xml), [just videos](/videos/rss.xml),
 [just songs](/songs/rss.xml), and [miscellaneous](/misc/rss.xml). there's also
 my [YouTube](https://www.youtube.com/channel/UC_JMabjdOb2k57k5pvHnfEg),
-[Twitter](https://twitter.com/damien__snyder), and
-[SoundCloud](https://soundcloud.com/damiensnyder), and an
-[Instagram](https://www.instagram.com/damien__snyder) but i haven't posted there
-yet.
+[Twitter](https://twitter.com/damien__snyder),
+[SoundCloud](https://soundcloud.com/damiensnyder), and
+[Instagram](https://www.instagram.com/damien__snyder).
 
 # how do i contact you
 
