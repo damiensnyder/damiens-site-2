@@ -9,6 +9,7 @@ import NormalHead from "../../components/NormalHead";
 // Markdown parsing
 import ReactMarkdown from "react-markdown";
 import {markdownRenderers, markdownPlugins} from "../blog/[code]";
+import FeedbackForm from "../../components/FeedbackForm";
 
 interface VideoMetadata extends PostMetadata {
   youtube: string
@@ -38,6 +39,7 @@ export default function VideoPage(props: VideoMetadata): ReactElement {
                          plugins={markdownPlugins}
                          source={props.videoDescription} />
         </div>
+        <FeedbackForm fromPage={props.code} />
       </div>
     </div>
   );

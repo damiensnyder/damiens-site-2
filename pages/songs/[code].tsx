@@ -5,6 +5,7 @@ import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
+import FeedbackForm from "../../components/FeedbackForm";
 
 interface SongMetadata extends PostMetadata {
   wav?: string,
@@ -81,6 +82,7 @@ export default function SongPage(props: PostMetadata): ReactElement {
             <source src={"https://static.damiensnyder.com.s3-us-west-2.amazonaws.com/" + props.code + ".mp3"}
                     type={"audio/mpeg"} />
         </audio>
+        <FeedbackForm fromPage={props.code} />
       </div>
     </div>
   );

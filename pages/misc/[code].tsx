@@ -4,6 +4,7 @@ import {PostMetadata, getSinglePost, getPostPaths, Paths} from "../api/content";
 import {formatDate} from "../../components/MenuItem";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
+import FeedbackForm from "../../components/FeedbackForm";
 
 export default function OtherPage(props: PostMetadata): ReactElement {
   return (
@@ -18,6 +19,7 @@ export default function OtherPage(props: PostMetadata): ReactElement {
         <p className={general.byline}>
           released {formatDate(props.date)}
         </p>
+        <FeedbackForm fromPage={props.code} />
       </div>
     </div>
   );
