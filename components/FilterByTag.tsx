@@ -4,7 +4,7 @@ import styles from "../styles/menu.module.css";
 interface FilterProps {
   tags: Map<string, number>,
   selectTag: (tag: string) => void,
-  tag: string | null
+  tag?: string
 }
 
 

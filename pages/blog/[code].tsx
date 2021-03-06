@@ -6,6 +6,7 @@ import {Paths, getPostPaths} from "../api/content";
 import LinkHeader from "../../components/LinkHeader";
 import NormalHead from "../../components/NormalHead";
 import {formatDate} from "../../components/MenuItem";
+import FeedbackForm from "../../components/FeedbackForm";
 
 // Markdown parsing
 import ReactMarkdown from "react-markdown";
@@ -77,6 +78,7 @@ export default function BlogPostPage(props: BlogPostProps): ReactElement {
                          plugins={markdownPlugins}
                          source={props.text} />
         </article>
+        <FeedbackForm fromPage={props.code} />
       </div>
     </div>
   );
