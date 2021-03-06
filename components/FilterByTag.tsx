@@ -7,7 +7,6 @@ interface FilterProps {
   tag?: string
 }
 
-
 export default class FilterByTag extends React.Component {
   state: {
     showTags: boolean,
