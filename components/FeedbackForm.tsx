@@ -1,7 +1,7 @@
-import React, {ReactElement} from 'react';
+import React, {ReactNode} from 'react';
 
 export interface FeedbackFormProps {
-  fromPage?: string
+  fromPage: string;
 }
 
 interface FeedbackFormState {
@@ -13,6 +13,7 @@ interface FeedbackFormState {
 
 export default class FeedbackForm extends React.Component {
   state: FeedbackFormState
+  props: FeedbackFormProps
 
   constructor(props: FeedbackFormProps) {
     super(props);
@@ -53,9 +54,9 @@ export default class FeedbackForm extends React.Component {
     console.log(this.state);
   }
 
-  render(): ReactElement {
+  render(): ReactNode {
     if (!this.state.expanded) {
-      return <button onClick={this.expand}>Send a comment</button>
+      return <button onClick={this.expand.bind(this)}>Send a comment</button>
     }
 
     return (
@@ -63,7 +64,7 @@ export default class FeedbackForm extends React.Component {
         <h2>Send a comment</h2>
         <p>Comment:</p>
         <textarea placeholder={"Write your message here..."}
-                  onChange={this.updateMessageText}>
+                  onChange={this.updateMessageText.bind(this)}>
           {this.state.messageText}
         </textarea>
         <label htmlFor={"identifier"}>
@@ -76,17 +77,17 @@ export default class FeedbackForm extends React.Component {
                autoComplete={"on"}
                placeholder={"Enter identifier here"}
                value={this.state.identifier}
-               onChange={this.updateIdentifier} />
+               onChange={this.updateIdentifier.bind(this)} />
         <label htmlFor={"can-be-published"}>
           Do I have permission to share this comment?
         </label>
         <input type={"checkbox"}
                name={"can-be-published"}
                checked={this.state.canBePublished}
-               onChange={this.updateCanBePublished} />
+               onChange={this.updateCanBePublished.bind(this)} />
         <input type={"submit"}
                value={"Send"}
-               onSubmit={this.submit} />
+               onSubmit={this.submit.bind(this)} />
       </form>
     );
   }

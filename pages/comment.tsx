@@ -15,3 +15,7 @@ export default function CommentPage() {
     </div>
   );
 }
+
+export function getStaticProps(): {props: {}} {
+  return {props: {}};
+}

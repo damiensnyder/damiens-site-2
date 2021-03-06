@@ -1,14 +1,6 @@
 {
   "posts": [
     {
-      "name": "my resume",
-      "code": "http://static.damiensnyder.com/resume.pdf",
-      "date": "20201031",
-      "description": "give me money",
-      "thumbnail": "resume.png",
-      "tags": ["other", "work", "featured-other"]
-    },
-    {
       "name": "Units Of Measurement That Never Caught On",
       "code": "units-of-measurement-that-never-caught-on",
       "date": "20210223",
@@ -46,6 +38,9 @@
       "description": "thats right folks. step riiiight up",
       "tags": ["blog", "first-posts"]
     },
+
+
+
     {
       "name": "Siphon State",
       "code": "http://www.siphonstate.com",
@@ -76,6 +71,9 @@
       "tags": ["misc", "web", "fun"],
       "thumbnail": "ultimate-personality-quiz.jpg"
     },
+
+
+
     {
       "name": "a video about angles",
       "code": "a-video-about-angles",
@@ -137,6 +135,9 @@
       "thumbnail": "hardest-part.png",
       "youtube": "ybOr9bQc_nQ"
     },
+
+
+
     {
       "name": "twitter",
       "code": "https://twitter.com/damien__snyder",
@@ -177,6 +178,22 @@
       "tags": ["other"]
     },
     {
+      "name": "Send me a comment",
+      "code": "/comment",
+      "date": "20210306",
+      "description": "it's faster than carrier pigeon",
+      "thumbnail": "resume.png",
+      "tags": ["other"]
+    },
+    {
+      "name": "my resume",
+      "code": "http://static.damiensnyder.com/resume.pdf",
+      "date": "20201031",
+      "description": "give me money",
+      "thumbnail": "resume.png",
+      "tags": ["other", "work", "featured-other"]
+    },
+    {
       "name": "about",
       "code": "/about",
       "date": "20201231",
@@ -184,6 +201,9 @@
       "thumbnail": "about.png",
       "tags": ["other", "featured-other"]
     },
+
+
+    
     {
       "name": "it isn't funny anymore",
       "code": "it-isnt-funny-anymore",
