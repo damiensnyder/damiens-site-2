@@ -1,0 +1,55 @@
+$dark-text: #333;
+// $action-color: #e33;
+$text-color: #ccc;
+$light-text: #aaa;
+
+.feedbackContainer {
+  display: flex;
+  flex-flow: column;
+
+  font-size: 20px;
+}
+
+.sameLine {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.feedbackHeading {
+  margin: 8px 0;
+
+  font-size: 32px;
+}
+
+.inputLabel {
+  margin: 8px 0;
+
+  font-weight: 600;
+}
+
+.commentArea, .identifierArea {
+  padding: 8px;
+
+  color: $dark-text;
+  background-color: $light-text;
+  border-radius: 6px;
+  border: 4px $light-text;
+}
+
+.commentArea {
+  height: 80px;
+  resize: vertical;
+}
+
+.actionButton {
+  margin: 8px 0 32px 0;
+  align-self: center;
+  padding: 4px 8px;
+
+  font-size: 20px;
+  color: $light-text;
+  background-color: $dark-text;
+  border: 2px solid $light-text;
+  border-radius: 6px;
+}

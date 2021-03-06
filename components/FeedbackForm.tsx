@@ -1,4 +1,5 @@
 import React, {ReactNode} from 'react';
+import styles from "../styles/feedback.module.scss";
 
 export interface FeedbackFormProps {
   fromPage: string;
@@ -22,7 +23,7 @@ export default class FeedbackForm extends React.Component {
       expanded: false,
       messageText: "",
       identifier: "",
-      canBePublished: true
+      canBePublished: false
     }
   }
 
@@ -33,15 +34,19 @@ export default class FeedbackForm extends React.Component {
   }
 
   updateMessageText(e: React.ChangeEvent<HTMLTextAreaElement>): void {
-    this.setState({
-      messageText: e.target.value
-    });
+    if (e.target.value.length <= 5000) {
+      this.setState({
+        messageText: e.target.value
+      });
+    }
   }
 
   updateIdentifier(e: React.ChangeEvent<HTMLInputElement>): void {
-    this.setState({
-      identifier: e.target.value
-    });
+    if (e.target.value.length <= 100) {
+      this.setState({
+        identifier: e.target.value
+      });
+    }
   }
 
   updateCanBePublished(e: React.ChangeEvent<HTMLInputElement>): void {
@@ -54,40 +59,62 @@ export default class FeedbackForm extends React.Component {
     console.log(this.state);
   }
 
+  cancel(): void {
+    this.setState({
+      expanded: false
+    });
+  }
+
   render(): ReactNode {
     if (!this.state.expanded) {
-      return <button onClick={this.expand.bind(this)}>Send a comment</button>
+      return (
+        <button onClick={this.expand.bind(this)}
+                className={styles.actionButton}>
+          send a comment
+        </button>
+      );
     }
 
     return (
-      <form>
-        <h2>Send a comment</h2>
-        <p>Comment:</p>
-        <textarea placeholder={"Write your message here..."}
-                  onChange={this.updateMessageText.bind(this)}>
-          {this.state.messageText}
-        </textarea>
-        <label htmlFor={"identifier"}>
-          Add contact info if you want me to message you in response, or a name
-          if you just want to identify yourself, or nothing to remain
-          anonymous.
+      <form className={styles.feedbackContainer}>
+        <h2 className={styles.feedbackHeading}>Send a comment</h2>
+        <label className={styles.inputLabel}>Comment:</label>
+        <textarea className={styles.commentArea}
+                  placeholder={"Write your message here"}
+                  value={this.state.messageText}
+                  onChange={this.updateMessageText.bind(this)} />
+        <label className={styles.inputLabel}
+               htmlFor={"identifier"}>
+          (Optional) Add contact info if you want me to respond, or a name to
+          identify yourself.
         </label>
-        <input type={"text"}
+        <input className={styles.identifierArea}
+               type={"text"}
                name={"identifier"}
                autoComplete={"on"}
-               placeholder={"Enter identifier here"}
+               placeholder={"Add identifier here"}
                value={this.state.identifier}
                onChange={this.updateIdentifier.bind(this)} />
-        <label htmlFor={"can-be-published"}>
-          Do I have permission to share this comment?
-        </label>
-        <input type={"checkbox"}
-               name={"can-be-published"}
-               checked={this.state.canBePublished}
-               onChange={this.updateCanBePublished.bind(this)} />
-        <input type={"submit"}
-               value={"Send"}
-               onSubmit={this.submit.bind(this)} />
+        <div className={styles.sameLine}>
+          <label className={styles.inputLabel}
+                htmlFor={"can-be-published"}>
+            Do I have permission to share this comment?
+          </label>
+          <input type={"checkbox"}
+                name={"can-be-published"}
+                checked={this.state.canBePublished}
+                onChange={this.updateCanBePublished.bind(this)} />
+        </div>
+        <div className={styles.sameLine}>
+          <input className={styles.actionButton}
+                type={"submit"}
+                value={"send"}
+                onSubmit={this.submit.bind(this)} />
+          <button className={styles.actionButton}
+                onClick={this.cancel.bind(this)}>
+            cancel
+          </button>
+        </div>
       </form>
     );
   }
