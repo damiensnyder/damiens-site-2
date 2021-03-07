@@ -1,0 +1,10 @@
+type DirectComment {
+  text: String!,
+  from: String,
+  sender: String,
+  canBeShared: Boolean
+}
+
+type Query {
+   allDirectComments: [DirectComment!]
+}
