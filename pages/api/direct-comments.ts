@@ -42,7 +42,7 @@ export default async function DirectComments(req: NextApiRequest,
       ).then((result) => res.status(200).json(JSON.stringify(result)));
     }
   } catch (error) {
-    console.log(error.description);
-    res.status(500).json(JSON.stringify({error: error.description}));
+    console.log(error);
+    res.status(500).json(JSON.stringify({error: error}));
   }
 }
