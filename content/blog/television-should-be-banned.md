@@ -40,7 +40,7 @@ Remember the statistics from earlier? 2.81 *hours* per day? That seems really al
 
 [Some random marketing firm](https://www.emarketer.com/content/mobile-soon-to-pass-tv-in-time-spent) claims that people now spend more time on mobile devices than watching TV. Their TV numbers are pretty close to what the BLS says for the average day someone watches TV, but I can't find their methodology so I take their absolute numbers with a grain of salt.
 
-![Chart of time spent per day using mobile devices versus watching television]()
+![Chart of time spent per day using mobile devices versus watching television](mobile-vs-tv.png)
 
 Anecdotally, the time spent on mobile devices seems fairly accurate for people like me, but for example my mother certainly does not use a mobile device for over three hours per day. It is probably much closer to accurate than whatever you could hope to infer from BLS. That's because the BLS survey's "non-game leisure computer use" category reports only 15 minutes per day, which is obviously too low for anyone I've met under the age of 50. Part of it is that people are unlikely to form good estimates, or any estimates at all, about time spent on social media or whatever. I expect most people surveyed report their time in blocks, so they'd say that they worked from 8:30 to 4:30 instead of, "I got to work at 8:35 but I checked my phone for a few minutes, then I caught up with a coworker so it didn't really get started until 8:46..." This is conjecture, but average non-game leisure computer use (including phones) is definitely way above 15 minutes per day.
 
@@ -52,7 +52,7 @@ And, like with TV, digital consumption has its own merits, many of them the same
 
 Now, I've been avoiding maybe the strongest argument against my position. The argument is, it's paternalistic as hell. Who am I to decide whether a consenting adult and a consenting media company engage in entertainment? Everyone is their own person. I feel like what I'm writing is only a step away from this meme:
 
-!["Isn't there someone you forgot to ask" meme]()
+!["Isn't there someone you forgot to ask" meme](isnt-there-someone-you-forgot-to-ask.png)
 
 But in its strongest form, none but the purest of philosophers believe adults should always do whatever they want. If you read that adults spend 2.81 hours a day injecting heroin between their toes, you'd think "wow, that's messed up." (Unless you were in the middle of your 2.81 hours.) Even with completely legal activities, people recognize that acceptable things can be bad if used too much. Watching cable news for two hours straight is the technological equivalent of day drinking, but few people treat it as such.
 
