@@ -56,7 +56,11 @@ export default class FeedbackForm extends React.Component {
   }
 
   submit(): void {
-    console.log(this.state);
+    const comment = {
+      text: this.state.messageText,
+      identifier: this.state.identifier,
+      publishable: this.state.canBePublished
+    };
   }
 
   cancel(): void {
