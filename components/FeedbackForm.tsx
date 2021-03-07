@@ -9,7 +9,7 @@ interface FeedbackFormState {
   expanded: boolean,
   messageText: string,
   identifier: string,
-  canBePublished: boolean
+  canBeShared: boolean
 }
 
 export default class FeedbackForm extends React.Component {
@@ -23,7 +23,7 @@ export default class FeedbackForm extends React.Component {
       expanded: false,
       messageText: "",
       identifier: "",
-      canBePublished: false
+      canBeShared: false
     }
   }
 
@@ -49,17 +49,18 @@ export default class FeedbackForm extends React.Component {
     }
   }
 
-  updateCanBePublished(e: React.ChangeEvent<HTMLInputElement>): void {
+  updateCanBeShared(e: React.ChangeEvent<HTMLInputElement>): void {
     this.setState({
-      canBePublished: e.target.checked
+      canBeShared: e.target.checked
     });
   }
 
   submit(): void {
     const comment = {
+      from: this.props.fromPage,
       text: this.state.messageText,
       identifier: this.state.identifier,
-      publishable: this.state.canBePublished
+      sharable: this.state.canBeShared
     };
   }
 
@@ -101,13 +102,13 @@ export default class FeedbackForm extends React.Component {
                onChange={this.updateIdentifier.bind(this)} />
         <div className={styles.sameLine}>
           <label className={styles.inputLabel}
-                htmlFor={"can-be-published"}>
+                htmlFor={"can-be-shared"}>
             Do I have permission to share this comment?
           </label>
           <input type={"checkbox"}
-                name={"can-be-published"}
-                checked={this.state.canBePublished}
-                onChange={this.updateCanBePublished.bind(this)} />
+                name={"can-be-shared"}
+                checked={this.state.canBeShared}
+                onChange={this.updateCanBeShared.bind(this)} />
         </div>
         <div className={styles.sameLine}>
           <input className={styles.actionButton}
