@@ -21,7 +21,7 @@ export default class FeedbackForm extends React.Component {
     super(props);
 
     this.state = {
-      expanded: false,
+      expanded: props.fromPage == "comment-page",
       messageText: "",
       identifier: "",
       canBeShared: false
@@ -56,18 +56,18 @@ export default class FeedbackForm extends React.Component {
     });
   }
 
-  submit(): void {
+  async submit(): Promise<void> {
     const comment: DirectComment = {
       from: this.props.fromPage,
       text: this.state.messageText,
       identifier: this.state.identifier,
       sharable: this.state.canBeShared
     };
-    fetch("/api/direct-comments", {
+    await fetch("/api/direct-comments", {
       method: "POST",
       headers: {"Content-type": "application/json"},
       body: JSON.stringify({comment})
-    });
+    }).then(() => {location.reload(true)});
   }
 
   cancel(): void {
