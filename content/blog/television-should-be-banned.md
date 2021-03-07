@@ -66,15 +66,15 @@ The important part is, time spent *is* the devil. Some of the time you aimlessly
 
 ~~Step 1: Join my anarcho-communist Discord server.~~
 
-Maybe we should do an economic revolution. I dunno. I'm on the fence about it. But it's a big ask, and if you're gonna do a communism this wouldn't be the reason to do it. So let's start simple.
+There are two things you can try to improve. Those are your life, and other people's lives. You might not feel it's particularly pressing to attack either of those. That's ok, and if you still think the societal role of TV and digital entertainment is basically fine, you can stop reading. If not, I can offer *some* guidance, but be warned that I am only a metaphorical green belt in the martial art of attention.
 
-Step one is to examine your daily time use. If you're the kind of person who found this blog post, and didn't stop reading halfway through, you might have already examined it. I hope it helped. Am I good at restricting technology use? Like, a little bit. You can be mad at Big Pharma and still be addicted to opioids. Improving at life was never the easy part.
+On a personal level, examine your daily time use. Notice when you choose screens over human interaction. When you're hanging out with someone, do you check your phone when you get bored? Do you ever not make plans with people, or not spend time on your hobby, because you're cool just binge-watching[^8] TV instead? Obviously everyone has different social needs. Consider whether yours are being met.[^9] In general, notice which things you do are most fulfilling, and try to spend more time on those things and less itme on the things that aren't fulfilling to you.
 
-One thing to notice particularly is how often you prioritize screens over human interaction. This means hanging out with a person and being on your phone the whole time. It also means not making plans with people, or not spending time on your hobby, because you're cool just binge-watching[^8] TV for the day instead. Obviously everyone has different social needs. Consider whether yours are being met.[^9] In general, notice which things you do are most fulfilling, and try to spend more time on those things and less itme on the things that aren't fulfilling to you.
+At a level slightly beyond the personal, you wield the power to enforce social norms. When you're with other people you can politely ask to do something other than watch TV, and something other than look at your phones in the same room without talking. In whatever political discussions you're in, you can influence $\textrm{the discourse}$. 
 
-At a level slightly beyond the personal, you wield the power to enforce social norms. When you're with other people you can politely ask to do something other than watch TV, and something other than look at your phones in the same room without talking. In whatever political discussions you're in, you can influence $\textrm{the discourse}$. Technology is already a hot issue, and the issue could use a little nudge, y'know?
+In terms of social reform movements, probably the most comparable in terms of aims is [Temperance](https://en.wikipedia.org/wiki/Temperance_movement). Obviously there are some very big differences in the circumstance: technology is not a religious issue (except for Amish, Orthodox Jewish, and some other people); drunk people cause more problems for others than distracted people; and alcohol's danger is clearly physical and not just psychological. Being compared to Temperance doesn't even sound like a compliment, given how Prohibition went. A *good* cultural movement to change attitudes toward entertainment might stem from clusters of local groups focused on non-technological forms of recreation. A swell of blog posts like this one would reflect people changing their beliefs, but the blogosphere and Twittersphere cannot be the ones to make people use technology less.[^10]
 
-And if there are 100 signups in the next 30 days, you can get a "Prohibition 2: No More Mr. Couch Potato" T-shirt.
+So what are you doing? Get outta here. Go outside. That's what I'm about to do.
 
 ---
 
@@ -94,6 +94,8 @@ And if there are 100 signups in the next 30 days, you can get a "Prohibition 2: 
 
 [^7] Source: People interacted in person a hell of a lot during the entire pre-TV era. Still a lot after, but not as much.
 
-[^8] "Binge-watching" is regarded as a weirdly normal thing to do for a phrase that contains the word "binge" in it.
+[^8] "Binge-watching" is regarded as a weirdly normal thing to do for a phrase that contains the word "binge" in it. Imagine if the web was littered with listicles like ["The 25 best beers to binge drink"](https://editorial.rottentomatoes.com/guide/25-most-bingeable-shows/).
 
-[^9] A lot of people in today's society interact with others rarely enough they would be weirdo recluses in any other time.
+[^9] A lot of people today interact with others rarely enough that they would seem like weirdo recluses in any other time.
+
+[^10] I believe this is called "the unity of means and ends."
