@@ -1,4 +1,4 @@
-import faunadb, {query as q} from 'faunadb';
+import faunadb, {CreateCollection, query as q} from 'faunadb';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export interface DirectComment {
@@ -14,11 +14,10 @@ const client: faunadb.Client = secret ? new faunadb.Client({secret}) : null;
 export default async function DirectComments(req: NextApiRequest,
                                              res: NextApiResponse) {
   const comment: any = req.body;
-  console.log(JSON.stringify(comment));
 
   try {
     if (!client) {
-      return res.status(500).json({
+      res.status(500).json({
         error: new Error("Missing secret to connect to FaunaDB")
       });
     } else if (comment) {
@@ -36,14 +35,15 @@ export default async function DirectComments(req: NextApiRequest,
         newComment.sharable = comment.sharable;
       }
 
-      const result = client.query(
-        q.Create(q.Collection("DirectComment"), {data: newComment})
-      );
-      console.log(JSON.stringify(result));
-
-      res.status(200).json(JSON.stringify(result));
+      await client.query(
+        q.Create(
+          q.Collection("DirectComments", q.Database("personal-site")),
+          {data: newComment}
+        )
+      ).then((result) => res.status(200).json(JSON.stringify(result)));
     }
   } catch (error) {
+    console.log(error.description);
     res.status(500).json({error});
   }
 }

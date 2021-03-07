@@ -56,7 +56,7 @@ export default class FeedbackForm extends React.Component {
     });
   }
 
-  async submit(e: React.ChangeEvent<HTMLInputElement>): Promise<void> {
+  submit(e: React.ChangeEvent<HTMLInputElement>): void {
     e.preventDefault();
     const comment: DirectComment = {
       from: this.props.fromPage,
@@ -64,14 +64,14 @@ export default class FeedbackForm extends React.Component {
       sender: this.state.sender,
       sharable: this.state.sharable
     };
-    const x = await fetch("/api/direct-comments", {
+    fetch("/api/direct-comments", {
       method: "POST",
       headers: {"Content-type": "application/json"},
       body: JSON.stringify({comment})
     });
     this.setState({
       expanded: false,
-      text: x.toString(),
+      text: "",
       sender: "",
       sharable: false
     });
