@@ -4,7 +4,7 @@ Okay, I don't mean we should literally ban television. I am not writing my senat
 
 The Bureau of Labor Statistics conducts a [survey](https://www.bls.gov/tus/a1-2019.pdf) every year where they ask people what they do all day and then average it all out. Did you know that the average American[^2] spends 2.81 hours a day watching television? For reference, the average American spends 3.26 hours working. (Note that nearly twice as many people report watching TV on a given day than working,[^3] so the numbers are 3.61 on TV and 7.60 on work for people who actually do those things.)
 
-The thing is, no one actually needs to watch television. I can't think of a single situation where "you should watch more television" is important advice to give someone. At best, the merits of television are:
+The thing is, no one actually needs to watch television. I can't think of a single situation where "you should watch more television" is important and good advice to give someone. At best, the merits of television are:
 
 - consuming good art is an enriching experience
 - stories can uplift you emotionally
@@ -29,8 +29,6 @@ I won't contend with the point that a more civically informed society will elect
 All else held equal, I'd rather be entertained than *not* entertained. But all things are not held equal.
 
 Television is entertaining in the same sense that alcohol is entertaining. It can be worth doing sometimes to have fun, but a life that consists of television is not much of a life at all. Furthermore, I'm not convinced that without television life would be boring and suck all the time. You might be bored more often, but sources inform me that 1800s diaries were not filled with "life's boring, this sucks, when can someone invent the TV already." Maybe they were too busy working 12-hour shifts in the mill to care, I dunno. But I think entertainment value is an extremely weak argument for anything
-
----
 
 I will recognize "watching TV with someone else" as often a positive activity. The key reason is that it involves another person, but whatever gets the job done works for me. And if you're really feeling down, watching TV alone is probably better than binge drinking. So if you think it will genuinely make you happier, go ahead and watch TV. But my conviction is that in the long run television is kind of a bad thing.
 
@@ -80,22 +78,22 @@ So what are you doing? Get outta here. Go outside. That's what I'm about to do.
 
 ## Footnotes
 
-[^1] Any complaints about the polemic title can be filed at the bottom of the page.
+[^1]: Any complaints about the polemic title can be filed at the bottom of the page.
 
-[^2] That is, the average U.S. resident 15 or older and not in jail or the military
+[^2]: That is, the average U.S. resident 15 or older and not in jail or the military
 
-[^3] BLS describes their methodology more in depth [here](https://www.bls.gov/tus/atusfaqs.htm#8). Basically they ask people what they did the previous day (starting and ending at 4am), how much time they spent on it, when in the day they did it, and who they did it with.
+[^3]: BLS describes their methodology more in depth [here](https://www.bls.gov/tus/atusfaqs.htm#8). Basically they ask people what they did the previous day (starting and ending at 4am), how much time they spent on it, when in the day they did it, and who they did it with.
 
-[^4] No, I haven't read *[Infinite Jest](https://en.wikipedia.org/wiki/Infinite_Jest)*, and neither have you.
+[^4]: No, I haven't read *[Infinite Jest](https://en.wikipedia.org/wiki/Infinite_Jest)*, and neither have you.
 
-[^5] Can I just talk for a moment about how dystopian the word "feed" is? What am I, some kind of cattle being fattened for the slaughter?
+[^5]: Can I just talk for a moment about how dystopian the word "feed" is? What am I, some kind of cattle being fattened for the slaughter?
 
-[^6] The equivalent for traditional media companies is getting you to form parasocial emotional attachments to fictional characters or celebrities, then using those emotional attachments to create investment in their narratives.
+[^6]: The equivalent for traditional media companies is getting you to form parasocial emotional attachments to fictional characters or celebrities, then using those emotional attachments to create investment in their narratives.
 
-[^7] Source: People interacted in person a hell of a lot during the entire pre-TV era. Still a lot after, but not as much.
+[^7]: Source: People interacted in person a hell of a lot during the entire pre-TV era. Still a lot after, but not as much.
 
-[^8] "Binge-watching" is regarded as a weirdly normal thing to do for a phrase that contains the word "binge" in it. Imagine if the web was littered with listicles like ["The 25 best beers to binge drink"](https://editorial.rottentomatoes.com/guide/25-most-bingeable-shows/).
+[^8]: "Binge-watching" is regarded as a weirdly normal thing to do for a phrase that contains the word "binge" in it. Imagine if the web was littered with listicles like ["The 25 best beers to binge drink"](https://editorial.rottentomatoes.com/guide/25-most-bingeable-shows/).
 
-[^9] A lot of people today interact with others rarely enough that they would seem like weirdo recluses in any other time.
+[^9]: A lot of people today interact with others rarely enough that they would seem like weirdo recluses in any other time.
 
-[^10] I believe this is called "the unity of means and ends."
+[^10]: I believe this is called "the unity of means and ends."

@@ -1,12 +1,20 @@
 {
   "posts": [
     {
+      "name": "Television should be banned",
+      "code": "television-should-be-banned",
+      "date": "20210307",
+      "description": "i mean this sincerely but not literally",
+      "thumbnail": "television-should-be-banned.png",
+      "tags": ["blog", "featured"]
+    },
+    {
       "name": "Units Of Measurement That Never Caught On",
       "code": "units-of-measurement-that-never-caught-on",
       "date": "20210223",
       "description": "the metric system is passé",
       "thumbnail": "units-of-measurement-that-never-caught-on.png",
-      "tags": ["blog", "featured"]
+      "tags": ["blog"]
     },
     {
       "name": "No Such Thing As Free Leverage",
