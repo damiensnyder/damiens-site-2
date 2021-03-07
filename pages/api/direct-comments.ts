@@ -22,13 +22,13 @@ export default async function DirectComments(req: NextApiRequest,
       const comment = req.body.comment;
       const newComment: DirectComment = {};
       if (typeof comment.from === "string") {
-        newComment.from = comment.from;
+        newComment.from = comment.from.slice(0, 100);
       }
       if (typeof comment.text === "string") {
-        newComment.text = comment.text;
+        newComment.text = comment.text.slice(0, 5000);
       }
       if (typeof comment.sender === "string") {
-        newComment.sender = comment.sender;
+        newComment.sender = comment.sender.slice(0, 100);
       }
       if (typeof comment.sharable === "boolean") {
         newComment.sharable = comment.sharable;

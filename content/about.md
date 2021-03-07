@@ -47,9 +47,9 @@ my [YouTube](https://www.youtube.com/channel/UC_JMabjdOb2k57k5pvHnfEg),
 
 # how do i contact you
 
-[email](mailto:damien@damiensnyder.com), but my email setup is broken half the
-time so a better idea would be to message me at any of the social media
-platforms. or know me in real life, that one usually works
+you can message me on any of the social media links above, or you can send me a
+comment [through this website[(/comment)! or if you know me in real life i am
+even easier to contact
 
 # why is the text so big
 
