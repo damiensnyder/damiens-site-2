@@ -1,4 +1,5 @@
-import React, {ReactNode} from 'react';
+import React, {ReactNode} from "react";
+import {DirectComment} from "../pages/api/direct-comments";
 import styles from "../styles/feedback.module.scss";
 
 export interface FeedbackFormProps {
@@ -56,12 +57,17 @@ export default class FeedbackForm extends React.Component {
   }
 
   submit(): void {
-    const comment = {
+    const comment: DirectComment = {
       from: this.props.fromPage,
       text: this.state.messageText,
       identifier: this.state.identifier,
       sharable: this.state.canBeShared
     };
+    fetch("/api/direct-comments", {
+      method: "POST",
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify({comment})
+    });
   }
 
   cancel(): void {
