@@ -2,7 +2,7 @@ type DirectComment {
   text: String!,
   from: String,
   sender: String,
-  canBeShared: Boolean
+  sharable: Boolean
 }
 
 type Query {

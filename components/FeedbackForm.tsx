@@ -52,7 +52,7 @@ export default class FeedbackForm extends React.Component {
 
   updateSharable(e: React.ChangeEvent<HTMLInputElement>): void {
     this.setState({
-      canBeShared: e.target.checked
+      sharable: e.target.checked
     });
   }
 
@@ -102,24 +102,24 @@ export default class FeedbackForm extends React.Component {
                   value={this.state.text}
                   onChange={this.updateText.bind(this)} />
         <label className={styles.inputLabel}
-               htmlFor={"sender"}>
+               htmlFor={"identifier"}>
           (Optional) Add contact info if you want me to respond, or a name to
           identify yourself.
         </label>
         <input className={styles.identifierArea}
                type={"text"}
-               name={"sender"}
+               name={"identifier"}
                autoComplete={"on"}
                placeholder={"Add identifier here"}
                value={this.state.sender}
                onChange={this.updateSender.bind(this)} />
         <div className={styles.sameLine}>
           <label className={styles.inputLabel}
-                htmlFor={"can-be-shared"}>
+                htmlFor={"sharable"}>
             Do I have permission to share this comment?
           </label>
           <input type={"checkbox"}
-                name={"can-be-shared"}
+                name={"sharable"}
                 checked={this.state.sharable}
                 onChange={this.updateSharable.bind(this)} />
         </div>
@@ -127,7 +127,8 @@ export default class FeedbackForm extends React.Component {
           <input className={styles.actionButton}
                 type={"submit"}
                 value={"send"}
-                onSubmit={this.submit.bind(this)} />
+                onSubmit={this.submit.bind(this)}
+                onClick={this.submit.bind(this)} />
           <button className={styles.actionButton}
                 onClick={this.cancel.bind(this)}>
             cancel
