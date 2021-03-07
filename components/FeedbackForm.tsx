@@ -8,9 +8,9 @@ export interface FeedbackFormProps {
 
 interface FeedbackFormState {
   expanded: boolean,
-  messageText: string,
-  identifier: string,
-  canBeShared: boolean
+  text: string,
+  sender: string,
+  sharable: boolean
 }
 
 export default class FeedbackForm extends React.Component {
@@ -22,9 +22,9 @@ export default class FeedbackForm extends React.Component {
 
     this.state = {
       expanded: props.fromPage == "comment-page",
-      messageText: "",
-      identifier: "",
-      canBeShared: false
+      text: "",
+      sender: "",
+      sharable: false
     }
   }
 
@@ -34,40 +34,47 @@ export default class FeedbackForm extends React.Component {
     });
   }
 
-  updateMessageText(e: React.ChangeEvent<HTMLTextAreaElement>): void {
+  updateText(e: React.ChangeEvent<HTMLTextAreaElement>): void {
     if (e.target.value.length <= 5000) {
       this.setState({
-        messageText: e.target.value
+        text: e.target.value
       });
     }
   }
 
-  updateIdentifier(e: React.ChangeEvent<HTMLInputElement>): void {
+  updateSender(e: React.ChangeEvent<HTMLInputElement>): void {
     if (e.target.value.length <= 100) {
       this.setState({
-        identifier: e.target.value
+        sender: e.target.value
       });
     }
   }
 
-  updateCanBeShared(e: React.ChangeEvent<HTMLInputElement>): void {
+  updateSharable(e: React.ChangeEvent<HTMLInputElement>): void {
     this.setState({
       canBeShared: e.target.checked
     });
   }
 
-  async submit(): Promise<void> {
+  async submit(e: React.ChangeEvent<HTMLInputElement>): Promise<void> {
+    e.preventDefault();
     const comment: DirectComment = {
       from: this.props.fromPage,
-      text: this.state.messageText,
-      identifier: this.state.identifier,
-      sharable: this.state.canBeShared
+      text: this.state.text,
+      sender: this.state.sender,
+      sharable: this.state.sharable
     };
-    await fetch("/api/direct-comments", {
+    const x = await fetch("/api/direct-comments", {
       method: "POST",
       headers: {"Content-type": "application/json"},
       body: JSON.stringify({comment})
-    }).then(() => {location.reload(true)});
+    });
+    this.setState({
+      expanded: false,
+      text: x.toString(),
+      sender: "",
+      sharable: false
+    });
   }
 
   cancel(): void {
@@ -92,20 +99,20 @@ export default class FeedbackForm extends React.Component {
         <label className={styles.inputLabel}>Comment:</label>
         <textarea className={styles.commentArea}
                   placeholder={"Write your message here"}
-                  value={this.state.messageText}
-                  onChange={this.updateMessageText.bind(this)} />
+                  value={this.state.text}
+                  onChange={this.updateText.bind(this)} />
         <label className={styles.inputLabel}
-               htmlFor={"identifier"}>
+               htmlFor={"sender"}>
           (Optional) Add contact info if you want me to respond, or a name to
           identify yourself.
         </label>
         <input className={styles.identifierArea}
                type={"text"}
-               name={"identifier"}
+               name={"sender"}
                autoComplete={"on"}
                placeholder={"Add identifier here"}
-               value={this.state.identifier}
-               onChange={this.updateIdentifier.bind(this)} />
+               value={this.state.sender}
+               onChange={this.updateSender.bind(this)} />
         <div className={styles.sameLine}>
           <label className={styles.inputLabel}
                 htmlFor={"can-be-shared"}>
@@ -113,8 +120,8 @@ export default class FeedbackForm extends React.Component {
           </label>
           <input type={"checkbox"}
                 name={"can-be-shared"}
-                checked={this.state.canBeShared}
-                onChange={this.updateCanBeShared.bind(this)} />
+                checked={this.state.sharable}
+                onChange={this.updateSharable.bind(this)} />
         </div>
         <div className={styles.sameLine}>
           <input className={styles.actionButton}

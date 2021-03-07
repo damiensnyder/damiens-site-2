@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export interface DirectComment {
   from?: string,
   text?: string,
-  identifier?: string,
+  sender?: string,
   sharable?: boolean
 }
 
@@ -14,6 +14,7 @@ const client: faunadb.Client = secret ? new faunadb.Client({secret}) : null;
 export default async function DirectComments(req: NextApiRequest,
                                              res: NextApiResponse) {
   const comment: any = req.body;
+  console.log(JSON.stringify(comment));
 
   try {
     if (!client) {
@@ -28,16 +29,19 @@ export default async function DirectComments(req: NextApiRequest,
       if (typeof comment.text === "string") {
         newComment.text = comment.text;
       }
-      if (typeof comment.identifier === "string") {
-        newComment.identifier = comment.identifier;
+      if (typeof comment.sender === "string") {
+        newComment.sender = comment.sender;
       }
       if (typeof comment.sharable === "boolean") {
         newComment.sharable = comment.sharable;
       }
-      
-      return client.query(
-        q.Create(q.Collection("DirectComments"), newComment)
+
+      const result = client.query(
+        q.Create(q.Collection("DirectComment"), {data: newComment})
       );
+      console.log(JSON.stringify(result));
+
+      res.status(200).json(JSON.stringify(result));
     }
   } catch (error) {
     res.status(500).json({error});
