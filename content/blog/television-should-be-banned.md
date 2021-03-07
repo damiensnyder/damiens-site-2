@@ -34,7 +34,7 @@ Television is entertaining in the same sense that alcohol is entertaining. It ca
 
 I will recognize "watching TV with someone else" as often a positive activity. The key reason is that it involves another person, but whatever gets the job done works for me. And if you're really feeling down, watching TV alone is probably better than binge drinking. So if you think it will genuinely make you happier, go ahead and watch TV. But my conviction is that in the long run television is kind of a bad thing.
 
-Remember the statistics from earlier? 2.81 *hours* per day? That seems really alarming, and I hope not just to me. If you spend 2.81 hours per day from ages 15 to 70 watching TV, that's 6.44 *years*. If leisure time were a public health crisis, it would be worse than smoking. Of course, leisure time is not a public health crisis. I could make the same case for, say, sleeping—if we just didn't sleep, we could have 50% more time, *whooaaa*—but the other things we spend 3 hours a day on seem to be much more obviously valuable. Maybe we're so advanced as a society that we're finally getting to enjoy the "good ending" of spending 3 hours on a couch watching Seinfeld reruns, but somehow I don't think that's it.
+Remember the statistics from earlier? 2.81 *hours* per day? That seems really alarming, and I hope not just to me. If you spend 2.81 hours per day from ages 15 to 70 watching TV, that's 6.44 *years*. If leisure time were a public health crisis, it would be worse than smoking. Of course, leisure time is not a public health crisis. I could make the same case for, say, sleeping—if we just didn't sleep, we could have 50% more time, *whooaaa*—but the other things we spend 3 hours a day on seem to be much more obviously valuable. Or maybe not. Maybe *Infinite Jest* was actually a book about a utopia where people got to spend all their time entertained.[^4]
 
 # Part II: just TV tho?
 
@@ -48,7 +48,7 @@ Anecdotally, the time spent on mobile devices seems fairly accurate for people l
 
 This chart includes, I assume, computers, phones, and tablets in the "digital" category. I don't know if it distinguishes work from non-work activity, and I don't mean to rag on people checking their email or whatever. But if you divide the numbers in that chart by 2 I'm guessing you'd get a pretty good estimate of digital leisure time and television watching.
 
-And, like with TV, digital consumption has its own merits, many of them the same. But like with the "No one watches good TV" hypothesis, the most common use of technology is scrolling through some sort of feed[^4] without any particular goal in mind. For every time you feel slightly more connected to a friend you couldn't see in person, you scroll past five boring vacation photos.
+And, like with TV, digital consumption has its own merits, many of them the same. But like with the "No one watches good TV" hypothesis, the most common use of technology is scrolling through some sort of feed[^5] without any particular goal in mind. For every time you feel slightly more connected to a friend you couldn't see in person, you scroll past five boring vacation photos.
 
 Now, I've been avoiding maybe the strongest argument against my position. The argument is, it's paternalistic as hell. Who am I to decide whether a consenting adult and a consenting media company engage in entertainment? Everyone is their own person. I feel like what I'm writing is only a step away from this meme:
 
@@ -56,11 +56,11 @@ Now, I've been avoiding maybe the strongest argument against my position. The ar
 
 But in its strongest form, none but the purest of philosophers believe adults should always do whatever they want. If you read that adults spend 2.81 hours a day injecting heroin between their toes, you'd think "wow, that's messed up." (Unless you were in the middle of your 2.81 hours.) Even with completely legal activities, people recognize that acceptable things can be bad if used too much. Watching cable news for two hours straight is the technological equivalent of day drinking, but few people treat it as such.
 
-Furthermore, people recognize that media often uses predatory tactics to get people to spend more time on them. Algorithmically arranged, blink-and-you'll-miss-it feeds with unpredictable rewards—these are intentionally addictive tactics, and prevalent in all the major social media sites.[^5] The tech backlash rightly recognizes this as unethical behavior that causes people to make bad choices for themselves.
+Furthermore, people recognize that media often uses predatory tactics to get people to spend more time on them. Algorithmically arranged, blink-and-you'll-miss-it feeds with unpredictable rewards—these are intentionally addictive tactics, and prevalent in all the major social media sites.[^6] The tech backlash rightly recognizes this as unethical behavior that causes people to make bad choices for themselves.
 
 Facebook, YouTube, Instagram, and nearly all television channels, make money from selling ads. If you sell ads, the best way to be more profitable is to get more people to consume your product for a longer amount of time. When every media company's KPI is time spent... it's no wonder people spend a lot of time consuming media.
 
-The important part is, time spent *is* the devil. Some of the time you aimlessly consume TV/digital content, maybe even most of the time, you would've been doing something equivalently bad or worse. Maybe you'd be so bored you start scratching your skin just to feel something. But some of the time, you would interact with other people face-to-face, or pursue an enriching hobby, or work and create value for someone else.[^6] This is healthy, and even necessary for health. Not interacting with people makes you isolated; hobbies enrich your character; work helps other people, and sometimes also feels fulfilling.
+The important part is, time spent *is* the devil. Some of the time you aimlessly consume TV/digital content, maybe even most of the time, you would've been doing something equivalently bad or worse. Maybe you'd be so bored you start scratching your skin just to feel something. But some of the time, you would interact with other people face-to-face, or pursue an enriching hobby, or work and create value for someone else.[^7] This is healthy, and even necessary for health. Not interacting with people makes you isolated; hobbies enrich your character; work helps other people, and sometimes also feels fulfilling.
 
 # Part III: so whadaya want me to do about it
 
@@ -70,7 +70,7 @@ Maybe we should do an economic revolution. I dunno. I'm on the fence about it. B
 
 Step one is to examine your daily time use. If you're the kind of person who found this blog post, and didn't stop reading halfway through, you might have already examined it. I hope it helped. Am I good at restricting technology use? Like, a little bit. You can be mad at Big Pharma and still be addicted to opioids. Improving at life was never the easy part.
 
-One thing to notice particularly is how often you prioritize screens over human interaction. This means hanging out with a person and being on your phone the whole time. It also means not making plans with people, or not spending time on your hobby, because you're cool just binge-watching[^7] TV for the day instead. Obviously everyone has different social needs. Consider whether yours are being met.[^8] In general, notice which things you do are most fulfilling, and try to spend more time on those things and less itme on the things that aren't fulfilling to you.
+One thing to notice particularly is how often you prioritize screens over human interaction. This means hanging out with a person and being on your phone the whole time. It also means not making plans with people, or not spending time on your hobby, because you're cool just binge-watching[^8] TV for the day instead. Obviously everyone has different social needs. Consider whether yours are being met.[^9] In general, notice which things you do are most fulfilling, and try to spend more time on those things and less itme on the things that aren't fulfilling to you.
 
 At a level slightly beyond the personal, you wield the power to enforce social norms. When you're with other people you can politely ask to do something other than watch TV, and something other than look at your phones in the same room without talking. In whatever political discussions you're in, you can influence $\textrm{the discourse}$. Technology is already a hot issue, and the issue could use a little nudge, y'know?
 
@@ -80,18 +80,20 @@ And if there are 100 signups in the next 30 days, you can get a "Prohibition 2: 
 
 ## Footnotes
 
-[^1] I hope you didn't expect me to say that, because it would mean you're suboptimal at inferring what claims will be associated with a given title of post. But everyone has flaws.
+[^1] Any complaints about the polemic title can be filed at the bottom of the page.
 
 [^2] That is, the average U.S. resident 15 or older and not in jail or the military
 
 [^3] BLS describes their methodology more in depth [here](https://www.bls.gov/tus/atusfaqs.htm#8). Basically they ask people what they did the previous day (starting and ending at 4am), how much time they spent on it, when in the day they did it, and who they did it with.
 
-[^4] Can I just talk for a moment about how dystopian the word "feed" is? What am I, some kind of cattle being fattened for the slaughter?
+[^4] No, I haven't read *[Infinite Jest](https://en.wikipedia.org/wiki/Infinite_Jest)*, and neither have you.
 
-[^5] The equivalent for traditional media companies is getting you to form parasocial emotional attachments to fictional characters or celebrities, then using those emotional attachments to create investment in their narratives.
+[^5] Can I just talk for a moment about how dystopian the word "feed" is? What am I, some kind of cattle being fattened for the slaughter?
 
-[^6] Source: People interacted in person a hell of a lot during the entire pre-TV era. Still a lot after, but not as much.
+[^6] The equivalent for traditional media companies is getting you to form parasocial emotional attachments to fictional characters or celebrities, then using those emotional attachments to create investment in their narratives.
 
-[^7] "Binge-watching" is regarded as a weirdly normal thing to do for a phrase that contains the word "binge" in it.
+[^7] Source: People interacted in person a hell of a lot during the entire pre-TV era. Still a lot after, but not as much.
 
-[^8] A lot of people in today's society interact with others rarely enough they would be weirdo recluses in any other time.
+[^8] "Binge-watching" is regarded as a weirdly normal thing to do for a phrase that contains the word "binge" in it.
+
+[^9] A lot of people in today's society interact with others rarely enough they would be weirdo recluses in any other time.
