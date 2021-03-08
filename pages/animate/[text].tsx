@@ -9,7 +9,7 @@ export default function AnimatePage(): ReactElement {
   const {text} = router.query;
   return (
     <div className={general.pageContainer}>
-      <NormalHead title={"" + text} />
+      <NormalHead title={"animated message"} />
       <div className={styles.textContainer}>
         <p className={styles.spinnyText}>
           <span className={styles.rainbow}>{text}</span>
