@@ -40,7 +40,7 @@ That's stupid. Advertising is a zero-sum or even negative-sum game. If everyone 
 
 It's even worse than that. Our entertainment is tailored to be maximally palatable to advertisers. Even when individual creators follow their own values, the platforms select the most profitable. This means avoiding controversy wherever possible, targeting demographics with the biggest wallets, and stretching out what content does exist to allow the maximum possible runtime. Platforms optimize for addiction, news for sensation, and creators for bingeability.
 
-This is how things are, but there is no reason to lie down in defeat. There are business models of entertainment that don't require you to consent to manipulation. Generally this means "paying for content." Sometimes you pay for content and are still sold to advertisers, so this means "paying more for content." Such is life.
+This is how things are, but there is no reason to accept it as a fact of life. There are business models of entertainment that don't require you to consent to manipulation. This means "paying for content." Sometimes you pay for content and are still sold to advertisers. In that case, this means "paying more for content." It is often preferable to pay money rather than your soul.
 
 However, a series of paid opt-outs will not solve advertising.[^4] The entertainment industry costs billions, maybe even gazillions, of dollars to run. Opting out of advertising would make entertainment costs higher than most people are willing to pay. The second part of this puzzle is consuming less entertainment. I plan to write about that later, but first I am seeking broader feedback on this topic.
 
