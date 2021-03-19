@@ -50,10 +50,10 @@ However, a series of paid opt-outs will not solve advertising.[^4] The entertain
 
 # Footnotes
 
-[^1] There are supposedly people who watch the Super Bowl for the ads, which I consider an advanced form of Stockholm syndrome.
+[^1]: There are supposedly people who watch the Super Bowl for the ads, which I consider an advanced form of Stockholm syndrome.
 
-[^2] Sometimes you even *pay* to be advertised to! You pay for your sports ticket, or newspaper subscription, or magazine subscription, and you're *still* being advertised to.
+[^2]: Sometimes you even *pay* to be advertised to! You pay for your sports ticket, or newspaper subscription, or magazine subscription, and you're *still* being advertised to.
 
-[^3] This might not be true, but if barrages of manipulation are the only thing keeping the economy afloat, the economy deserves to collapse.
+[^3]: This might not be true, but if barrages of manipulation are the only thing keeping the economy afloat, the economy deserves to collapse.
 
-[^4] This is especially true considering some products exist only to sell ads. Namely billboards. If billboards offered an opt-out fee so you wouldn't have to look at them, we would rightly notice they are a racket.
+[^4]: This is especially true considering some products exist only to sell ads. Namely billboards. If billboards offered an opt-out fee so you wouldn't have to look at them, we would rightly notice they are a racket.
