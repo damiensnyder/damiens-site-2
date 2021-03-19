@@ -48,8 +48,7 @@ my [YouTube](https://www.youtube.com/channel/UC_JMabjdOb2k57k5pvHnfEg),
 # how do i contact you
 
 you can message me on any of the social media links above, or you can send me a
-comment [through this website[(/comment)! or if you know me in real life i am
-even easier to contact
+comment [through this website[(/comment)! or if you know me in real life please text or call me on my phone
 
 # why is the text so big
 

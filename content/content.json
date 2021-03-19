@@ -1,10 +1,10 @@
 {
   "posts": [
     {
-      "name": "Television should be banned",
-      "code": "television-should-be-banned",
-      "date": "20210307",
-      "description": "i mean this sincerely but not literally",
+      "name": "Ads are everywhere, and it's not okay",
+      "code": "ads-are-everywhere-and-its-not-okay",
+      "date": "20210318",
+      "description": "we can create an ad-free future",
       "thumbnail": "television-should-be-banned.png",
       "tags": ["blog", "featured"]
     },
