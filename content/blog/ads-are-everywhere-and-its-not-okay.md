@@ -1,6 +1,6 @@
 Have you noticed that everything is covered in ads?
 
-Not *everything*, of course. You can go entire days without seeing an advertisement. But you can't do that if you plan on watching TV, browsing the internet, or taking public transit. Let's review some everyday sources of entertainment, and where you can expect them to show you ads:
+Not *everything*. You can go entire days without seeing an advertisement. But you can't do that if you plan on watching TV, browsing the internet, or taking public transit. Let's review some everyday sources of entertainment, and where you can expect them to show you ads:
 
 ## Sports
 
