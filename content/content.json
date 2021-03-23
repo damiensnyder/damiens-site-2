@@ -1,20 +1,12 @@
 {
   "posts": [
     {
-      "name": "Ads are everywhere, and it's not okay",
-      "code": "ads-are-everywhere-and-its-not-okay",
-      "date": "20210318",
-      "description": "we can create an ad-free future",
-      "thumbnail": "television-should-be-banned.png",
-      "tags": ["blog", "featured"]
-    },
-    {
       "name": "Units Of Measurement That Never Caught On",
       "code": "units-of-measurement-that-never-caught-on",
       "date": "20210223",
       "description": "the metric system is passé",
       "thumbnail": "units-of-measurement-that-never-caught-on.png",
-      "tags": ["blog"]
+      "tags": ["blog", "featured"]
     },
     {
       "name": "No Such Thing As Free Leverage",
