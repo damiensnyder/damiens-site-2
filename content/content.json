@@ -201,6 +201,13 @@
       "thumbnail": "about.png",
       "tags": ["other", "featured-other"]
     },
+    {
+      "name": "faves",
+      "code": "/faves",
+      "date": "20210324",
+      "description": "some of my favorite songs",
+      "tags": ["other"]
+    },
 
 
     
