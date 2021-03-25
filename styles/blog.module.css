@@ -37,6 +37,26 @@
   max-height: 1080px;
 }
 
+.blogTable {
+  font-family: Inter, Helvetiva, sans-serif;
+  border: 2px solid #ccc;
+  border-collapse: collapse;
+}
+
+.blogTh {
+  padding: 4px 8px;
+
+  text-align: center;
+  background-color: #222;
+  border-bottom: 2px solid #ccc;
+}
+
+.blogTd {
+  padding: 2px 8px;
+
+  border-bottom: 2px solid #888;
+}
+
 .caption {
   text-align: center;
 }
