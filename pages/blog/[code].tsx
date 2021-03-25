@@ -21,6 +21,8 @@ export const markdownRenderers: any = {
   image: ({src, alt}) => <img className={styles.blogImage}
                               src={src}
                               alt={alt} />,
+  table: ({children}) => <table className={styles.blogTable}>{children}</table>,
+  tableCell: (props) => <TableCell props={props}></TableCell>,
   inlineMath: ({value}) => <InlineMath math={value} />,
   math: ({value}) => <BlockMath math={value} />,
   footnoteReference: FootnoteReference,
@@ -39,8 +41,21 @@ function Heading(props): ReactElement {
     return <h1 className={styles.blogHeading1}>{props.children}</h1>;
   } else if (props.level == 2) {
     return <h2 className={styles.blogHeading2}>{props.children}</h2>;
+  } else if (props.level == 6) {
+    // 6 headings is a caption, because I don't want to write a new plugin
+    // just for captions.
+    return <p className={styles.caption}>{props.children}</p>
   }
   return <h3 className={styles.blogHeading3}>{props.children}</h3>;
+}
+
+function TableCell(propsBox: {props: any}): ReactElement {
+  const props = propsBox.props;
+  if (props.isHeader) {
+    return <th className={styles.blogTh}>{props.children}</th>;
+  }
+  return <td className={styles.blogTd}
+             align={props.align}>{props.children}</td>;
 }
 
 function FootnoteReference(props): ReactElement {

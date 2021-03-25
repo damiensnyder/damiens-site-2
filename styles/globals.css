@@ -58,3 +58,7 @@ pre {
 
   background-color: #333;
 }
+
+th {
+  text-align: center;
+}
