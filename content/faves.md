@@ -8,7 +8,7 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | It's Alrite 2 Cry | Francis and the Lights, Kool A.D. | [Video](https://www.youtube.com/watch?v=hmlZxNE2VQ4) |
 | Friday Night Big Screen | GIRLI | [Video](https://www.youtube.com/watch?v=UDHFYVorDpU) |
 | Hundred Thousand Hearts | HOLYCHILD | [Video](https://www.youtube.com/watch?v=AXabgt-UGD4) |
-| The Procession of Celestial Beings I | Joe Hisaichi | [Video](https://www.youtube.com/watch?v=mUwzfqm0dqY) |
+| The Procession of Celestial Beings I | Joe Hisaichi | [Audio](https://www.youtube.com/watch?v=mUwzfqm0dqY) |
 | Things | Louis Cole | [Video](https://www.youtube.com/watch?v=RhllQAiEQlM) |
 | Ride My Bike | Maude Latour | [Video](https://www.youtube.com/watch?v=N_nBsFkUDtU) |
 | Song for Zula | Phosphorescent | [Video](https://www.youtube.com/watch?v=ZPxQYhGpdvg) |
@@ -19,13 +19,13 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 
 | Song | Artist | Source |
 | :-- | :-- | :-: |
-| xXXi_wud_nvrstøp_ÜXXx | 100 gecs (splee remix) | [Video](https://www.youtube.com/watch?v=ZKanae2wncU) |
-| The I Love You Song | 25th Annual Putnam County Spelling Bee | [Video](https://www.youtube.com/watch?v=uTjK9leC6jk) |
+| xXXi_wud_nvrstøp_ÜXXx | 100 gecs (splee remix) | [Audio](https://www.youtube.com/watch?v=ZKanae2wncU) |
+| The I Love You Song | 25th Annual Putnam County Spelling Bee | [Audio](https://www.youtube.com/watch?v=uTjK9leC6jk) |
 | If I Had You | Adam Lambert | [Video](https://www.youtube.com/watch?v=wmXQFwlD7vk) |
 | Hands Up | Blood Orange | [Video](https://www.youtube.com/watch?v=CBpqtvgbhXY) |
-| Sweden | C418 | [Video](https://www.youtube.com/watch?v=_3ngiSxVCBs) |
+| Sweden | C418 | [Audio](https://www.youtube.com/watch?v=_3ngiSxVCBs) |
 | Fire / Freezer | El May | [Video](https://www.youtube.com/watch?v=dHo1h1IKc1U) |
-| #1 Crush | Garbage | [Video](https://www.youtube.com/watch?v=PX7LLua5NCM) |
+| #1 Crush | Garbage | [Audio](https://www.youtube.com/watch?v=PX7LLua5NCM) |
 | Carmelo | HOLYCHILD | [Video](https://www.youtube.com/watch?v=VGzx0_fXa9I) |
 | Over You | HOLYCHILD | [Video](https://www.youtube.com/watch?v=dD4Q5fbOKXQ) |
 | Harvest Moon | Imaginary Future | [Video](https://www.youtube.com/watch?v=XVzLUW1qtR4) |
@@ -37,7 +37,7 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Lento | Julieta Venegas | [Video](https://www.youtube.com/watch?v=CuTx1QwLPjM) |
 | One Trick Ponies | Kurt Vile | [Video](https://www.youtube.com/watch?v=W7OmWKy6_8E) |
 | American Dream | LCD Soundsystem | [Video](https://www.youtube.com/watch?v=ML1MUKOJIIo) |
-| Hoyt and Schermerhorn | Leikeli47 | [Video](https://www.youtube.com/watch?v=RugQooxnn-4) |
+| Hoyt and Schermerhorn | Leikeli47 | [Audio](https://www.youtube.com/watch?v=RugQooxnn-4) |
 | Kids | MGMT | [Video](https://www.youtube.com/watch?v=fe4EK4HSPkI) |
 | I Know A Place | MUNA | [Video](https://www.youtube.com/watch?v=-t5gGm3NWU4) |
 | You Can't Hide | Maktub | [Video](https://www.youtube.com/watch?v=EbWT8UKi7gE) |
@@ -46,8 +46,8 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Oh No | Soy Christmas | [Video](https://www.youtube.com/watch?v=OAzP0h7BURI) |
 | Lucky 88 | Speedy Ortiz | [Video](https://www.youtube.com/watch?v=f76rghmg1jI) |
 | So Now What | The Shins | [Video](https://www.youtube.com/watch?v=R7-DjDF1MRM) |
-| Emerald Princess | Two Steps From Hell | [Video](https://www.youtube.com/watch?v=kBH-dO68ooA) |
-| Magika | Two Steps From Hell | [Video](https://www.youtube.com/watch?v=D2gIt7WSY5Q) |
+| Emerald Princess | Two Steps From Hell | [Audio](https://www.youtube.com/watch?v=kBH-dO68ooA) |
+| Magika | Two Steps From Hell | [Audio](https://www.youtube.com/watch?v=D2gIt7WSY5Q) |
 | Junk | Vivienne Chi | [Video](https://www.youtube.com/watch?v=udKtaZAj-qY) |
 
 ## 41-100
@@ -61,7 +61,7 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Baby I'm Yours | Breakbot, Irfane | [Video](https://www.youtube.com/watch?v=6okxuiiHx2w) |
 | Everytime We Touch | Cascada | [Video](https://www.youtube.com/watch?v=4G6QDNC4jPs) |
 | Little Heartbeat | Cataldo | [Video](https://www.youtube.com/watch?v=k3ZnlZOWbNY) |
-| Real Life | Cayucas | [Video](https://www.youtube.com/watch?v=i_adEXYIEuo) |
+| Real Life | Cayucas | [Audio](https://www.youtube.com/watch?v=i_adEXYIEuo) |
 | Fuck You | CeeLo Green | [Video](https://www.youtube.com/watch?v=pc0mxOXbWIU) |
 | Wonderful Everyday | Chance The Rapper, Social Experiment | [Audio](https://soundcloud.com/haute_audio/chance-the-rapper-wonderful-everyday-arthur-theme-cover) |
 | Boys | Charli XCX | [Video](https://www.youtube.com/watch?v=mPRy1B4t5YA) |
@@ -77,8 +77,9 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Wishing You Away | HOLYCHILD | [Video](https://www.youtube.com/watch?v=-NzjL25AK8c) |
 | Oom Sha La La | Haley Heynderickx | [Video](https://www.youtube.com/watch?v=ZyvYIYwLzTw) |
 | This Time It's Different | Heart Bones | [Video](https://www.youtube.com/watch?v=8I3Fvtc2ElA) |
+| heart of the woods (ending theme) | in love with a ghost, Ukeletea | [Audio](https://soundcloud.com/in-love-with-a-ghost/heart-of-the-woods-ending-theme-ft-ukuletea) |
+| Introduction | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/introduction-1) |
 | the land of the giant flying beast | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/the-land-of-the-giant-flying-beast) |
-| heart of the woods (ending theme) | in love with a ghost, Ukeletea |
 | Make Me Cry | Jacob Collier | [Video](https://www.youtube.com/watch?v=Ra77qWfXv1c) |
 | Don't Look Back | Jem | [Video](https://www.youtube.com/watch?v=-u9aH0OP218) |
 | Dance Again | Jennifer Lopez, Pitbull | [Video](https://www.youtube.com/watch?v=bjgFH01k0gU) |
@@ -113,4 +114,3 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Winterspell | Two Steps From Hell | [Video](https://www.youtube.com/watch?v=GLqiQWAXQh8) |
 | Teenage Dirtbag | Wheatus | [Video](https://www.youtube.com/watch?v=FC3y9llDXuM) |
 | You're Somebody Else | flora cash | [Video](https://www.youtube.com/watch?v=AzjMmwki1Fs) |
-| Introduction | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/introduction-1) | [Audio](https://soundcloud.com/in-love-with-a-ghost/heart-of-the-woods-ending-theme-ft-ukuletea) |
