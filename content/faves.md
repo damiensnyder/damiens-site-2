@@ -30,6 +30,7 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Over You | HOLYCHILD | [Video](https://www.youtube.com/watch?v=dD4Q5fbOKXQ) |
 | Harvest Moon | Imaginary Future | [Video](https://www.youtube.com/watch?v=XVzLUW1qtR4) |
 | Hide and Seek | Imogen Heap | [Video](https://www.youtube.com/watch?v=UYIAfiVGluk) |
+| complex feelings about my own existence | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/complex-feelings-about-my-own-existence-feat-jungkook) |
 | Upside Down | Jack Johnson | [Video](https://www.youtube.com/watch?v=dqUdI4AIDF0) |
 | I Won't Fall Apart | Jager | [Video](https://www.youtube.com/watch?v=PwE7h4tUB_4) |
 | Laid | James | [Video](https://www.youtube.com/watch?v=mC53oRIo0zQ) |
@@ -48,7 +49,6 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Emerald Princess | Two Steps From Hell | [Video](https://www.youtube.com/watch?v=kBH-dO68ooA) |
 | Magika | Two Steps From Hell | [Video](https://www.youtube.com/watch?v=D2gIt7WSY5Q) |
 | Junk | Vivienne Chi | [Video](https://www.youtube.com/watch?v=udKtaZAj-qY) |
-| complex feelings about my own existence | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/complex-feelings-about-my-own-existence-feat-jungkook) |
 
 ## 41-100
 
@@ -77,7 +77,8 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Wishing You Away | HOLYCHILD | [Video](https://www.youtube.com/watch?v=-NzjL25AK8c) |
 | Oom Sha La La | Haley Heynderickx | [Video](https://www.youtube.com/watch?v=ZyvYIYwLzTw) |
 | This Time It's Different | Heart Bones | [Video](https://www.youtube.com/watch?v=8I3Fvtc2ElA) |
-| My Love | Hopsin | [Video](https://www.youtube.com/watch?v=XiBqOgs2K6w) |
+| the land of the giant flying beast | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/the-land-of-the-giant-flying-beast) |
+| heart of the woods (ending theme) | in love with a ghost, Ukeletea |
 | Make Me Cry | Jacob Collier | [Video](https://www.youtube.com/watch?v=Ra77qWfXv1c) |
 | Don't Look Back | Jem | [Video](https://www.youtube.com/watch?v=-u9aH0OP218) |
 | Dance Again | Jennifer Lopez, Pitbull | [Video](https://www.youtube.com/watch?v=bjgFH01k0gU) |
@@ -96,21 +97,20 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Thingamajig | Miya Folick | [Video](https://www.youtube.com/watch?v=II9JXA_VOZ0) |
 | Welcome to the Black Parade | My Chemical Romance | [Video](https://www.youtube.com/watch?v=RRKJiM9Njr8) |
 | Just A Dream | Nelly | [Video](https://www.youtube.com/watch?v=N6O2ncUKvlg) |
+| Metropolis | Octave Cat | [Video](https://www.youtube.com/watch?v=zqBNf5SFLWI) |
 | Dragostea Din Tei | O-Zone | [Video](https://www.youtube.com/watch?v=YnopHCL1Jk8) |
 | Run Devil Run | Ozark Sheiks | [Video](https://www.youtube.com/watch?v=Ue-s5UbWU8s) |
 | Santiago | Preservation Hall Jazz Band | [Video](https://www.youtube.com/watch?v=vi504wcjFfs) |
 | IPHONE | Rico Nasty | [Video](https://www.youtube.com/watch?v=RuhvdaDabpU) |
 | Fields of Verdun | Sabaton | [Video](https://www.youtube.com/watch?v=xP8G-LwWNn0) |
+| 9/20 line | shebtel shebtel | [Audio](https://soundcloud.com/good/how-daytime-must-look) |
 | Cheap Thrills | Sia, Sean Paul | [Video](https://www.youtube.com/watch?v=nYh-n7EOtMA) |
 | Omens of Love (live) | T-SQUARE | [Video](https://www.youtube.com/watch?v=HYie77YHkns) |
 | Feels Like We Only Go Backwards | Tame Impala | [Video](https://www.youtube.com/watch?v=wycjnCCgUes) |
 | epiphany | Taylor Swift | [Video](https://www.youtube.com/watch?v=DUnDkI7l9LQ) |
+| Again & Again | the bird and the bee | [Video](https://www.youtube.com/watch?v=TMy6X5cQul8) |
+| My Love | the bird and the bee | [Video](https://www.youtube.com/watch?v=Hv3ZdOdjXso) |
 | Winterspell | Two Steps From Hell | [Video](https://www.youtube.com/watch?v=GLqiQWAXQh8) |
 | Teenage Dirtbag | Wheatus | [Video](https://www.youtube.com/watch?v=FC3y9llDXuM) |
 | You're Somebody Else | flora cash | [Video](https://www.youtube.com/watch?v=AzjMmwki1Fs) |
-| Introduction | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/introduction-1) |
-| the land of the giant flying beast | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/the-land-of-the-giant-flying-beast) |
-| heart of the woods (ending theme) | in love with a ghost, Ukeletea | [Audio](https://soundcloud.com/in-love-with-a-ghost/heart-of-the-woods-ending-theme-ft-ukuletea) |
-| 9/20 line | shebtel shebtel | [Audio](https://soundcloud.com/good/how-daytime-must-look) |
-| Again & Again | the bird and the bee | [Video](https://www.youtube.com/watch?v=TMy6X5cQul8) |
-| My Love | the bird and the bee | [Video](https://www.youtube.com/watch?v=Hv3ZdOdjXso) |
+| Introduction | in love with a ghost | [Audio](https://soundcloud.com/in-love-with-a-ghost/introduction-1) | [Audio](https://soundcloud.com/in-love-with-a-ghost/heart-of-the-woods-ending-theme-ft-ukuletea) |
