@@ -78,8 +78,8 @@
       "name": "2021 NBA Draft Profile: Air Bud",
       "code": "2021-nba-draft-profile-air-bud",
       "date": "20210615",
-      "description": "4:02 ▶ Dogs can play basketball, but can they play it at the highest level?",
-      "tags": ["video", "comedy"],
+      "description": "4:02 ▶ dogs can play basketball, but can they play it at the highest level?",
+      "tags": ["video", "comedy", "featured"],
       "youtube": "P0m2t5S2J9I"
     },
     {
@@ -139,7 +139,7 @@
       "code": "hardest-part",
       "date": "20210123",
       "description": "0:20 ▶",
-      "tags": ["video", "animated", "comedy", "short", "featured"],
+      "tags": ["video", "animated", "comedy", "short"],
       "thumbnail": "hardest-part.png",
       "youtube": "ybOr9bQc_nQ"
     },
