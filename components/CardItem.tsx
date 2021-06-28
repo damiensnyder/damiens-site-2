@@ -15,14 +15,14 @@ export default function CardItem(props: CardMetadata): ReactElement {
 
   return (
     <div className={styles.cardItem}>
-      <Link href={props.url}>
+      <Link href={props.url} passHref>
         <img className={styles.thumbnail}
-             src={thumbnailSrc}
-             alt={props.name} />
+               src={thumbnailSrc}
+               alt={props.name} />
       </Link>
       <div className={styles.itemText}>
         <span className={styles.itemTitle}>
-          <Link href={props.url}>
+          <Link href={props.url} passHref>
             {props.name}
           </Link>
         </span>

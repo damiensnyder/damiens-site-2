@@ -17,12 +17,12 @@ import math from "remark-math";
 import "katex/dist/katex.min.css";
 
 export const markdownRenderers: any = {
-  heading: ({level, children}) => <Heading level={level} children={children} />,
+  heading: ({level, children}) => <Heading level={level}>{children}</Heading>,
   image: ({src, alt}) => <img className={styles.blogImage}
-                              src={src}
-                              alt={alt} />,
+                                src={src}
+                                alt={alt} />,
   table: ({children}) => <table className={styles.blogTable}>{children}</table>,
-  tableCell: (props) => <TableCell props={props}></TableCell>,
+  tableCell: TableCell,
   inlineMath: ({value}) => <InlineMath math={value} />,
   math: ({value}) => <BlockMath math={value} />,
   footnoteReference: FootnoteReference,
@@ -49,8 +49,7 @@ function Heading(props): ReactElement {
   return <h3 className={styles.blogHeading3}>{props.children}</h3>;
 }
 
-function TableCell(propsBox: {props: any}): ReactElement {
-  const props = propsBox.props;
+function TableCell(props: any): ReactElement {
   if (props.isHeader) {
     return <th className={styles.blogTh}>{props.children}</th>;
   }

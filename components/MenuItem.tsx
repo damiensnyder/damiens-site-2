@@ -17,14 +17,14 @@ export default function MenuItem(props: MenuItemProps): ReactElement {
 
   return (
     <div className={styles.menuItem}>
-      <Link href={url}>
+      <Link href={url} passHref>
         <img className={styles.thumbnail}
              src={thumbnailSrc}
              alt={props.name} />
       </Link>
       <div className={styles.itemText}>
       <span className={styles.itemTitle}>
-        <Link href={url}>
+        <Link href={url} passHref>
           {props.name}
         </Link>
       </span>

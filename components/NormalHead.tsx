@@ -62,10 +62,15 @@ export default function NormalHead(props: HeadProps | AudioHeadProps):
 function AudioTags(props: AudioHeadProps): ReactElement[] {
   return [
     <meta property={"og:audio"}
-          content={"https://www.damiensnyder.com/" + props.audioUrl} />,
-    <meta property={"og:audio:title"} content={props.title} />,
-    <meta property={"og:audio:artist"} content={"damien snyder"} />,
-    <meta property={"og:audio:album"} content={props.album} />,
-    <meta property={"og:audio:type"} content={"application/mp3"} />
+          content={"https://www.damiensnyder.com/" + props.audioUrl}
+          key={0} />,
+    <meta property={"og:audio:title"} content={props.title}
+          key={0} />,
+    <meta property={"og:audio:artist"} content={"damien snyder"}
+          key={0} />,
+    <meta property={"og:audio:album"} content={props.album}
+          key={0} />,
+    <meta property={"og:audio:type"} content={"application/mp3"}
+          key={0} />
   ];
 }
