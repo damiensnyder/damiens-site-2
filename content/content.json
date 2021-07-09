@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "name": "The news attention span",
+      "code": "the-news-attention-span",
+      "date": "20210708",
+      "description": "R.I.P. to an O.K. game",
+      "thumbnail": "the-news-attention-span.png",
+      "tags": ["blog", "featured"]
+    },
+    {
       "name": "Siphon State postmortem",
       "code": "siphon-state-postmortem",
       "date": "20210627",
@@ -233,7 +241,7 @@
       "code": "cross-the-line-w-me",
       "date": "20210526",
       "description": "3:32 ♬",
-      "tags": ["song", "vocal", "featured"],
+      "tags": ["song", "vocal"],
       "thumbnail": "cross-the-line-w-me.png",
       "soundcloud": "1056308467",
       "wav": "http://static.damiensnyder.com/cross-the-line-w-me.wav"
