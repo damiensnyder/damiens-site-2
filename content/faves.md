@@ -68,7 +68,6 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Little Heartbeat | Cataldo | [Video](https://www.youtube.com/watch?v=k3ZnlZOWbNY) |
 | Real Life | Cayucas | [Audio](https://www.youtube.com/watch?v=i_adEXYIEuo) |
 | Fuck You | CeeLo Green | [Video](https://www.youtube.com/watch?v=pc0mxOXbWIU) |
-| Wonderful Everyday | Chance The Rapper, Social Experiment | [Audio](https://soundcloud.com/haute_audio/chance-the-rapper-wonderful-everyday-arthur-theme-cover) |
 | Baba Yetu | Christopher Tin, Soweto Gospel Choir | [Video](https://www.youtube.com/watch?v=IJiHDmyhE1A) |
 | Standing In The Middle Of The Field | Cut Copy | [Video](https://www.youtube.com/watch?v=a0gBk1J-i-o) |
 | Man To Man | Dorian Electra | [Video](https://www.youtube.com/watch?v=u3K6_89Ee4U) |
@@ -108,6 +107,7 @@ Songs within each tier are listed in alphabetical order by artist. For easier li
 | Rich and Famous | Ozark Sheiks | [Audio](https://www.youtube.com/watch?v=nTAk4kWSQ-k) |
 | Unfold | Porter Robinson, Totally Enormous Extinct Dinosaurs | [Audio](https://www.youtube.com/watch?v=MtDhMZcHBvw) |
 | Santiago | Preservation Hall Jazz Band | [Video](https://www.youtube.com/watch?v=vi504wcjFfs) |
+| Dream I Had | Revenge Wife | [Video](https://www.youtube.com/watch?v=f1V7b2EiuVA) |
 | IPHONE | Rico Nasty | [Video](https://www.youtube.com/watch?v=RuhvdaDabpU) |
 | Fields of Verdun | Sabaton | [Video](https://www.youtube.com/watch?v=xP8G-LwWNn0) |
 | 9/20 line | shebtel shebtel | [Audio](https://soundcloud.com/good/how-daytime-must-look) |
